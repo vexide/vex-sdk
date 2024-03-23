@@ -8,6 +8,7 @@ pub mod devices;
 pub mod controller;
 pub mod motor;
 pub mod imu;
+pub mod vision;
 
 pub use jump::*;
 pub use system::*;
@@ -16,3 +17,4 @@ pub use devices::*;
 pub use controller::*;
 pub use motor::*;
 pub use imu::*;
+pub use vision::*;

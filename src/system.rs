@@ -19,7 +19,9 @@ pub struct Date {
 
 map_jump_table! {
 	0x10 => pub fn stdlib_mismatch_error(param_1: u32, param_2: u32),
-	0x01c => pub fn scratch_memory_ptr(ptr: *mut *mut core::ffi::c_void) -> i32,
+	0x01c =>
+		/// special use only ! Talk to James.
+		pub fn scratch_memory_ptr(ptr: *mut *mut core::ffi::c_void) -> i32,
 	0x20 => pub fn private_api_disable(),
 	0x024 => pub fn private_api_enable(),
 	0x028 =>

@@ -1,5 +1,43 @@
 use crate::jump::map_jump_table;
-use crate::types::{ControllerId, ControllerChannel};
+
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub enum ControllerId {
+    Primary = 0,
+    Partner = 1,
+}
+
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub enum ControllerChannel {
+    JoystickLeftX = 0,
+    JoystickLeftY,
+    JoystickRightX,
+    JoystickRightY,
+    AnalogSpare1,
+    AnalogSpare2,
+
+    ButtonL1,
+    ButtonL2,
+    ButtonR1,
+    ButtonR2,
+    ButtonUp,
+    ButtonDown,
+    ButtonLeft,
+    ButtonRight,
+    ButtonX,
+    ButtonB,
+    ButtonY,
+    ButtonA,
+
+    ButtonSEL,
+
+    BatteryLevel,
+
+    ButtonAll,
+    Flags,
+    BatteryCapacity,
+}
 
 map_jump_table! {
 	0x1a4 =>
