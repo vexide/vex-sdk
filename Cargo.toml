@@ -1,11 +1,11 @@
 [package]
 name = "vex_sys"
-description = "A library for autonomously controlling VEX robots."
-repository = "https://github.com/tropix126/vexnav/"
+description = "Raw bindings to vexos user jump table functions."
+repository = "https://github.com/pros-rs/vex-sys/"
 authors = ["Tropical"]
 license-file = "LICENSE.md"
-categories = ["science::robotics", "no-std", "mathematics", "embedded"]
-keywords = ["vex", "pros", "pros-rs", "vex-robotics", "robotics", "autonomous"]
+categories = ["science::robotics", "no-std", "embedded"]
+keywords = ["vex", "vex-v5", "vex-robotics", "robotics"]
 version = "0.1.0"
 edition = "2021"
 
@@ -13,4 +13,3 @@ edition = "2021"
 
 [dependencies]
 pros = { git = "https://github.com/pros-rs/pros-rs" }
-num-traits = { version = "0.2", default-features = false, features = ["libm"] }

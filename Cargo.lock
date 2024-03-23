@@ -16,9 +16,9 @@ checksum = "d468802bab17cbc0cc575e9b053f41e72aa36bfa6b7f55e3529ffa43161b97fa"
 
 [[package]]
 name = "bitflags"
-version = "2.4.2"
+version = "2.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ed570934406eb16438a4e976b1b4500774099c13b8cb96eec99f620f05090ddf"
+checksum = "cf4b9d6a944f767f8e5e0db018570623c85f3d925ac718db4e06d0187adb21c1"
 
 [[package]]
 name = "cfg-if"
@@ -48,12 +48,6 @@ name = "libc"
 version = "0.2.153"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9c198f91728a82281a64e1f4f9eeb25d82cb32a5de251c6bd1b5154d63a8e7bd"
-
-[[package]]
-name = "libm"
-version = "0.2.8"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4ec2a862134d2a7d32d7983ddcdd1c4923530833c9f2ea1a44fc5fa473989058"
 
 [[package]]
 name = "lock_api"
@@ -140,7 +134,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "da0df0e5185db44f69b44f26786fe401b6c293d1907744beaa7fa62b2e5a517a"
 dependencies = [
  "autocfg",
- "libm",
 ]
 
 [[package]]
@@ -155,7 +148,7 @@ dependencies = [
 [[package]]
 name = "pros"
 version = "0.8.0"
-source = "git+https://github.com/pros-rs/pros-rs#d1e99727ad309da6b3a8be4ddb45827637dcbfd1"
+source = "git+https://github.com/pros-rs/pros-rs#7a3744ad452b6122958c80deca9d46ff1572ce31"
 dependencies = [
  "pros-async",
  "pros-core",
@@ -168,7 +161,7 @@ dependencies = [
 [[package]]
 name = "pros-async"
 version = "0.1.0"
-source = "git+https://github.com/pros-rs/pros-rs#d1e99727ad309da6b3a8be4ddb45827637dcbfd1"
+source = "git+https://github.com/pros-rs/pros-rs#7a3744ad452b6122958c80deca9d46ff1572ce31"
 dependencies = [
  "async-task",
  "pros-core",
@@ -179,7 +172,7 @@ dependencies = [
 [[package]]
 name = "pros-core"
 version = "0.1.0"
-source = "git+https://github.com/pros-rs/pros-rs#d1e99727ad309da6b3a8be4ddb45827637dcbfd1"
+source = "git+https://github.com/pros-rs/pros-rs#7a3744ad452b6122958c80deca9d46ff1572ce31"
 dependencies = [
  "dlmalloc",
  "no_std_io",
@@ -191,7 +184,7 @@ dependencies = [
 [[package]]
 name = "pros-devices"
 version = "0.1.0"
-source = "git+https://github.com/pros-rs/pros-rs#d1e99727ad309da6b3a8be4ddb45827637dcbfd1"
+source = "git+https://github.com/pros-rs/pros-rs#7a3744ad452b6122958c80deca9d46ff1572ce31"
 dependencies = [
  "bitflags",
  "no_std_io",
@@ -203,7 +196,7 @@ dependencies = [
 [[package]]
 name = "pros-math"
 version = "0.1.0"
-source = "git+https://github.com/pros-rs/pros-rs#d1e99727ad309da6b3a8be4ddb45827637dcbfd1"
+source = "git+https://github.com/pros-rs/pros-rs#7a3744ad452b6122958c80deca9d46ff1572ce31"
 dependencies = [
  "num",
  "pros-core",
@@ -212,7 +205,7 @@ dependencies = [
 [[package]]
 name = "pros-panic"
 version = "0.1.0"
-source = "git+https://github.com/pros-rs/pros-rs#d1e99727ad309da6b3a8be4ddb45827637dcbfd1"
+source = "git+https://github.com/pros-rs/pros-rs#7a3744ad452b6122958c80deca9d46ff1572ce31"
 dependencies = [
  "pros-core",
  "pros-devices",
@@ -222,7 +215,7 @@ dependencies = [
 [[package]]
 name = "pros-sys"
 version = "0.7.0"
-source = "git+https://github.com/pros-rs/pros-rs#d1e99727ad309da6b3a8be4ddb45827637dcbfd1"
+source = "git+https://github.com/pros-rs/pros-rs#7a3744ad452b6122958c80deca9d46ff1572ce31"
 dependencies = [
  "cfg-if",
 ]
@@ -274,9 +267,9 @@ dependencies = [
 
 [[package]]
 name = "syn"
-version = "2.0.52"
+version = "2.0.53"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b699d15b36d1f02c3e7c69f8ffef53de37aefae075d8488d4ba1a7788d574a07"
+checksum = "7383cd0e49fff4b6b90ca5670bfd3e9d6a733b3f90c686605aa7eec8c4996032"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -293,7 +286,6 @@ checksum = "3354b9ac3fae1ff6755cb6db53683adb661634f67557942dea4facebec0fee4b"
 name = "vex_sys"
 version = "0.1.0"
 dependencies = [
- "num-traits",
  "pros",
 ]
 
