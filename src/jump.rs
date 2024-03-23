@@ -5,7 +5,7 @@ macro_rules! map_jump_table {
     (
         $(
             $offset:expr =>
-            $(#[$meta:meta])* $vis:vis fn $name:ident($($arg:ident: $arg_ty:ty),* $(, ...)?) $(-> $ret:ty)?
+            $(#[$meta:meta])* $vis:vis fn $name:ident($($arg:ident: $arg_ty:ty $(,)?),*) $(-> $ret:ty)?
         ),+ $(,)?
     ) => {
         $(

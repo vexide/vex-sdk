@@ -1,5 +1,3 @@
-use core::ffi::c_char;
-
 use crate::jump::map_jump_table;
 
 #[repr(C)]
@@ -29,7 +27,7 @@ map_jump_table! {
 		/// processor when writing data to devices. This function should ideally be ran
 		/// every 2mS for devices to be properly communicated with.
 		pub fn background_processing(),
-	0xf0 => pub fn debug(fmt: *const c_char, ...) -> i32,
+	// 0xf0 => pub fn debug(fmt: *const c_char, ...) -> i32,
 	0x118 =>
 		/// Gets the time since program start with millisecond precision.
 		pub fn system_time() -> u32,

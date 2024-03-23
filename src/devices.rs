@@ -1,6 +1,9 @@
-use crate::jump::map_jump_table;
-use crate::types::{
-    AdiExpanderData, GenericPositionData, GpsData, ImuData, MotorData, OpticalData,
+use crate::{
+	jump::map_jump_table,
+	motor::MotorData,
+	types::{
+		AdiExpanderData, GenericPositionData, GpsData, ImuData, OpticalData,
+	}
 };
 
 #[repr(C)]
@@ -75,4 +78,6 @@ map_jump_table! {
     0x1b0 =>
         /// Get the timestamp recorded by a device's internal clock.
         pub fn device_timestamp(device: V5DeviceHandle) -> u32,
+	0x2a8 =>
+		pub fn device_value(device: V5DeviceHandle) -> f64,
 }
