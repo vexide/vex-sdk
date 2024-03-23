@@ -1,35 +1,4 @@
 #[repr(C)]
-#[repr(packed)]
-#[derive(Debug, Copy, Clone)]
-pub struct ImuRaw {
-    pub x: f64,
-    pub y: f64,
-    pub z: f64,
-    pub w: f64,
-}
-
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub enum ImuOrientationMode {
-    ZUp = 0x00,
-    ZDown = 0x10,
-    XUp = 0x20,
-    XDown = 0x30,
-    YUp = 0x40,
-    YDown = 0x50,
-    Auto = 0x80,
-}
-
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct ImuData {
-    pub orientation: ImuOrientationMode,
-    pub rotation: ImuRaw,
-    pub acceleration: ImuRaw,
-    pub reset_timestamp: u32,
-}
-
-#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct GenericPositionData {
     pub position: f64,
@@ -215,25 +184,6 @@ pub enum VisionLedMode {
 pub enum VisionWifiMode {
     Off = 0,
     On = 1,
-}
-
-#[repr(C)]
-#[repr(packed)]
-#[derive(Debug, Copy, Clone)]
-pub struct ImuQuaternion {
-    pub x: f64,
-    pub y: f64,
-    pub z: f64,
-    pub w: f64,
-}
-
-#[repr(C)]
-#[repr(packed)]
-#[derive(Debug, Copy, Clone)]
-pub struct ImuAttitude {
-    pub pitch: f64,
-    pub roll: f64,
-    pub yaw: f64,
 }
 
 #[repr(C)]

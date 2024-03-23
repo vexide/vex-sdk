@@ -1,8 +1,9 @@
 use crate::{
 	jump::map_jump_table,
 	motor::MotorData,
+	imu::ImuData,
 	types::{
-		AdiExpanderData, GenericPositionData, GpsData, ImuData, OpticalData,
+		AdiExpanderData, GenericPositionData, GpsData, OpticalData,
 	}
 };
 
