@@ -34,7 +34,7 @@ map_jump_table! {
     0x998 => pub fn vexScratchMemoryLock() -> bool,
     0x99c => pub fn vexScratchMemoryUnock(),
     0x028 =>
-        /// Derived from https://github.com/jpearman/vexcode-lvgllib6_X/blob/8ead3dab49665d4c98225d612672be28c7c2a425/src/v5lvgl.c#L17
+        /// Derived from <https://github.com/jpearman/vexcode-lvgllib6_X/blob/8ead3dab49665d4c98225d612672be28c7c2a425/src/v5lvgl.c#L17>
         pub fn vexTaskAdd(
             callback: unsafe extern "C" fn() -> c_int,
             interval: c_int,
