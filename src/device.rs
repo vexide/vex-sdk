@@ -3,7 +3,8 @@
 use core::ffi::{c_double, c_int};
 
 use crate::{
-    adi::V5_AdiPortConfiguration, map_jump_table, V5ImuOrientationMode, V5MotorBrakeMode, V5MotorControlMode, V5MotorEncoderUnits, V5MotorGearset, V5_DeviceImuRaw, V5_DeviceMotorPid
+    adi::V5_AdiPortConfiguration, map_jump_table, V5ImuOrientationMode, V5MotorBrakeMode,
+    V5MotorControlMode, V5MotorEncoderUnits, V5MotorGearset, V5_DeviceImuRaw, V5_DeviceMotorPid,
 };
 
 #[repr(C)]
@@ -105,35 +106,35 @@ pub struct V5_Device {
 #[repr(C)]
 #[derive(Debug, Copy, Clone, Eq, PartialEq)]
 pub enum V5_DeviceType {
-    kDeviceTypeNoSensor        = 0,
-    kDeviceTypeMotorSensor     = 2,
-    kDeviceTypeLedSensor       = 3,
-    kDeviceTypeAbsEncSensor    = 4,
-    kDeviceTypeCrMotorSensor   = 5,
-    kDeviceTypeImuSensor       = 6,
-    kDeviceTypeDistanceSensor  = 7,
-    kDeviceTypeRadioSensor     = 8,
-    kDeviceTypeTetherSensor    = 9,
-    kDeviceTypeBrainSensor     = 10,
-    kDeviceTypeVisionSensor    = 11,
-    kDeviceTypeAdiSensor       = 12,
-    kDeviceTypeRes1Sensor      = 13,
-    kDeviceTypeRes2Sensor      = 14,
-    kDeviceTypeRes3Sensor      = 15,
-    kDeviceTypeOpticalSensor   = 16,
-    kDeviceTypeMagnetSensor    = 17,
-    kDeviceTypeGpsSensor       = 20,
-    kDeviceTypeAicameraSensor  = 26,
+    kDeviceTypeNoSensor = 0,
+    kDeviceTypeMotorSensor = 2,
+    kDeviceTypeLedSensor = 3,
+    kDeviceTypeAbsEncSensor = 4,
+    kDeviceTypeCrMotorSensor = 5,
+    kDeviceTypeImuSensor = 6,
+    kDeviceTypeDistanceSensor = 7,
+    kDeviceTypeRadioSensor = 8,
+    kDeviceTypeTetherSensor = 9,
+    kDeviceTypeBrainSensor = 10,
+    kDeviceTypeVisionSensor = 11,
+    kDeviceTypeAdiSensor = 12,
+    kDeviceTypeRes1Sensor = 13,
+    kDeviceTypeRes2Sensor = 14,
+    kDeviceTypeRes3Sensor = 15,
+    kDeviceTypeOpticalSensor = 16,
+    kDeviceTypeMagnetSensor = 17,
+    kDeviceTypeGpsSensor = 20,
+    kDeviceTypeAicameraSensor = 26,
     kDeviceTypeLightTowerSensor = 27,
-    kDeviceTypeArmDevice       = 28,
-    kDeviceTypeAiVisionSensor  = 29,
+    kDeviceTypeArmDevice = 28,
+    kDeviceTypeAiVisionSensor = 29,
     kDeviceTypePneumaticSensor = 30,
-    kDeviceTypeBumperSensor    = 0x40,
-    kDeviceTypeGyroSensor      = 0x46,
-    kDeviceTypeSonarSensor     = 0x47,
-    kDeviceTypeGenericSensor   = 128,
-    kDeviceTypeGenericSerial   = 129,
-    kDeviceTypeUndefinedSensor = 255
+    kDeviceTypeBumperSensor = 0x40,
+    kDeviceTypeGyroSensor = 0x46,
+    kDeviceTypeSonarSensor = 0x47,
+    kDeviceTypeGenericSensor = 128,
+    kDeviceTypeGenericSerial = 129,
+    kDeviceTypeUndefinedSensor = 255,
 }
 
 map_jump_table! {
