@@ -2,11 +2,8 @@
 
 use core::ffi::{c_double, c_int};
 
-use pros::devices::smart::motor::Gearset;
-
 use crate::{
-    adi::V5_AdiPortConfiguration, map_jump_table, V5ImuOrientationMode, V5MotorBrakeMode,
-    V5MotorControlMode, V5MotorEncoderUnits, V5_DeviceImuRaw, V5_DeviceMotorPid,
+    adi::V5_AdiPortConfiguration, map_jump_table, V5ImuOrientationMode, V5MotorBrakeMode, V5MotorControlMode, V5MotorEncoderUnits, V5MotorGearset, V5_DeviceImuRaw, V5_DeviceMotorPid
 };
 
 #[repr(C)]
@@ -57,7 +54,7 @@ pub struct MotorData {
     pub brake_mode: V5MotorBrakeMode,
     pub control_mode: V5MotorControlMode,
     pub encoder_units: V5MotorEncoderUnits,
-    pub gearing: Gearset,
+    pub gearing: V5MotorGearset,
     pub pos_pid: *mut V5_DeviceMotorPid,
     pub vel_pid: *mut V5_DeviceMotorPid,
     pub velocity_target: i32,
