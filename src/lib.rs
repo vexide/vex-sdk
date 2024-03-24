@@ -59,7 +59,7 @@ macro_rules! map_jump_table {
     ) => {
         $(
             $(#[$meta])*
-            $vis unsafe extern "C" fn $name($($arg: $arg_ty),*) $(-> $ret)? {
+            #[no_mangle] $vis unsafe extern "C" fn $name($($arg: $arg_ty),*) $(-> $ret)? {
                 unsafe {
                     (*((crate::JUMP_TABLE_START + $offset) as *const extern "C" fn($($arg_ty,)*) $(-> $ret)?))($($arg,)*)
                 }
