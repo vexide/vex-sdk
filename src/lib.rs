@@ -24,7 +24,6 @@ pub mod serial;
 pub mod system;
 pub mod touch;
 pub mod vision;
-pub mod user;
 
 pub use adi::*;
 pub use battery::*;
