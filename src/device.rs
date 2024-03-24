@@ -143,8 +143,8 @@ map_jump_table! {
         /// Get a handle to a specific device plugged into a specific port index.
         pub fn vexDeviceGetByIndex(index: u32) -> V5_DeviceT,
     0x1a0 =>
-        /// Get the status flags of a specific device.
-        pub fn vexDeviceGetStatus(devices: *const V5_DeviceType) -> i32,
+        /// Get a list of device types plugged into the brain.
+        pub fn vexDeviceGetStatus(devices: *mut V5_DeviceType) -> i32,
     0x1b0 =>
         /// Get the timestamp recorded by a device's internal clock.
         pub fn vexDeviceGetTimestamp(device: V5_DeviceT) -> u32,
