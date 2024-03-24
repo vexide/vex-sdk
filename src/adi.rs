@@ -33,9 +33,9 @@ pub enum V5_AdiPortConfiguration {
 
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
-pub enum BumperState {
-    Released = 0,
-    Pressed = 1,
+pub enum V5_DeviceBumperState {
+    kBumperReleased = 0,
+    kBumperPressed = 1,
 }
 
 map_jump_table! {
