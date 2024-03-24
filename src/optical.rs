@@ -3,7 +3,7 @@ use core::ffi::c_double;
 use crate::{map_jump_table, V5_DeviceT};
 
 #[repr(C)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, Eq, PartialEq)]
 pub struct OpticalRaw {
     pub clear: u16,
     pub red: u16,
@@ -12,7 +12,7 @@ pub struct OpticalRaw {
 }
 
 #[repr(C)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, PartialEq)]
 pub struct OpticalRgb {
     pub red: c_double,
     pub green: c_double,
@@ -21,7 +21,7 @@ pub struct OpticalRgb {
 }
 
 #[repr(C)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, Eq, PartialEq)]
 pub struct OpticalGesture {
     pub udata: u8,
     pub ddata: u8,

@@ -4,7 +4,7 @@ use crate::{device::V5_DeviceT, map_jump_table};
 
 #[repr(C)]
 #[repr(packed)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, PartialEq)]
 pub struct V5_DeviceImuRaw {
     pub x: c_double,
     pub y: c_double,
@@ -14,7 +14,7 @@ pub struct V5_DeviceImuRaw {
 
 #[repr(C)]
 #[repr(packed)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, PartialEq)]
 pub struct V5_DeviceImuQuaternion {
     pub a: c_double,
     pub b: c_double,
@@ -23,7 +23,7 @@ pub struct V5_DeviceImuQuaternion {
 }
 
 #[repr(C)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, Eq, PartialEq)]
 pub enum V5ImuOrientationMode {
     kImuOrientationZUp = 0x00,
     kImuOrientationZDown = 0x10,
@@ -36,7 +36,7 @@ pub enum V5ImuOrientationMode {
 
 #[repr(C)]
 #[repr(packed)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, PartialEq)]
 pub struct V5_DeviceImuAttitude {
     pub pitch: c_double,
     pub roll: c_double,

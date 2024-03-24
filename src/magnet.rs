@@ -3,7 +3,7 @@ use core::ffi::c_double;
 use crate::{map_jump_table, V5_DeviceT};
 
 #[repr(C)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, PartialEq)]
 pub enum V5_DeviceMagnetDuration {
     kMagnetDurationShort,
     kMagnetDurationMedium,

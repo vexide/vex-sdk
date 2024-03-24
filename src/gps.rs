@@ -4,7 +4,7 @@ use crate::{map_jump_table, V5_DeviceT};
 
 #[repr(C)]
 #[repr(packed)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, PartialEq)]
 pub struct V5_DeviceGpsRaw {
     pub x: c_double,
     pub y: c_double,
@@ -14,7 +14,7 @@ pub struct V5_DeviceGpsRaw {
 
 #[repr(C)]
 #[repr(packed)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, PartialEq)]
 pub struct V5_DeviceGpsAttitude {
     pub pitch: c_double, // x
     pub roll: c_double,  // y
@@ -33,7 +33,7 @@ pub struct V5_DeviceGpsAttitude {
 
 #[repr(C)]
 #[repr(packed)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, PartialEq)]
 pub struct V5_DeviceGpsQuaternion {
     pub x: c_double,
     pub y: c_double,

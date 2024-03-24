@@ -32,7 +32,7 @@ pub enum V5_AdiPortConfiguration {
 }
 
 #[repr(C)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, Eq, PartialEq)]
 pub enum V5_DeviceBumperState {
     kBumperReleased = 0,
     kBumperPressed = 1,

@@ -3,7 +3,7 @@ use core::ffi::c_char;
 use crate::map_jump_table;
 
 #[repr(C, packed)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, Eq, PartialEq)]
 pub struct v5_image {
     pub width: u16,
     pub height: u16,

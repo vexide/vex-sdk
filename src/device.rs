@@ -7,13 +7,13 @@ use crate::{
 };
 
 #[repr(C)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, PartialEq)]
 pub struct PositionData {
     pub position: c_double,
 }
 
 #[repr(C)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, PartialEq)]
 pub struct GpsData {
     pub offset_x: c_double,
     pub offset_y: c_double,
@@ -25,13 +25,13 @@ pub struct GpsData {
 }
 
 #[repr(C)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, Eq, PartialEq)]
 pub struct AdiExpanderData {
     pub adi_types: [V5_AdiPortConfiguration; 8],
 }
 
 #[repr(C)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, PartialEq)]
 pub struct OpticalData {
     pub red: c_double,
     pub green: c_double,
@@ -40,7 +40,7 @@ pub struct OpticalData {
 }
 
 #[repr(C)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, PartialEq)]
 pub struct ImuData {
     pub orientation: V5ImuOrientationMode,
     pub rotation: V5_DeviceImuRaw,
@@ -49,7 +49,7 @@ pub struct ImuData {
 }
 
 #[repr(C)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, PartialEq)]
 pub struct MotorData {
     pub brake_mode: V5MotorBrakeMode,
     pub control_mode: V5MotorControlMode,
@@ -103,7 +103,7 @@ pub struct V5_Device {
 }
 
 #[repr(C)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, Eq, PartialEq)]
 pub enum V5_DeviceType {
     NoSensor = 0,
     MotorSensor = 2,

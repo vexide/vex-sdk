@@ -3,7 +3,7 @@ use core::ffi::{c_char, c_int, c_void};
 use crate::map_jump_table;
 
 #[repr(C)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, Eq, PartialEq)]
 pub struct time {
     /// Hours
     pub ti_hour: u8,
@@ -16,7 +16,7 @@ pub struct time {
 }
 
 #[repr(C)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, Eq, PartialEq)]
 pub struct date {
     /// Year - 1980
     pub da_year: u16,
