@@ -16,3 +16,5 @@ This project aims to cover 100% of the publicly available symbols present in the
 Functions that currently are not included:
 - Anything introduced in vexos 1.1.3 (`vexDeviceAiCam`, CTE Workcell devices, etc...)
 - C-style varadic functions (vex_printf, etc...), or functions taking vararg structures (e.g. `va_list`)
+- `vexSystemVersion`, `vexStdlibVersion`, `vexSdkVersion`, `vexStdlibVersionLinked`, and`vexStdlibVersionVerify` since their offsets are currently unknown.
+- Most private API symbols, excluding definitions that are either obvious (e.g. `vexDisplayPenSizeSet`) or made publicly available for various reasons.
