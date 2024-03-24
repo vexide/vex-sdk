@@ -46,7 +46,7 @@ map_jump_table! {
     0x21c =>
         /// <Derived from <https://github.com/purduesigbots/pros/blob/89a7417352fbbc86420325afe410861e2210743c/src/devices/vdml_ext_adi.c#L40>
         pub fn vexDeviceAdiAddrLedSet(device: V5_DeviceT, port: u32, pData: *mut u32, nOffset: u32, nLength: u32, options: u32),
-    0x230 => pub fn vexDeviceBumperGet(device: V5_DeviceT) -> BumperState,
+    0x230 => pub fn vexDeviceBumperGet(device: V5_DeviceT) -> V5_DeviceBumperState,
     0x258 => pub fn vexDeviceGyroReset(device: V5_DeviceT),
     0x25c => pub fn vexDeviceGyroHeadingGet(device: V5_DeviceT) -> c_double,
     0x260 => pub fn vexDeviceGyroDegreesGet(device: V5_DeviceT) -> c_double,
