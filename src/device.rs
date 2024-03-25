@@ -41,7 +41,7 @@ pub struct OpticalData {
 }
 
 #[repr(C)]
-#[derive(Debug, Copy, Clone, PartialEq)]
+#[derive(Default, Debug, Copy, Clone, PartialEq)]
 pub struct ImuData {
     pub orientation: V5ImuOrientationMode,
     pub rotation: V5_DeviceImuRaw,

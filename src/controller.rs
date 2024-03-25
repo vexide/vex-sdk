@@ -1,15 +1,17 @@
 use crate::map_jump_table;
 
 #[repr(C)]
-#[derive(Copy, Clone, Eq, PartialEq, Debug)]
+#[derive(Default, Copy, Clone, Eq, PartialEq, Debug)]
 pub enum V5_ControllerId {
+    #[default]
     kControllerMaster = 0,
     kControllerPartner,
 }
 
 #[repr(C)]
-#[derive(Copy, Clone, Eq, PartialEq, Debug)]
+#[derive(Default, Copy, Clone, Eq, PartialEq, Debug)]
 pub enum V5_ControllerStatus {
+    #[default]
     kV5ControllerOffline = 0,
     kV5ControllerTethered,
     kV5ControllerVexnet,

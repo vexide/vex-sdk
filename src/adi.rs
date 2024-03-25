@@ -28,12 +28,14 @@ pub enum V5_AdiPortConfiguration {
 
     kAdiPortTypeLegacyPwmSlew,
 
+    #[default]
     kAdiPortTypeUndefined = 255,
 }
 
 #[repr(C)]
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 pub enum V5_DeviceBumperState {
+    #[default]
     kBumperReleased = 0,
     kBumperPressed = 1,
 }

@@ -23,7 +23,7 @@ pub struct V5_DeviceImuQuaternion {
 }
 
 #[repr(C)]
-#[derive(Debug, Copy, Clone, Eq, PartialEq)]
+#[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 pub enum V5ImuOrientationMode {
     kImuOrientationZUp = 0x00,
     kImuOrientationZDown = 0x10,
@@ -31,6 +31,7 @@ pub enum V5ImuOrientationMode {
     kImuOrientationXDown = 0x30,
     kImuOrientationYUp = 0x40,
     kImuOrientationYDown = 0x50,
+    #[default]
     kImuOrientationAuto = 0x80,
 }
 
