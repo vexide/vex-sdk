@@ -45,7 +45,7 @@ map_jump_table! {
     0x548 => pub fn vexDeviceOpticalRawGet(device: V5_DeviceT, data: *mut V5_DeviceOpticalRaw),
     0x550 => pub fn vexDeviceOpticalModeSet(device: V5_DeviceT, mode: u32),
     0x554 => pub fn vexDeviceOpticalModeGet(device: V5_DeviceT) -> u32,
-    0x558 => pub fn vexDeviceOpticalGestureGet(device: V5_DeviceT, pData: *mut V5_DeviceOpticalGesture),
+    0x558 => pub fn vexDeviceOpticalGestureGet(device: V5_DeviceT, pData: *mut V5_DeviceOpticalGesture) -> u32,
     0x55c => pub fn vexDeviceOpticalGestureEnable(device: V5_DeviceT),
     0x560 => pub fn vexDeviceOpticalGestureDisable(device: V5_DeviceT),
     0x564 => pub fn vexDeviceOpticalProximityThreshold(device: V5_DeviceT, value: i32),
