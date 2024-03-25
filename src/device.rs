@@ -8,13 +8,13 @@ use crate::{
 };
 
 #[repr(C)]
-#[derive(Debug, Copy, Clone, PartialEq)]
+#[derive(Default, Debug, Copy, Clone, PartialEq)]
 pub struct PositionData {
     pub position: c_double,
 }
 
 #[repr(C)]
-#[derive(Debug, Copy, Clone, PartialEq)]
+#[derive(Default, Debug, Copy, Clone, PartialEq)]
 pub struct GpsData {
     pub offset_x: c_double,
     pub offset_y: c_double,
@@ -26,13 +26,13 @@ pub struct GpsData {
 }
 
 #[repr(C)]
-#[derive(Debug, Copy, Clone, Eq, PartialEq)]
+#[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 pub struct AdiExpanderData {
     pub adi_types: [V5_AdiPortConfiguration; 8],
 }
 
 #[repr(C)]
-#[derive(Debug, Copy, Clone, PartialEq)]
+#[derive(Default, Debug, Copy, Clone, PartialEq)]
 pub struct OpticalData {
     pub red: c_double,
     pub green: c_double,

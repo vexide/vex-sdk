@@ -2,16 +2,18 @@ use crate::{device::V5_DeviceT, map_jump_table};
 use core::ffi::c_double;
 
 #[repr(C)]
-#[derive(Copy, Clone, Eq, PartialEq, Debug)]
+#[derive(Default, Copy, Clone, Eq, PartialEq, Debug)]
 pub enum V5MotorBrakeMode {
+    #[default]
     kV5MotorBrakeModeCoast = 0,
     kV5MotorBrakeModeBrake = 1,
     kV5MotorBrakeModeHold = 2,
 }
 
 #[repr(C)]
-#[derive(Copy, Clone, Eq, PartialEq, Debug)]
+#[derive(Default, Copy, Clone, Eq, PartialEq, Debug)]
 pub enum V5MotorControlMode {
+    #[default]
     kMotorControlModeOFF = 0,
     kMotorControlModeBRAKE = 1,
     kMotorControlModeHOLD = 2,
@@ -22,26 +24,28 @@ pub enum V5MotorControlMode {
 }
 
 #[repr(C)]
-#[derive(Copy, Clone, Eq, PartialEq, Debug)]
+#[derive(Default, Copy, Clone, Eq, PartialEq, Debug)]
 pub enum V5MotorEncoderUnits {
+    #[default]
     kMotorEncoderDegrees = 0,
     kMotorEncoderRotations = 1,
     kMotorEncoderCounts = 2,
 }
 
 #[repr(C)]
-#[derive(Copy, Clone, Eq, PartialEq, Debug)]
+#[derive(Default, Copy, Clone, Eq, PartialEq, Debug)]
 pub enum V5MotorGearset {
     /// 36:1 gear set, torque
     kMotorGearSet_36 = 0,
     /// 18:1 gear set, speed
+    #[default]
     kMotorGearSet_18 = 1,
     /// 6:1 gear set, high speed
     kMotorGearSet_06 = 2,
 }
 
 #[repr(packed)]
-#[derive(Copy, Clone, Eq, PartialEq, Debug)]
+#[derive(Default, Copy, Clone, Eq, PartialEq, Debug)]
 pub struct V5_DeviceMotorPid {
     pub kf: u8,
     pub kp: u8,

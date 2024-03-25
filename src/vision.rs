@@ -1,8 +1,9 @@
 use crate::{map_jump_table, V5_DeviceT};
 
 #[repr(C)]
-#[derive(Debug, Copy, Clone, Eq, PartialEq)]
+#[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 pub enum V5VisionMode {
+    #[default]
     kVisionModeNormal = 0,
     kVisionModeMixed = 1,
     kVisionModeLineDetect = 2,
@@ -10,8 +11,9 @@ pub enum V5VisionMode {
 }
 
 #[repr(C)]
-#[derive(Debug, Copy, Clone, Eq, PartialEq)]
+#[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 pub enum V5VisionBlockType {
+    #[default]
     kVisionTypeNormal = 0,
     kVisionTypeColorCode = 1,
     kVisionTypeLineDetect = 2,
@@ -19,7 +21,7 @@ pub enum V5VisionBlockType {
 
 #[repr(C)]
 #[repr(packed)]
-#[derive(Debug, Copy, Clone, Eq, PartialEq)]
+#[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 pub struct V5_DeviceVisionObject {
     /// block signature
     pub signature: u16,
@@ -39,7 +41,7 @@ pub struct V5_DeviceVisionObject {
 
 #[repr(C)]
 #[repr(packed)]
-#[derive(Debug, Copy, Clone, PartialEq)]
+#[derive(Default, Debug, Copy, Clone, PartialEq)]
 pub struct V5_DeviceVisionSignature {
     pub id: u8,
     pub flags: u8,
@@ -56,8 +58,9 @@ pub struct V5_DeviceVisionSignature {
 }
 
 #[repr(C)]
-#[derive(Debug, Copy, Clone, Eq, PartialEq)]
+#[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 pub enum V5VisionWBMode {
+    #[default]
     kVisionWBNormal = 0,
     kVisionWBStart = 1,
     kVisionWBManual = 2,
@@ -65,7 +68,7 @@ pub enum V5VisionWBMode {
 
 #[repr(C)]
 #[repr(packed)]
-#[derive(Debug, Copy, Clone, Eq, PartialEq)]
+#[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 pub struct V5_DeviceVisionRgb {
     pub red: u8,
     pub green: u8,
@@ -74,15 +77,17 @@ pub struct V5_DeviceVisionRgb {
 }
 
 #[repr(C)]
-#[derive(Debug, Copy, Clone, Eq, PartialEq)]
+#[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 pub enum V5VisionLedMode {
+    #[default]
     kVisionLedModeAuto = 0,
     kVisionLedModeManual = 1,
 }
 
 #[repr(C)]
-#[derive(Debug, Copy, Clone, Eq, PartialEq)]
+#[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 pub enum V5VisionWifiMode {
+    #[default]
     kVisionWifiModeOff = 0,
     kVisionWifiModeOn = 1,
 }

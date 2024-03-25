@@ -3,7 +3,7 @@ use core::ffi::c_double;
 use crate::{map_jump_table, V5_DeviceT};
 
 #[repr(C)]
-#[derive(Copy, Clone, Eq, PartialEq, Debug)]
+#[derive(Default, Copy, Clone, Eq, PartialEq, Debug)]
 pub enum V5_AdiPortConfiguration {
     kAdiPortTypeAnalogIn = 0,
     kAdiPortTypeAnalogOut,
@@ -32,7 +32,7 @@ pub enum V5_AdiPortConfiguration {
 }
 
 #[repr(C)]
-#[derive(Debug, Copy, Clone, Eq, PartialEq)]
+#[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 pub enum V5_DeviceBumperState {
     kBumperReleased = 0,
     kBumperPressed = 1,
