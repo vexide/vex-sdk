@@ -145,7 +145,7 @@ map_jump_table! {
         /// Get the number of devices of a specific type plugged into the brain.
         pub fn vexDevicesGetNumberByType(device_type: V5_DeviceType) -> u32,
     0x198 => pub fn vexDevicesGet() -> V5_DeviceT,
-    0x18c =>
+    0x19c =>
         /// Get a handle to a specific device plugged into a specific port index.
         pub fn vexDeviceGetByIndex(index: u32) -> V5_DeviceT,
     0x1a0 =>
