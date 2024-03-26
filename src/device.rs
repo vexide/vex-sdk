@@ -148,6 +148,11 @@ map_jump_table! {
     0x19c =>
         /// Get a handle to a specific device plugged into a specific port index.
         pub fn vexDeviceGetByIndex(index: u32) -> V5_DeviceT,
+    0x1d8 =>
+        /// Get a device's bitflags on a specific port index.
+        /// 
+        /// Function signature inferred based on return type of vex::device::flags.
+        pub fn vexDeviceFlagsGetByIndex(index: u32) -> u32,
     0x1a0 =>
         /// Get a list of device types plugged into the brain.
         pub fn vexDeviceGetStatus(devices: *mut V5_DeviceType) -> i32,
