@@ -17,7 +17,7 @@ This project aims to cover 100% of the publicly available symbols present in the
 Functions present in `libv5rt` that are currently are **NOT** in `vex_sdk`:
 - Most things outside of `v5_api.h`and `v5_types.h`. This includes the "user functions", which are basically convenience methods for passing in port indexes directly (e.g. `vexImuReset` vs. `vexDeviceImuReset`).
 - C-style varadic functions (vex_printf, etc...), or functions taking vararg structures (e.g. `va_list`)
-- `vexSystemVersion`, `vexStdlibVersion`, `vexSdkVersion`, `vexStdlibVersionLinked`, and`vexStdlibVersionVerify` since these aren't actual functions on the jumptable, just data at addresses. Support might be added in the future, though.
+- `vexSystemVersion`, `vexStdlibVersion`, `vexSdkVersion`, `vexStdlibVersionLinked`, and `vexStdlibVersionVerify` since these aren't actual functions on the jumptable, just data at addresses. Support might be added in the future, though.
 - Most private API symbols*.
 	- The exceptions to this are functions that have been publicly released for various reason, such as `vexDeviceAdiAddrLedSet` or `vexTaskAdd`.
 	- Additionally some function signatures are easily guessable. For example, most smart devices have a `vexDeviceXTemperatureGet` function that always has the function signature `fn(V5_DeviceT) -> c_double`. For some reason, some of these functions are left private (such as `vexDeviceImuTemperatureGet`) while others are public (such as `vexDeviceAiVisionTemperatureGet`). This also includes status code getters which are always `fn(V5_DeviceT) -> u32`.
