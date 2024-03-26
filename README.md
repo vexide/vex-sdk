@@ -14,7 +14,8 @@ This repository serves as a partial open-source reimplementation of VEX's V5 run
 
 This project aims to cover 100% of the publicly available symbols present in the `v5_api` SDK, as well as any private symbols that have been released to the public (such as `vexTaskAdd`).
 
-Functions that currently are **NOT** included:
+Functions present in `libv5rt` that are currently are **NOT** in `vex_sdk`:
+- Most things outside of `v5_api.h`and `v5_types.h`. This includes the "user functions", which are basically convenience methods for passing in port indexes directly (e.g. `vexImuReset` vs. `vexDeviceImuReset`).
 - C-style varadic functions (vex_printf, etc...), or functions taking vararg structures (e.g. `va_list`)
 - `vexSystemVersion`, `vexStdlibVersion`, `vexSdkVersion`, `vexStdlibVersionLinked`, and`vexStdlibVersionVerify` since these aren't actual functions on the jumptable, just data at addresses. Support might be added in the future, though.
 - Most private API symbols*.
