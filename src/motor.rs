@@ -1,3 +1,5 @@
+//! V5 Smart Motor
+
 use crate::{device::V5_DeviceT, map_jump_table};
 use core::ffi::c_double;
 

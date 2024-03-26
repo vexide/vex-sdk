@@ -1,3 +1,5 @@
+//! V5 Distance Sensor
+
 use core::ffi::c_double;
 
 use crate::{map_jump_table, V5_DeviceT};

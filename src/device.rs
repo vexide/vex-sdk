@@ -1,3 +1,5 @@
+//! V5 Smart Devices
+
 #![allow(non_camel_case_types)]
 
 use core::ffi::{c_double, c_int};
@@ -9,13 +11,13 @@ use crate::{
 
 #[repr(C)]
 #[derive(Default, Debug, Copy, Clone, PartialEq)]
-pub struct PositionData {
+pub struct V5_DevicePositionData {
     pub position: c_double,
 }
 
 #[repr(C)]
 #[derive(Default, Debug, Copy, Clone, PartialEq)]
-pub struct GpsData {
+pub struct V5_DeviceGpsData {
     pub offset_x: c_double,
     pub offset_y: c_double,
 
@@ -27,13 +29,13 @@ pub struct GpsData {
 
 #[repr(C)]
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
-pub struct AdiExpanderData {
+pub struct V5_DeviceAdiData {
     pub adi_types: [V5_AdiPortConfiguration; 8],
 }
 
 #[repr(C)]
 #[derive(Default, Debug, Copy, Clone, PartialEq)]
-pub struct OpticalData {
+pub struct V5_DeviceOpticalData {
     pub red: c_double,
     pub green: c_double,
     pub blue: c_double,
@@ -42,7 +44,7 @@ pub struct OpticalData {
 
 #[repr(C)]
 #[derive(Default, Debug, Copy, Clone, PartialEq)]
-pub struct ImuData {
+pub struct V5_DeviceImuData {
     pub orientation: V5ImuOrientationMode,
     pub rotation: V5_DeviceImuRaw,
     pub acceleration: V5_DeviceImuRaw,
@@ -51,7 +53,7 @@ pub struct ImuData {
 
 #[repr(C)]
 #[derive(Debug, Copy, Clone, PartialEq)]
-pub struct MotorData {
+pub struct V5_DeviceMotorData {
     pub brake_mode: V5MotorBrakeMode,
     pub control_mode: V5MotorControlMode,
     pub encoder_units: V5MotorEncoderUnits,
@@ -78,14 +80,14 @@ pub struct MotorData {
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub union V5_DeviceData {
-    pub motor: MotorData,
-    pub imu: ImuData,
-    pub rotation: PositionData,
-    pub distance: PositionData,
-    pub optical: OpticalData,
+    pub motor: V5_DeviceMotorData,
+    pub imu: V5_DeviceImuData,
+    pub rotation: V5_DevicePositionData,
+    pub distance: V5_DevicePositionData,
+    pub optical: V5_DeviceOpticalData,
     pub vision: (),
-    pub gps: GpsData,
-    pub adi_expander: AdiExpanderData,
+    pub gps: V5_DeviceGpsData,
+    pub adi: V5_DeviceAdiData,
 }
 
 /// Handle to a [`V5_Device`]

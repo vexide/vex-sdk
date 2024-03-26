@@ -12,10 +12,10 @@ This repository serves as a partial open-source reimplementation of VEX's V5 run
 
 ## SDK Coverage
 
-This project aims to cover 100% of the publicly available symbols present in the V5 SDK, as well as any private symbols that have been released to the public (such as `vexTaskAdd`).
+This project aims to cover 100% of the publicly available symbols present in the `v5_api` SDK, as well as any private symbols that have been released to the public (such as `vexTaskAdd`).
 
 Functions that currently are not included:
-- Anything introduced in vexos 1.1.3 (`vexDeviceAiCam`, CTE Workcell devices, etc...)
 - C-style varadic functions (vex_printf, etc...), or functions taking vararg structures (e.g. `va_list`)
-- `vexSystemVersion`, `vexStdlibVersion`, `vexSdkVersion`, `vexStdlibVersionLinked`, and`vexStdlibVersionVerify` since their offsets are currently unknown.
-- Most private API symbols, excluding definitions that are either obvious (e.g. `vexDisplayPenSizeSet`) or made publicly available for various reasons.
+- `vexSystemVersion`, `vexStdlibVersion`, `vexSdkVersion`, `vexStdlibVersionLinked`, and`vexStdlibVersionVerify` since these aren't actual functions on the jumptable, just data at addresses. Support might be added in the future, though.
+- Most private API symbols are missing, excluding definitions that are either obvious (e.g. `vexDisplayPenSizeSet`) or made publicly available for various reasons.
+- The `vexDeviceAiCamX` family of functions is currently missing bindings, but support is planned.

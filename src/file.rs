@@ -1,3 +1,5 @@
+//! Filesystem Access
+
 use core::ffi::{c_char, c_void};
 
 use crate::map_jump_table;

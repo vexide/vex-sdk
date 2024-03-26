@@ -1,3 +1,5 @@
+//! V5 Smart Battery
+
 use core::ffi::c_double;
 
 use crate::map_jump_table;

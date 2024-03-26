@@ -1,3 +1,5 @@
+//! Brain Display
+
 use core::ffi::c_char;
 
 use crate::map_jump_table;

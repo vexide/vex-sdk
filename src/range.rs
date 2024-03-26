@@ -1,3 +1,7 @@
+//! Rangefinder/Lidar Sensor
+//! 
+//! This sensor is not sold by VEX.
+
 use crate::{map_jump_table, V5_DeviceT};
 
 map_jump_table! {

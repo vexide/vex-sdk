@@ -1,3 +1,5 @@
+//! V5 Smart Radio
+
 use core::ffi::{c_char, c_int};
 
 use crate::{map_jump_table, V5_DeviceT};

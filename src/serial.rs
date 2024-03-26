@@ -1,3 +1,5 @@
+//! USB Serial Communication
+
 use crate::map_jump_table;
 
 map_jump_table! {

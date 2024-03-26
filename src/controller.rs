@@ -1,3 +1,5 @@
+//! V5 Controller
+
 use crate::map_jump_table;
 
 #[repr(C)]

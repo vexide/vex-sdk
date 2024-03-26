@@ -3,6 +3,7 @@
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]
 
+pub mod abs_enc;
 pub mod adi;
 pub mod battery;
 pub mod competition;
@@ -22,9 +23,15 @@ pub mod optical;
 pub mod range;
 pub mod serial;
 pub mod system;
+pub mod task;
 pub mod touch;
 pub mod vision;
+pub mod arm;
+pub mod light_tower;
+pub mod pneumatic;
+pub mod ai_vision;
 
+pub use abs_enc::*;
 pub use adi::*;
 pub use battery::*;
 pub use competition::*;
@@ -44,8 +51,13 @@ pub use optical::*;
 pub use range::*;
 pub use serial::*;
 pub use system::*;
+pub use task::*;
 pub use touch::*;
 pub use vision::*;
+pub use arm::*;
+pub use light_tower::*;
+pub use pneumatic::*;
+pub use ai_vision::*;
 
 pub const JUMP_TABLE_START: usize = 0x037FC000;
 
