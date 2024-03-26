@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "vex_sys"
+name = "vex_sdk"
 version = "0.1.0"

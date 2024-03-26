@@ -1,4 +1,4 @@
-# vex_sys
+# vex_sdk
 
 Raw bindings to vexos user jump table functions.
 
@@ -14,8 +14,10 @@ This repository serves as a partial open-source reimplementation of VEX's V5 run
 
 This project aims to cover 100% of the publicly available symbols present in the `v5_api` SDK, as well as any private symbols that have been released to the public (such as `vexTaskAdd`).
 
-Functions that currently are not included:
+Functions that currently are **NOT** included:
 - C-style varadic functions (vex_printf, etc...), or functions taking vararg structures (e.g. `va_list`)
 - `vexSystemVersion`, `vexStdlibVersion`, `vexSdkVersion`, `vexStdlibVersionLinked`, and`vexStdlibVersionVerify` since these aren't actual functions on the jumptable, just data at addresses. Support might be added in the future, though.
-- Most private API symbols are missing, excluding definitions that are either obvious (e.g. `vexDisplayPenSizeSet`) or made publicly available for various reasons.
+- Most private API symbols*.
+	- The exceptions to this are functions that have been publicly released for various reason, such as `vexDeviceAdiAddrLedSet` or `vexTaskAdd`.
+	- Additionally some function signatures are easily guessable. For example, most smart devices have a `vexDeviceXTemperatureGet` function that always has the function signature `fn(V5_DeviceT) -> c_double`. For some reason, some of these functions are left private (such as `vexDeviceImuTemperatureGet`) while others are public (such as `vexDeviceAiVisionTemperatureGet`). This also includes status code getters which are always `fn(V5_DeviceT) -> u32`.
 - The `vexDeviceAiCamX` family of functions is currently missing bindings, but support is planned.

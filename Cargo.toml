@@ -1,5 +1,5 @@
 [package]
-name = "vex_sys"
+name = "vex_sdk"
 description = "Raw bindings to vexos user jump table functions."
 repository = "https://github.com/pros-rs/vex-sys/"
 authors = ["Tropical"]
