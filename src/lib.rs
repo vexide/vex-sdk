@@ -3,6 +3,8 @@
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]
 
+#![feature(c_variadic)]
+
 pub mod abs_enc;
 pub mod adi;
 pub mod battery;
