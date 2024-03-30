@@ -1,6 +1,6 @@
 //! USB Serial Communication
 
-use core::ffi::{c_char, VaList};
+use core::ffi::c_char;
 
 use crate::map_jump_table;
 
