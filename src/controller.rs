@@ -4,7 +4,7 @@ use crate::map_jump_table;
 
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 #[repr(C)]
-pub struct V5_ControllerId(core::ffi::c_uint);
+pub struct V5_ControllerId(pub core::ffi::c_uint);
 
 impl V5_ControllerId {    
     pub const kControllerMaster: Self = Self(0);
@@ -13,7 +13,7 @@ impl V5_ControllerId {
 
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 #[repr(C)]
-pub struct V5_ControllerStatus(core::ffi::c_uint);
+pub struct V5_ControllerStatus(pub core::ffi::c_uint);
 
 impl V5_ControllerStatus {    
     pub const kV5ControllerOffline: Self = Self(0);
@@ -23,7 +23,7 @@ impl V5_ControllerStatus {
 
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 #[repr(C)]
-pub struct V5_ControllerIndex(core::ffi::c_uint);
+pub struct V5_ControllerIndex(pub core::ffi::c_uint);
 
 impl V5_ControllerIndex {    
     pub const Axis1: Self = Self(0);

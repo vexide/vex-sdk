@@ -5,7 +5,7 @@ use crate::{map_jump_table, V5_DeviceT};
 
 #[repr(C)]
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
-pub struct V5_AdiPortConfiguration(core::ffi::c_uint);
+pub struct V5_AdiPortConfiguration(pub core::ffi::c_uint);
 
 impl V5_AdiPortConfiguration {    
     pub const kAdiPortTypeAnalogIn: Self = Self(0);
@@ -30,7 +30,7 @@ impl V5_AdiPortConfiguration {
 
 #[repr(C)]
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
-pub struct V5_DeviceBumperState(core::ffi::c_uint);
+pub struct V5_DeviceBumperState(pub core::ffi::c_uint);
 
 impl V5_DeviceBumperState {    
     pub const kBumperReleased: Self = Self(0);

@@ -6,7 +6,7 @@ use crate::{map_jump_table, V5_DeviceT};
 
 #[repr(C)]
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
-pub struct V5_DeviceLedColor(core::ffi::c_uint);
+pub struct V5_DeviceLedColor(pub core::ffi::c_uint);
 
 impl V5_DeviceLedColor {
     pub const kLedColorBlack: Self = Self(0);

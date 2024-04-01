@@ -6,7 +6,7 @@ use crate::map_jump_table;
 
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 #[repr(C)]
-pub struct FRESULT(core::ffi::c_uint);
+pub struct FRESULT(pub core::ffi::c_uint);
 
 impl FRESULT {
     pub const FR_OK: Self = Self(0);

@@ -106,7 +106,7 @@ pub struct V5_Device {
 
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 #[repr(C)]
-pub struct V5_DeviceType(core::ffi::c_uint);
+pub struct V5_DeviceType(pub core::ffi::c_uint);
 
 impl V5_DeviceType {
     pub const kDeviceTypeNoSensor: Self = Self(0);

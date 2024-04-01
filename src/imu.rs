@@ -25,7 +25,7 @@ pub struct V5_DeviceImuQuaternion {
 }
 
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
-pub struct V5ImuOrientationMode(core::ffi::c_uint);
+pub struct V5ImuOrientationMode(pub core::ffi::c_uint);
 
 impl V5ImuOrientationMode {
     pub const kImuOrientationZUp: Self = Self(0x00);
