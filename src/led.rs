@@ -9,14 +9,14 @@ use crate::{map_jump_table, V5_DeviceT};
 pub struct V5_DeviceLedColor(core::ffi::c_uint);
 
 impl V5_DeviceLedColor {
-    pub const kLedColorBlack: core::ffi::c_uint = 0;
-    pub const kLedColorRed: core::ffi::c_uint = 0xFF0000;
-    pub const kLedColorGreen: core::ffi::c_uint = 0x00FF00;
-    pub const kLedColorBlue: core::ffi::c_uint = 0x0000FF;
-    pub const kLedColorYellow: core::ffi::c_uint = 0xFFFF00;
-    pub const kLedColorCyan: core::ffi::c_uint = 0x00FFFF;
-    pub const kLedColorMagenta: core::ffi::c_uint = 0xFF00FF;
-    pub const kLedColorWhite: core::ffi::c_uint = 0xFFFFFF;
+    pub const kLedColorBlack: Self = Self(0);
+    pub const kLedColorRed: Self = Self(0xFF0000);
+    pub const kLedColorGreen: Self = Self(0x00FF00);
+    pub const kLedColorBlue: Self = Self(0x0000FF);
+    pub const kLedColorYellow: Self = Self(0xFFFF00);
+    pub const kLedColorCyan: Self = Self(0x00FFFF);
+    pub const kLedColorMagenta: Self = Self(0xFF00FF);
+    pub const kLedColorWhite: Self = Self(0xFFFFFF);
 }
 
 map_jump_table! {

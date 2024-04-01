@@ -7,10 +7,10 @@ use crate::{map_jump_table, V5_DeviceT};
 pub struct V5VisionMode(core::ffi::c_uint);
 
 impl V5VisionMode {
-    pub const kVisionModeNormal: core::ffi::c_uint = 0;
-    pub const kVisionModeMixed: core::ffi::c_uint = 1;
-    pub const kVisionModeLineDetect: core::ffi::c_uint = 2;
-    pub const kVisionTypeTest: core::ffi::c_uint = 3;
+    pub const kVisionModeNormal: Self = Self(0);
+    pub const kVisionModeMixed: Self = Self(1);
+    pub const kVisionModeLineDetect: Self = Self(2);
+    pub const kVisionTypeTest: Self = Self(3);
 }
 
 #[repr(C)]
@@ -18,9 +18,9 @@ impl V5VisionMode {
 pub struct V5VisionBlockType(core::ffi::c_uint);
 
 impl V5VisionBlockType {
-    pub const kVisionTypeNormal: core::ffi::c_uint = 0;
-    pub const kVisionTypeColorCode: core::ffi::c_uint = 1;
-    pub const kVisionTypeLineDetect: core::ffi::c_uint = 2;
+    pub const kVisionTypeNormal: Self = Self(0);
+    pub const kVisionTypeColorCode: Self = Self(1);
+    pub const kVisionTypeLineDetect: Self = Self(2);
 }
 
 #[repr(C)]
@@ -66,9 +66,9 @@ pub struct V5_DeviceVisionSignature {
 pub struct V5VisionWBMode(core::ffi::c_uint);
 
 impl V5VisionWBMode {
-    pub const kVisionWBNormal: core::ffi::c_uint = 0;
-    pub const kVisionWBStart: core::ffi::c_uint = 1;
-    pub const kVisionWBManual: core::ffi::c_uint = 2;
+    pub const kVisionWBNormal: Self = Self(0);
+    pub const kVisionWBStart: Self = Self(1);
+    pub const kVisionWBManual: Self = Self(2);
 }
 
 #[repr(C)]
@@ -86,8 +86,8 @@ pub struct V5_DeviceVisionRgb {
 pub struct V5VisionLedMode(core::ffi::c_uint);
 
 impl V5VisionLedMode {
-    pub const kVisionLedModeAuto: core::ffi::c_uint = 0;
-    pub const kVisionLedModeManual: core::ffi::c_uint = 1;
+    pub const kVisionLedModeAuto: Self = Self(0);
+    pub const kVisionLedModeManual: Self = Self(1);
 }
 
 #[repr(C)]
@@ -95,8 +95,8 @@ impl V5VisionLedMode {
 pub struct V5VisionWifiMode(core::ffi::c_uint);
 
 impl V5VisionWifiMode {
-    pub const kVisionWifiModeOff: core::ffi::c_uint = 0;
-    pub const kVisionWifiModeOn: core::ffi::c_uint = 1;
+    pub const kVisionWifiModeOff: Self = Self(0);
+    pub const kVisionWifiModeOn: Self = Self(1);
 }
 
 map_jump_table! {

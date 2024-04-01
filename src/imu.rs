@@ -28,13 +28,13 @@ pub struct V5_DeviceImuQuaternion {
 pub struct V5ImuOrientationMode(core::ffi::c_uint);
 
 impl V5ImuOrientationMode {
-    pub const kImuOrientationZUp: core::ffi::c_uint = 0x00;
-    pub const kImuOrientationZDown: core::ffi::c_uint = 0x10;
-    pub const kImuOrientationXUp: core::ffi::c_uint = 0x20;
-    pub const kImuOrientationXDown: core::ffi::c_uint = 0x30;
-    pub const kImuOrientationYUp: core::ffi::c_uint = 0x40;
-    pub const kImuOrientationYDown: core::ffi::c_uint = 0x50;
-    pub const kImuOrientationAuto: core::ffi::c_uint = 0x80;
+    pub const kImuOrientationZUp: Self = Self(0x00);
+    pub const kImuOrientationZDown: Self = Self(0x10);
+    pub const kImuOrientationXUp: Self = Self(0x20);
+    pub const kImuOrientationXDown: Self = Self(0x30);
+    pub const kImuOrientationYUp: Self = Self(0x40);
+    pub const kImuOrientationYDown: Self = Self(0x50);
+    pub const kImuOrientationAuto: Self = Self(0x80);
 }
 
 #[repr(C)]

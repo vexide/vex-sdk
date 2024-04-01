@@ -9,10 +9,10 @@ use crate::{map_jump_table, V5_DeviceT};
 pub struct V5_DeviceMagnetDuration(core::ffi::c_uint);
 
 impl V5_DeviceMagnetDuration {
-    pub const kMagnetDurationShort: core::ffi::c_uint = 0;
-    pub const kMagnetDurationMedium: core::ffi::c_uint = 1;
-    pub const kMagnetDurationLong: core::ffi::c_uint = 2;
-    pub const kMagnetDurationExtraLong: core::ffi::c_uint = 3;
+    pub const kMagnetDurationShort: Self = Self(0);
+    pub const kMagnetDurationMedium: Self = Self(1);
+    pub const kMagnetDurationLong: Self = Self(2);
+    pub const kMagnetDurationExtraLong: Self = Self(3);
 }
 
 map_jump_table! {

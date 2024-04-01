@@ -7,8 +7,8 @@ use crate::map_jump_table;
 pub struct V5_ControllerId(core::ffi::c_uint);
 
 impl V5_ControllerId {    
-    pub const kControllerMaster: core::ffi::c_uint = 0;
-    pub const kControllerPartner: core::ffi::c_uint = 1;
+    pub const kControllerMaster: Self = Self(0);
+    pub const kControllerPartner: Self = Self(1);
 }
 
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
@@ -16,9 +16,9 @@ impl V5_ControllerId {
 pub struct V5_ControllerStatus(core::ffi::c_uint);
 
 impl V5_ControllerStatus {    
-    pub const kV5ControllerOffline: core::ffi::c_uint = 0;
-    pub const kV5ControllerTethered: core::ffi::c_uint = 1;
-    pub const kV5ControllerVexnet: core::ffi::c_uint = 2;
+    pub const kV5ControllerOffline: Self = Self(0);
+    pub const kV5ControllerTethered: Self = Self(1);
+    pub const kV5ControllerVexnet: Self = Self(2);
 }
 
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
@@ -26,27 +26,27 @@ impl V5_ControllerStatus {
 pub struct V5_ControllerIndex(core::ffi::c_uint);
 
 impl V5_ControllerIndex {    
-    pub const Axis1: core::ffi::c_uint = 0;
-    pub const Axis2: core::ffi::c_uint = 1;
-    pub const Axis3: core::ffi::c_uint = 2;
-    pub const Axis4: core::ffi::c_uint = 3;
-    pub const ButtonL1: core::ffi::c_uint = 4;
-    pub const ButtonL2: core::ffi::c_uint = 5;
-    pub const ButtonR1: core::ffi::c_uint = 6;
-    pub const ButtonR2: core::ffi::c_uint = 7;
-    pub const ButtonUp: core::ffi::c_uint = 8;
-    pub const ButtonDown: core::ffi::c_uint = 9;
-    pub const ButtonLeft: core::ffi::c_uint = 10;
-    pub const ButtonRight: core::ffi::c_uint = 11;
-    pub const ButtonX: core::ffi::c_uint = 12;
-    pub const ButtonB: core::ffi::c_uint = 13;
-    pub const ButtonY: core::ffi::c_uint = 14;
-    pub const ButtonA: core::ffi::c_uint = 15;
-    pub const ButtonSEL: core::ffi::c_uint = 16;
-    pub const BatteryLevel: core::ffi::c_uint = 17;
-    pub const ButtonAll: core::ffi::c_uint = 18;
-    pub const Flags: core::ffi::c_uint = 19;
-    pub const BatteryCapacity: core::ffi::c_uint = 20;
+    pub const Axis1: Self = Self(0);
+    pub const Axis2: Self = Self(1);
+    pub const Axis3: Self = Self(2);
+    pub const Axis4: Self = Self(3);
+    pub const ButtonL1: Self = Self(4);
+    pub const ButtonL2: Self = Self(5);
+    pub const ButtonR1: Self = Self(6);
+    pub const ButtonR2: Self = Self(7);
+    pub const ButtonUp: Self = Self(8);
+    pub const ButtonDown: Self = Self(9);
+    pub const ButtonLeft: Self = Self(10);
+    pub const ButtonRight: Self = Self(11);
+    pub const ButtonX: Self = Self(12);
+    pub const ButtonB: Self = Self(13);
+    pub const ButtonY: Self = Self(14);
+    pub const ButtonA: Self = Self(15);
+    pub const ButtonSEL: Self = Self(16);
+    pub const BatteryLevel: Self = Self(17);
+    pub const ButtonAll: Self = Self(18);
+    pub const Flags: Self = Self(19);
+    pub const BatteryCapacity: Self = Self(20);
 }
 
 map_jump_table! {

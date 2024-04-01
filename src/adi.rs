@@ -8,24 +8,24 @@ use crate::{map_jump_table, V5_DeviceT};
 pub struct V5_AdiPortConfiguration(core::ffi::c_uint);
 
 impl V5_AdiPortConfiguration {    
-    pub const kAdiPortTypeAnalogIn: core::ffi::c_uint = 0;
-    pub const kAdiPortTypeAnalogOut: core::ffi::c_uint = 1;
-    pub const kAdiPortTypeDigitalIn: core::ffi::c_uint = 2;
-    pub const kAdiPortTypeDigitalOut: core::ffi::c_uint = 3;
-    pub const kAdiPortTypeSmartButton: core::ffi::c_uint = 4;
-    pub const kAdiPortTypeSmartPot: core::ffi::c_uint = 5;
-    pub const kAdiPortTypeLegacyButton: core::ffi::c_uint = 6;
-    pub const kAdiPortTypeLegacyPotentiometer: core::ffi::c_uint = 7;
-    pub const kAdiPortTypeLegacyLineSensor: core::ffi::c_uint = 8;
-    pub const kAdiPortTypeLegacyLightSensor: core::ffi::c_uint = 9;
-    pub const kAdiPortTypeLegacyGyro: core::ffi::c_uint = 10;
-    pub const kAdiPortTypeLegacyAccelerometer: core::ffi::c_uint = 11;
-    pub const kAdiPortTypeLegacyServo: core::ffi::c_uint = 12;
-    pub const kAdiPortTypeLegacyPwm: core::ffi::c_uint = 13;
-    pub const kAdiPortTypeQuadEncoder: core::ffi::c_uint = 14;
-    pub const kAdiPortTypeSonar: core::ffi::c_uint = 15;
-    pub const kAdiPortTypeLegacyPwmSlew: core::ffi::c_uint = 16;
-    pub const kAdiPortTypeUndefined: core::ffi::c_uint = 255;
+    pub const kAdiPortTypeAnalogIn: Self = Self(0);
+    pub const kAdiPortTypeAnalogOut: Self = Self(1);
+    pub const kAdiPortTypeDigitalIn: Self = Self(2);
+    pub const kAdiPortTypeDigitalOut: Self = Self(3);
+    pub const kAdiPortTypeSmartButton: Self = Self(4);
+    pub const kAdiPortTypeSmartPot: Self = Self(5);
+    pub const kAdiPortTypeLegacyButton: Self = Self(6);
+    pub const kAdiPortTypeLegacyPotentiometer: Self = Self(7);
+    pub const kAdiPortTypeLegacyLineSensor: Self = Self(8);
+    pub const kAdiPortTypeLegacyLightSensor: Self = Self(9);
+    pub const kAdiPortTypeLegacyGyro: Self = Self(10);
+    pub const kAdiPortTypeLegacyAccelerometer: Self = Self(11);
+    pub const kAdiPortTypeLegacyServo: Self = Self(12);
+    pub const kAdiPortTypeLegacyPwm: Self = Self(13);
+    pub const kAdiPortTypeQuadEncoder: Self = Self(14);
+    pub const kAdiPortTypeSonar: Self = Self(15);
+    pub const kAdiPortTypeLegacyPwmSlew: Self = Self(16);
+    pub const kAdiPortTypeUndefined: Self = Self(255);
 }
 
 #[repr(C)]
@@ -33,8 +33,8 @@ impl V5_AdiPortConfiguration {
 pub struct V5_DeviceBumperState(core::ffi::c_uint);
 
 impl V5_DeviceBumperState {    
-    pub const kBumperReleased: core::ffi::c_uint = 0;
-    pub const kBumperPressed: core::ffi::c_uint = 1;
+    pub const kBumperReleased: Self = Self(0);
+    pub const kBumperPressed: Self = Self(1);
 }
 
 map_jump_table! {

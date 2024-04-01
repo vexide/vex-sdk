@@ -8,9 +8,9 @@ use core::ffi::c_double;
 pub struct V5MotorBrakeMode(core::ffi::c_uint);
 
 impl V5MotorBrakeMode {
-    pub const kV5MotorBrakeModeCoast: core::ffi::c_uint = 0;
-    pub const kV5MotorBrakeModeBrake: core::ffi::c_uint = 1;
-    pub const kV5MotorBrakeModeHold: core::ffi::c_uint = 2;
+    pub const kV5MotorBrakeModeCoast: Self = Self(0);
+    pub const kV5MotorBrakeModeBrake: Self = Self(1);
+    pub const kV5MotorBrakeModeHold: Self = Self(2);
 }
 
 #[repr(C)]
@@ -18,13 +18,13 @@ impl V5MotorBrakeMode {
 pub struct V5MotorControlMode(core::ffi::c_uint);
 
 impl V5MotorControlMode {
-    pub const kMotorControlModeOFF: core::ffi::c_uint = 0;
-    pub const kMotorControlModeBRAKE: core::ffi::c_uint = 1;
-    pub const kMotorControlModeHOLD: core::ffi::c_uint = 2;
-    pub const kMotorControlModeSERVO: core::ffi::c_uint = 3;
-    pub const kMotorControlModePROFILE: core::ffi::c_uint = 4;
-    pub const kMotorControlModeVELOCITY: core::ffi::c_uint = 5;
-    pub const kMotorControlModeUNDEFINED: core::ffi::c_uint = 6;
+    pub const kMotorControlModeOFF: Self = Self(0);
+    pub const kMotorControlModeBRAKE: Self = Self(1);
+    pub const kMotorControlModeHOLD: Self = Self(2);
+    pub const kMotorControlModeSERVO: Self = Self(3);
+    pub const kMotorControlModePROFILE: Self = Self(4);
+    pub const kMotorControlModeVELOCITY: Self = Self(5);
+    pub const kMotorControlModeUNDEFINED: Self = Self(6);
 }
 
 #[repr(C)]
@@ -32,9 +32,9 @@ impl V5MotorControlMode {
 pub struct V5MotorEncoderUnits(core::ffi::c_uint);
 
 impl V5MotorEncoderUnits {
-    pub const kMotorEncoderDegrees: core::ffi::c_uint = 0;
-    pub const kMotorEncoderRotations: core::ffi::c_uint = 1;
-    pub const kMotorEncoderCounts: core::ffi::c_uint = 2;
+    pub const kMotorEncoderDegrees: Self = Self(0);
+    pub const kMotorEncoderRotations: Self = Self(1);
+    pub const kMotorEncoderCounts: Self = Self(2);
 }
 
 #[repr(C)]
@@ -42,9 +42,9 @@ impl V5MotorEncoderUnits {
 pub struct V5MotorGearset(core::ffi::c_uint);
 
 impl V5MotorGearset {
-    pub const kMotorGearSet_36: core::ffi::c_uint = 0;
-    pub const kMotorGearSet_18: core::ffi::c_uint = 1;
-    pub const kMotorGearSet_06: core::ffi::c_uint = 2;
+    pub const kMotorGearSet_36: Self = Self(0);
+    pub const kMotorGearSet_18: Self = Self(1);
+    pub const kMotorGearSet_06: Self = Self(2);
 }
 
 #[repr(packed)]

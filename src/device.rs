@@ -109,35 +109,35 @@ pub struct V5_Device {
 pub struct V5_DeviceType(core::ffi::c_uint);
 
 impl V5_DeviceType {
-    pub const kDeviceTypeNoSensor: core::ffi::c_uint = 0;
-    pub const kDeviceTypeMotorSensor: core::ffi::c_uint = 2;
-    pub const kDeviceTypeLedSensor: core::ffi::c_uint = 3;
-    pub const kDeviceTypeAbsEncSensor: core::ffi::c_uint = 4;
-    pub const kDeviceTypeCrMotorSensor: core::ffi::c_uint = 5;
-    pub const kDeviceTypeImuSensor: core::ffi::c_uint = 6;
-    pub const kDeviceTypeDistanceSensor: core::ffi::c_uint = 7;
-    pub const kDeviceTypeRadioSensor: core::ffi::c_uint = 8;
-    pub const kDeviceTypeTetherSensor: core::ffi::c_uint = 9;
-    pub const kDeviceTypeBrainSensor: core::ffi::c_uint = 10;
-    pub const kDeviceTypeVisionSensor: core::ffi::c_uint = 11;
-    pub const kDeviceTypeAdiSensor: core::ffi::c_uint = 12;
-    pub const kDeviceTypeRes1Sensor: core::ffi::c_uint = 13;
-    pub const kDeviceTypeRes2Sensor: core::ffi::c_uint = 14;
-    pub const kDeviceTypeRes3Sensor: core::ffi::c_uint = 15;
-    pub const kDeviceTypeOpticalSensor: core::ffi::c_uint = 16;
-    pub const kDeviceTypeMagnetSensor: core::ffi::c_uint = 17;
-    pub const kDeviceTypeGpsSensor: core::ffi::c_uint = 20;
-    pub const kDeviceTypeAicameraSensor: core::ffi::c_uint = 26;
-    pub const kDeviceTypeLightTowerSensor: core::ffi::c_uint = 27;
-    pub const kDeviceTypeArmDevice: core::ffi::c_uint = 28;
-    pub const kDeviceTypeAiVisionSensor: core::ffi::c_uint = 29;
-    pub const kDeviceTypePneumaticSensor: core::ffi::c_uint = 30;
-    pub const kDeviceTypeBumperSensor: core::ffi::c_uint = 0x40;
-    pub const kDeviceTypeGyroSensor: core::ffi::c_uint = 0x46;
-    pub const kDeviceTypeSonarSensor: core::ffi::c_uint = 0x47;
-    pub const kDeviceTypeGenericSensor: core::ffi::c_uint = 128;
-    pub const kDeviceTypeGenericSerial: core::ffi::c_uint = 129;
-    pub const kDeviceTypeUndefinedSensor: core::ffi::c_uint = 255;
+    pub const kDeviceTypeNoSensor: Self = Self(0);
+    pub const kDeviceTypeMotorSensor: Self = Self(2);
+    pub const kDeviceTypeLedSensor: Self = Self(3);
+    pub const kDeviceTypeAbsEncSensor: Self = Self(4);
+    pub const kDeviceTypeCrMotorSensor: Self = Self(5);
+    pub const kDeviceTypeImuSensor: Self = Self(6);
+    pub const kDeviceTypeDistanceSensor: Self = Self(7);
+    pub const kDeviceTypeRadioSensor: Self = Self(8);
+    pub const kDeviceTypeTetherSensor: Self = Self(9);
+    pub const kDeviceTypeBrainSensor: Self = Self(10);
+    pub const kDeviceTypeVisionSensor: Self = Self(11);
+    pub const kDeviceTypeAdiSensor: Self = Self(12);
+    pub const kDeviceTypeRes1Sensor: Self = Self(13);
+    pub const kDeviceTypeRes2Sensor: Self = Self(14);
+    pub const kDeviceTypeRes3Sensor: Self = Self(15);
+    pub const kDeviceTypeOpticalSensor: Self = Self(16);
+    pub const kDeviceTypeMagnetSensor: Self = Self(17);
+    pub const kDeviceTypeGpsSensor: Self = Self(20);
+    pub const kDeviceTypeAicameraSensor: Self = Self(26);
+    pub const kDeviceTypeLightTowerSensor: Self = Self(27);
+    pub const kDeviceTypeArmDevice: Self = Self(28);
+    pub const kDeviceTypeAiVisionSensor: Self = Self(29);
+    pub const kDeviceTypePneumaticSensor: Self = Self(30);
+    pub const kDeviceTypeBumperSensor: Self = Self(0x40);
+    pub const kDeviceTypeGyroSensor: Self = Self(0x46);
+    pub const kDeviceTypeSonarSensor: Self = Self(0x47);
+    pub const kDeviceTypeGenericSensor: Self = Self(128);
+    pub const kDeviceTypeGenericSerial: Self = Self(129);
+    pub const kDeviceTypeUndefinedSensor: Self = Self(255);
 }
 
 map_jump_table! {

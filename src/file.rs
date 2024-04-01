@@ -9,26 +9,26 @@ use crate::map_jump_table;
 pub struct FRESULT(core::ffi::c_uint);
 
 impl FRESULT {
-    pub const FR_OK: core::ffi::c_uint = 0;
-    pub const FR_DISK_ERR: core::ffi::c_uint = 1;
-    pub const FR_INT_ERR: core::ffi::c_uint = 2;
-    pub const FR_NOT_READY: core::ffi::c_uint = 3;
-    pub const FR_NO_FILE: core::ffi::c_uint = 4;
-    pub const FR_NO_PATH: core::ffi::c_uint = 5;
-    pub const FR_INVALID_NAME: core::ffi::c_uint = 6;
-    pub const FR_DENIED: core::ffi::c_uint = 7;
-    pub const FR_EXIST: core::ffi::c_uint = 8;
-    pub const FR_INVALID_OBJECT: core::ffi::c_uint = 9;
-    pub const FR_WRITE_PROTECTED: core::ffi::c_uint = 10;
-    pub const FR_INVALID_DRIVE: core::ffi::c_uint = 11;
-    pub const FR_NOT_ENABLED: core::ffi::c_uint = 12;
-    pub const FR_NO_FILESYSTEM: core::ffi::c_uint = 13;
-    pub const FR_MKFS_ABORTED: core::ffi::c_uint = 14;
-    pub const FR_TIMEOUT: core::ffi::c_uint = 15;
-    pub const FR_LOCKED: core::ffi::c_uint = 16;
-    pub const FR_NOT_ENOUGH_CORE: core::ffi::c_uint = 17;
-    pub const FR_TOO_MANY_OPEN_FILES: core::ffi::c_uint = 18;
-    pub const FR_INVALID_PARAMETER: core::ffi::c_uint = 19;
+    pub const FR_OK: Self = Self(0);
+    pub const FR_DISK_ERR: Self = Self(1);
+    pub const FR_INT_ERR: Self = Self(2);
+    pub const FR_NOT_READY: Self = Self(3);
+    pub const FR_NO_FILE: Self = Self(4);
+    pub const FR_NO_PATH: Self = Self(5);
+    pub const FR_INVALID_NAME: Self = Self(6);
+    pub const FR_DENIED: Self = Self(7);
+    pub const FR_EXIST: Self = Self(8);
+    pub const FR_INVALID_OBJECT: Self = Self(9);
+    pub const FR_WRITE_PROTECTED: Self = Self(10);
+    pub const FR_INVALID_DRIVE: Self = Self(11);
+    pub const FR_NOT_ENABLED: Self = Self(12);
+    pub const FR_NO_FILESYSTEM: Self = Self(13);
+    pub const FR_MKFS_ABORTED: Self = Self(14);
+    pub const FR_TIMEOUT: Self = Self(15);
+    pub const FR_LOCKED: Self = Self(16);
+    pub const FR_NOT_ENOUGH_CORE: Self = Self(17);
+    pub const FR_TOO_MANY_OPEN_FILES: Self = Self(18);
+    pub const FR_INVALID_PARAMETER: Self = Self(19);
 }
 pub type FIL = c_void;
 

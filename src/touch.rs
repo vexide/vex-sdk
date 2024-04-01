@@ -7,9 +7,9 @@ use crate::map_jump_table;
 pub struct V5_TouchEvent(core::ffi::c_uint);
 
 impl V5_TouchEvent {
-    pub const kTouchEventRelease: core::ffi::c_uint = 0;
-    pub const kTouchEventPress: core::ffi::c_uint = 1;
-    pub const kTouchEventPressAuto: core::ffi::c_uint = 2;
+    pub const kTouchEventRelease: Self = Self(0);
+    pub const kTouchEventPress: Self = Self(1);
+    pub const kTouchEventPressAuto: Self = Self(2);
 }
 
 #[repr(C)]
