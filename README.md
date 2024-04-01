@@ -10,7 +10,7 @@ This repository serves as a partial open-source reimplementation of VEX's V5 run
 > [!WARNING]
 > This is fully unofficial and in no way affiliated, endorsed, supported, or created by VEX Robotics.
 
-# Stability
+## Stability
 
 > [!CAUTION]
 > Since `vex_sdk` simply provides bindings over firmware address offsets, no stability guarantees can be made around these APIs. Use this crate at your own risk - these could change any any point in time with a firmware update (although they probably wont in a major way, since this would break existing user programs).
