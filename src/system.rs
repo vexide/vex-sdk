@@ -45,7 +45,7 @@ map_jump_table! {
     0x12c => pub fn vexSystemStartupOptions() -> u32,
     0x130 =>
         /// Exits the current user program, returning to the main program screen.
-        pub fn vexSystemExitRequest() -> !,
+        pub fn vexSystemExitRequest(),
     0x134 =>
         /// Gets the time since program start with microsecond precision.
         pub fn vexSystemHighResTimeGet() -> u64,
