@@ -1,6 +1,6 @@
 //! Brain Display
 
-use core::ffi::c_char;
+use core::ffi::{c_char, VaList};
 
 use crate::map_jump_table;
 
@@ -50,4 +50,13 @@ map_jump_table! {
         pub fn vexDisplayClipRegionSetWithIndex(index: i32, x1: i32, y1: i32, x2: i32, y2: i32),
     0x990 => pub fn vexImageBmpRead(ibuf: *const u8, oBuf: *mut v5_image, maxw: u32, maxh: u32) -> u32,
     0x994 => pub fn vexImagePngRead(ibuf: *const u8, oBuf: *mut v5_image, maxw: u32, maxh: u32, ibuflen: u32) -> u32,
+
+    0x680 => pub fn vexDisplayVPrintf(xpos: i32, ypos: i32, bOpaque: i32, format: *const c_char, args: VaList),
+    0x684 => pub fn vexDisplayVString(nLineNumber: i32, format: *const c_char, args: VaList),
+    0x688 => pub fn vexDisplayVStringAt(xpos: i32, ypos: i32, format: *const c_char, args: VaList),
+    0x68c => pub fn vexDisplayVBigString(nLineNumber: i32, format: *const c_char, args: VaList),
+    0x690 => pub fn vexDisplayVBigStringAt(xpos: i32, ypos: i32, format: *const c_char, args: VaList),
+    0x6b0 => pub fn vexDisplayVSmallStringAt(xpos: i32, ypos: i32, format: *const c_char, args: VaList),
+    0x694 => pub fn vexDisplayVCenteredString(nLineNumber: i32, format: *const c_char, args: VaList),
+    0x698 => pub fn vexDisplayVBigCenteredString(nLineNumber: i32, format: *const c_char, args: VaList),
 }
