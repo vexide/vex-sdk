@@ -2,61 +2,53 @@
 
 use crate::map_jump_table;
 
-#[repr(C)]
-#[derive(Default, Copy, Clone, Eq, PartialEq, Debug)]
-pub enum V5_ControllerId {
-    #[default]
-    kControllerMaster = 0,
-    kControllerPartner,
+pub mod V5_ControllerId {
+    pub type Type = core::ffi::c_uint;
+    
+    pub const kControllerMaster: Type = 0;
+    pub const kControllerPartner: Type = 1;
 }
 
-#[repr(C)]
-#[derive(Default, Copy, Clone, Eq, PartialEq, Debug)]
-pub enum V5_ControllerStatus {
-    #[default]
-    kV5ControllerOffline = 0,
-    kV5ControllerTethered,
-    kV5ControllerVexnet,
+pub mod V5_ControllerStatus {
+    pub type Type = core::ffi::c_uint;
+    
+    pub const kV5ControllerOffline: Type = 0;
+    pub const kV5ControllerTethered: Type = 1;
+    pub const kV5ControllerVexnet: Type = 2;
 }
 
-#[repr(C)]
-#[derive(Copy, Clone, Eq, PartialEq, Debug)]
-pub enum V5_ControllerIndex {
-    Axis1 = 0,
-    Axis2,
-    Axis3,
-    Axis4,
-
-    ButtonL1,
-    ButtonL2,
-    ButtonR1,
-    ButtonR2,
-
-    ButtonUp,
-    ButtonDown,
-    ButtonLeft,
-    ButtonRight,
-
-    ButtonX,
-    ButtonB,
-    ButtonY,
-    ButtonA,
-
-    ButtonSEL,
-
-    BatteryLevel,
-
-    ButtonAll,
-    Flags,
-    BatteryCapacity,
+pub mod V5_ControllerIndex {
+    pub type Type = core::ffi::c_uint;
+    
+    pub const Axis1: Type = 0;
+    pub const Axis2: Type = 1;
+    pub const Axis3: Type = 2;
+    pub const Axis4: Type = 3;
+    pub const ButtonL1: Type = 4;
+    pub const ButtonL2: Type = 5;
+    pub const ButtonR1: Type = 6;
+    pub const ButtonR2: Type = 7;
+    pub const ButtonUp: Type = 8;
+    pub const ButtonDown: Type = 9;
+    pub const ButtonLeft: Type = 10;
+    pub const ButtonRight: Type = 11;
+    pub const ButtonX: Type = 12;
+    pub const ButtonB: Type = 13;
+    pub const ButtonY: Type = 14;
+    pub const ButtonA: Type = 15;
+    pub const ButtonSEL: Type = 16;
+    pub const BatteryLevel: Type = 17;
+    pub const ButtonAll: Type = 18;
+    pub const Flags: Type = 19;
+    pub const BatteryCapacity: Type = 20;
 }
 
 map_jump_table! {
     0x1a4 =>
         /// Get the value of a controller's data channel.
-        pub fn vexControllerGet(id: V5_ControllerId, index: V5_ControllerIndex) -> i32,
+        pub fn vexControllerGet(id: V5_ControllerId::Type, index: V5_ControllerIndex::Type) -> i32,
     0x1a8 =>
         /// Returns `1` if the controller on the given ID is connected, or `0` if not.
-        pub fn vexControllerConnectionStatusGet(id: V5_ControllerId) -> V5_ControllerStatus,
+        pub fn vexControllerConnectionStatusGet(id: V5_ControllerId::Type) -> V5_ControllerStatus::Type,
     0x1ac => pub fn vexControllerTextSet(id: u32, line: u32, col: u32, buf: *const u8) -> u32,
 }
