@@ -2,18 +2,20 @@
 
 use crate::map_jump_table;
 
-pub mod V5_TouchEvent {
-    pub type Type = core::ffi::c_uint;
+#[repr(C)]
+#[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
+pub struct V5_TouchEvent(core::ffi::c_uint);
 
-    pub const kTouchEventRelease: Type = 0;
-    pub const kTouchEventPress: Type = 1;
-    pub const kTouchEventPressAuto: Type = 2;
+impl V5_TouchEvent {
+    pub const kTouchEventRelease: core::ffi::c_uint = 0;
+    pub const kTouchEventPress: core::ffi::c_uint = 1;
+    pub const kTouchEventPressAuto: core::ffi::c_uint = 2;
 }
 
 #[repr(C)]
-#[derive(Copy, Clone, Eq, PartialEq, Debug)]
+#[derive(Default, Copy, Clone, Eq, PartialEq, Debug)]
 pub struct V5_TouchStatus {
-    pub lastEvent: V5_TouchEvent::Type,
+    pub lastEvent: V5_TouchEvent,
     pub lastXpos: i16,
     pub lastYpos: i16,
     pub pressCount: i32,
@@ -21,6 +23,6 @@ pub struct V5_TouchStatus {
 }
 
 map_jump_table! {
-    0x960 => pub fn vexTouchUserCallbackSet(callback: unsafe extern "C" fn(V5_TouchEvent::Type, i32, i32)),
+    0x960 => pub fn vexTouchUserCallbackSet(callback: unsafe extern "C" fn(V5_TouchEvent, i32, i32)),
     0x964 => pub fn vexTouchDataGet(status: *mut V5_TouchStatus),
 }

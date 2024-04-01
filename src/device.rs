@@ -28,7 +28,7 @@ pub struct V5_DeviceGpsData {
 #[repr(C)]
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 pub struct V5_DeviceAdiData {
-    pub adi_types: [V5_AdiPortConfiguration::Type; 8],
+    pub adi_types: [V5_AdiPortConfiguration; 8],
 }
 
 #[repr(C)]
@@ -41,9 +41,9 @@ pub struct V5_DeviceOpticalData {
 }
 
 #[repr(C)]
-#[derive(Default, Debug, Copy, Clone, PartialEq)]
+#[derive(Debug, Copy, Clone, PartialEq)]
 pub struct V5_DeviceImuData {
-    pub orientation: V5ImuOrientationMode::Type,
+    pub orientation: V5ImuOrientationMode,
     pub rotation: V5_DeviceImuRaw,
     pub acceleration: V5_DeviceImuRaw,
     pub reset_timestamp: u32,
@@ -52,10 +52,10 @@ pub struct V5_DeviceImuData {
 #[repr(C)]
 #[derive(Debug, Copy, Clone, PartialEq)]
 pub struct V5_DeviceMotorData {
-    pub brake_mode: V5MotorBrakeMode::Type,
-    pub control_mode: V5MotorControlMode::Type,
-    pub encoder_units: V5MotorEncoderUnits::Type,
-    pub gearing: V5MotorGearset::Type,
+    pub brake_mode: V5MotorBrakeMode,
+    pub control_mode: V5MotorControlMode,
+    pub encoder_units: V5MotorEncoderUnits,
+    pub gearing: V5MotorGearset,
     pub pos_pid: *mut V5_DeviceMotorPid,
     pub vel_pid: *mut V5_DeviceMotorPid,
     pub velocity_target: i32,
@@ -98,44 +98,46 @@ pub type V5_DeviceT = *mut V5_Device;
 pub struct V5_Device {
     pub port: u8,
     pub exists: bool,
-    pub device_type: V5_DeviceType::Type,
+    pub device_type: V5_DeviceType,
     pub timestamp: u32,
 
     pub device_specific_data: V5_DeviceData,
 }
 
-pub mod V5_DeviceType {
-    pub type Type = core::ffi::c_uint;
+#[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
+#[repr(C)]
+pub struct V5_DeviceType(core::ffi::c_uint);
 
-    pub const kDeviceTypeNoSensor: Type = 0;
-    pub const kDeviceTypeMotorSensor: Type = 2;
-    pub const kDeviceTypeLedSensor: Type = 3;
-    pub const kDeviceTypeAbsEncSensor: Type = 4;
-    pub const kDeviceTypeCrMotorSensor: Type = 5;
-    pub const kDeviceTypeImuSensor: Type = 6;
-    pub const kDeviceTypeDistanceSensor: Type = 7;
-    pub const kDeviceTypeRadioSensor: Type = 8;
-    pub const kDeviceTypeTetherSensor: Type = 9;
-    pub const kDeviceTypeBrainSensor: Type = 10;
-    pub const kDeviceTypeVisionSensor: Type = 11;
-    pub const kDeviceTypeAdiSensor: Type = 12;
-    pub const kDeviceTypeRes1Sensor: Type = 13;
-    pub const kDeviceTypeRes2Sensor: Type = 14;
-    pub const kDeviceTypeRes3Sensor: Type = 15;
-    pub const kDeviceTypeOpticalSensor: Type = 16;
-    pub const kDeviceTypeMagnetSensor: Type = 17;
-    pub const kDeviceTypeGpsSensor: Type = 20;
-    pub const kDeviceTypeAicameraSensor: Type = 26;
-    pub const kDeviceTypeLightTowerSensor: Type = 27;
-    pub const kDeviceTypeArmDevice: Type = 28;
-    pub const kDeviceTypeAiVisionSensor: Type = 29;
-    pub const kDeviceTypePneumaticSensor: Type = 30;
-    pub const kDeviceTypeBumperSensor: Type = 0x40;
-    pub const kDeviceTypeGyroSensor: Type = 0x46;
-    pub const kDeviceTypeSonarSensor: Type = 0x47;
-    pub const kDeviceTypeGenericSensor: Type = 128;
-    pub const kDeviceTypeGenericSerial: Type = 129;
-    pub const kDeviceTypeUndefinedSensor: Type = 255;
+impl V5_DeviceType {
+    pub const kDeviceTypeNoSensor: core::ffi::c_uint = 0;
+    pub const kDeviceTypeMotorSensor: core::ffi::c_uint = 2;
+    pub const kDeviceTypeLedSensor: core::ffi::c_uint = 3;
+    pub const kDeviceTypeAbsEncSensor: core::ffi::c_uint = 4;
+    pub const kDeviceTypeCrMotorSensor: core::ffi::c_uint = 5;
+    pub const kDeviceTypeImuSensor: core::ffi::c_uint = 6;
+    pub const kDeviceTypeDistanceSensor: core::ffi::c_uint = 7;
+    pub const kDeviceTypeRadioSensor: core::ffi::c_uint = 8;
+    pub const kDeviceTypeTetherSensor: core::ffi::c_uint = 9;
+    pub const kDeviceTypeBrainSensor: core::ffi::c_uint = 10;
+    pub const kDeviceTypeVisionSensor: core::ffi::c_uint = 11;
+    pub const kDeviceTypeAdiSensor: core::ffi::c_uint = 12;
+    pub const kDeviceTypeRes1Sensor: core::ffi::c_uint = 13;
+    pub const kDeviceTypeRes2Sensor: core::ffi::c_uint = 14;
+    pub const kDeviceTypeRes3Sensor: core::ffi::c_uint = 15;
+    pub const kDeviceTypeOpticalSensor: core::ffi::c_uint = 16;
+    pub const kDeviceTypeMagnetSensor: core::ffi::c_uint = 17;
+    pub const kDeviceTypeGpsSensor: core::ffi::c_uint = 20;
+    pub const kDeviceTypeAicameraSensor: core::ffi::c_uint = 26;
+    pub const kDeviceTypeLightTowerSensor: core::ffi::c_uint = 27;
+    pub const kDeviceTypeArmDevice: core::ffi::c_uint = 28;
+    pub const kDeviceTypeAiVisionSensor: core::ffi::c_uint = 29;
+    pub const kDeviceTypePneumaticSensor: core::ffi::c_uint = 30;
+    pub const kDeviceTypeBumperSensor: core::ffi::c_uint = 0x40;
+    pub const kDeviceTypeGyroSensor: core::ffi::c_uint = 0x46;
+    pub const kDeviceTypeSonarSensor: core::ffi::c_uint = 0x47;
+    pub const kDeviceTypeGenericSensor: core::ffi::c_uint = 128;
+    pub const kDeviceTypeGenericSerial: core::ffi::c_uint = 129;
+    pub const kDeviceTypeUndefinedSensor: core::ffi::c_uint = 255;
 }
 
 map_jump_table! {
@@ -144,7 +146,7 @@ map_jump_table! {
         pub fn vexDevicesGetNumber() -> u32,
     0x194 =>
         /// Get the number of devices of a specific type plugged into the brain.
-        pub fn vexDevicesGetNumberByType(device_type: V5_DeviceType::Type) -> u32,
+        pub fn vexDevicesGetNumberByType(device_type: V5_DeviceType) -> u32,
     0x198 => pub fn vexDevicesGet() -> V5_DeviceT,
     0x19c =>
         /// Get a handle to a specific device plugged into a specific port index.
@@ -156,7 +158,7 @@ map_jump_table! {
         pub fn vexDeviceFlagsGetByIndex(index: u32) -> u32,
     0x1a0 =>
         /// Get a list of device types plugged into the brain.
-        pub fn vexDeviceGetStatus(devices: *mut V5_DeviceType::Type) -> i32,
+        pub fn vexDeviceGetStatus(devices: *mut V5_DeviceType) -> i32,
     0x1b0 =>
         /// Get the timestamp recorded by a device's internal clock.
         pub fn vexDeviceGetTimestamp(device: V5_DeviceT) -> u32,

@@ -24,16 +24,17 @@ pub struct V5_DeviceImuQuaternion {
     pub d: c_double,
 }
 
-pub mod V5ImuOrientationMode {
-    pub type Type = core::ffi::c_uint;
+#[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
+pub struct V5ImuOrientationMode(core::ffi::c_uint);
 
-    pub const kImuOrientationZUp: Type = 0x00;
-    pub const kImuOrientationZDown: Type = 0x10;
-    pub const kImuOrientationXUp: Type = 0x20;
-    pub const kImuOrientationXDown: Type = 0x30;
-    pub const kImuOrientationYUp: Type = 0x40;
-    pub const kImuOrientationYDown: Type = 0x50;
-    pub const kImuOrientationAuto: Type = 0x80;
+impl V5ImuOrientationMode {
+    pub const kImuOrientationZUp: core::ffi::c_uint = 0x00;
+    pub const kImuOrientationZDown: core::ffi::c_uint = 0x10;
+    pub const kImuOrientationXUp: core::ffi::c_uint = 0x20;
+    pub const kImuOrientationXDown: core::ffi::c_uint = 0x30;
+    pub const kImuOrientationYUp: core::ffi::c_uint = 0x40;
+    pub const kImuOrientationYDown: core::ffi::c_uint = 0x50;
+    pub const kImuOrientationAuto: core::ffi::c_uint = 0x80;
 }
 
 #[repr(C)]

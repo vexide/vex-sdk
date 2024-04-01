@@ -3,40 +3,48 @@
 use crate::{device::V5_DeviceT, map_jump_table};
 use core::ffi::c_double;
 
-pub mod V5MotorBrakeMode {
-    pub type Type = core::ffi::c_uint;
+#[repr(C)]
+#[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
+pub struct V5MotorBrakeMode(core::ffi::c_uint);
 
-    pub const kV5MotorBrakeModeCoast: Type = 0;
-    pub const kV5MotorBrakeModeBrake: Type = 1;
-    pub const kV5MotorBrakeModeHold: Type = 2;
+impl V5MotorBrakeMode {
+    pub const kV5MotorBrakeModeCoast: core::ffi::c_uint = 0;
+    pub const kV5MotorBrakeModeBrake: core::ffi::c_uint = 1;
+    pub const kV5MotorBrakeModeHold: core::ffi::c_uint = 2;
 }
 
-pub mod V5MotorControlMode {
-    pub type Type = core::ffi::c_uint;
+#[repr(C)]
+#[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
+pub struct V5MotorControlMode(core::ffi::c_uint);
 
-    pub const kMotorControlModeOFF: Type = 0;
-    pub const kMotorControlModeBRAKE: Type = 1;
-    pub const kMotorControlModeHOLD: Type = 2;
-    pub const kMotorControlModeSERVO: Type = 3;
-    pub const kMotorControlModePROFILE: Type = 4;
-    pub const kMotorControlModeVELOCITY: Type = 5;
-    pub const kMotorControlModeUNDEFINED: Type = 6;
+impl V5MotorControlMode {
+    pub const kMotorControlModeOFF: core::ffi::c_uint = 0;
+    pub const kMotorControlModeBRAKE: core::ffi::c_uint = 1;
+    pub const kMotorControlModeHOLD: core::ffi::c_uint = 2;
+    pub const kMotorControlModeSERVO: core::ffi::c_uint = 3;
+    pub const kMotorControlModePROFILE: core::ffi::c_uint = 4;
+    pub const kMotorControlModeVELOCITY: core::ffi::c_uint = 5;
+    pub const kMotorControlModeUNDEFINED: core::ffi::c_uint = 6;
 }
 
-pub mod V5MotorEncoderUnits {
-    pub type Type = core::ffi::c_uint;
+#[repr(C)]
+#[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
+pub struct V5MotorEncoderUnits(core::ffi::c_uint);
 
-    pub const kMotorEncoderDegrees: Type = 0;
-    pub const kMotorEncoderRotations: Type = 1;
-    pub const kMotorEncoderCounts: Type = 2;
+impl V5MotorEncoderUnits {
+    pub const kMotorEncoderDegrees: core::ffi::c_uint = 0;
+    pub const kMotorEncoderRotations: core::ffi::c_uint = 1;
+    pub const kMotorEncoderCounts: core::ffi::c_uint = 2;
 }
 
-pub mod V5MotorGearset {
-    pub type Type = core::ffi::c_uint;
+#[repr(C)]
+#[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
+pub struct V5MotorGearset(core::ffi::c_uint);
 
-    pub const kMotorGearSet_36: Type = 0;
-    pub const kMotorGearSet_18: Type = 1;
-    pub const kMotorGearSet_06: Type = 2;
+impl V5MotorGearset {
+    pub const kMotorGearSet_36: core::ffi::c_uint = 0;
+    pub const kMotorGearSet_18: core::ffi::c_uint = 1;
+    pub const kMotorGearSet_06: core::ffi::c_uint = 2;
 }
 
 #[repr(packed)]
@@ -59,8 +67,8 @@ map_jump_table! {
     0x2d4 => pub fn vexDeviceMotorVelocityGet(device: V5_DeviceT) -> i32,
     0x2d4 => pub fn vexDeviceMotorActualVelocityGet(device: V5_DeviceT) -> c_double,
     0x2dc => pub fn vexDeviceMotorDirectionGet(device: V5_DeviceT) -> i32,
-    0x2e0 => pub fn vexDeviceMotorModeSet(device: V5_DeviceT, mode: V5MotorControlMode::Type),
-    0x2e4 => pub fn vexDeviceMotorModeGet(device: V5_DeviceT) -> V5MotorControlMode::Type,
+    0x2e0 => pub fn vexDeviceMotorModeSet(device: V5_DeviceT, mode: V5MotorControlMode),
+    0x2e4 => pub fn vexDeviceMotorModeGet(device: V5_DeviceT) -> V5MotorControlMode,
     0x2e8 => pub fn vexDeviceMotorPwmSet(device: V5_DeviceT, pwm: i32),
     0x2ec => pub fn vexDeviceMotorPwmGet(device: V5_DeviceT) -> i32,
     0x2f0 => pub fn vexDeviceMotorCurrentLimitSet(device: V5_DeviceT, limit: i32),
@@ -76,10 +84,10 @@ map_jump_table! {
     0x318 => pub fn vexDeviceMotorZeroPositionFlagGet(device: V5_DeviceT) -> bool,
     0x31c => pub fn vexDeviceMotorReverseFlagSet(device: V5_DeviceT, reverse: bool),
     0x320 => pub fn vexDeviceMotorReverseFlagGet(device: V5_DeviceT) -> bool,
-    0x324 => pub fn vexDeviceMotorEncoderUnitsSet(device: V5_DeviceT, units: V5MotorEncoderUnits::Type),
-    0x328 => pub fn vexDeviceMotorEncoderUnitsGet(device: V5_DeviceT) -> V5MotorEncoderUnits::Type,
-    0x32c => pub fn vexDeviceMotorBrakeModeSet(device: V5_DeviceT, mode: V5MotorBrakeMode::Type),
-    0x330 => pub fn vexDeviceMotorBrakeModeGet(device: V5_DeviceT) -> V5MotorBrakeMode::Type,
+    0x324 => pub fn vexDeviceMotorEncoderUnitsSet(device: V5_DeviceT, units: V5MotorEncoderUnits),
+    0x328 => pub fn vexDeviceMotorEncoderUnitsGet(device: V5_DeviceT) -> V5MotorEncoderUnits,
+    0x32c => pub fn vexDeviceMotorBrakeModeSet(device: V5_DeviceT, mode: V5MotorBrakeMode),
+    0x330 => pub fn vexDeviceMotorBrakeModeGet(device: V5_DeviceT) -> V5MotorBrakeMode,
     0x334 => pub fn vexDeviceMotorPositionSet(device: V5_DeviceT, position: c_double),
     0x338 => pub fn vexDeviceMotorPositionGet(device: V5_DeviceT) -> c_double,
     0x33c => pub fn vexDeviceMotorPositionRawGet(
@@ -103,8 +111,8 @@ map_jump_table! {
     0x358 => pub fn vexDeviceMotorFlagsGet(device: V5_DeviceT) -> u32,
     0x35c => pub fn vexDeviceMotorVoltageSet(device: V5_DeviceT, voltage: i32),
     0x360 => pub fn vexDeviceMotorVoltageGet(device: V5_DeviceT) -> i32,
-    0x364 => pub fn vexDeviceMotorGearingSet(device: V5_DeviceT, gearset: V5MotorGearset::Type),
-    0x368 => pub fn vexDeviceMotorGearingGet(device: V5_DeviceT) -> V5MotorGearset::Type,
+    0x364 => pub fn vexDeviceMotorGearingSet(device: V5_DeviceT, gearset: V5MotorGearset),
+    0x368 => pub fn vexDeviceMotorGearingGet(device: V5_DeviceT) -> V5MotorGearset,
     0x36c => pub fn vexDeviceMotorVoltageLimitSet(device: V5_DeviceT, limit: i32),
     0x370 => pub fn vexDeviceMotorVoltageLimitGet(device: V5_DeviceT) -> i32,
     0x374 => pub fn vexDeviceMotorVelocityUpdate(device: V5_DeviceT, velocity: i32),
