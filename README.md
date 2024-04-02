@@ -21,7 +21,6 @@ This project aims to cover 100% of the publicly available symbols present in the
 
 Functions present in `libv5rt` that are currently are **NOT** in `vex_sdk`:
 - Most things outside of `v5_api.h`and `v5_types.h`. This includes the "user functions", which are basically convenience methods for passing in port indexes directly (e.g. `vexImuReset` vs. `vexDeviceImuReset`).
-- C-style varadic functions (vex_printf, etc...), although functions taking `VaList` are supported.
 - `vexSystemVersion`, `vexStdlibVersion`, `vexSdkVersion`, `vexStdlibVersionLinked`, and `vexStdlibVersionVerify` since these aren't actual functions on the jumptable, just data at addresses. Support might be added in the future, though.
 - Most private API symbols*.
 	- The exceptions to this are functions that have been publicly released for various reason, such as `vexDeviceAdiAddrLedSet` or `vexTaskAdd`.
