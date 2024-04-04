@@ -32,11 +32,12 @@ map_jump_table! {
 		/// 
 		/// Inferred from <https://api.vexcode.cloud/v5/search/static%20int32_t%20vex::thread::hardware_concurrency()/vex::thread/function>
 		pub fn vexTaskHardwareConcurrency() -> i32,
-	0x5c =>
+	0xf74 => pub fn vexBackgroundProcessing(),
+	0x05c =>
 		/// VEXos User Background Processing Procedure
 		///
 		/// This function handles transactions between the user processor and master
 		/// processor when writing data to devices. This function should ideally be ran
 		/// every 2mS for devices to be properly communicated with.
-		pub fn vexBackgroundProcessing(),
+		pub fn vexTasksRun(),
 }
