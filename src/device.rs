@@ -2,106 +2,25 @@
 
 use core::ffi::{c_double, c_int};
 
-use crate::{
-    adi::V5_AdiPortConfiguration, map_jump_table, V5ImuOrientationMode, V5MotorBrakeMode,
-    V5MotorControlMode, V5MotorEncoderUnits, V5MotorGearset, V5_DeviceImuRaw, V5_DeviceMotorPid,
-};
-
-#[repr(C)]
-#[derive(Default, Debug, Copy, Clone, PartialEq)]
-pub struct V5_DevicePositionData {
-    pub position: c_double,
-}
-
-#[repr(C)]
-#[derive(Default, Debug, Copy, Clone, PartialEq)]
-pub struct V5_DeviceGpsData {
-    pub offset_x: c_double,
-    pub offset_y: c_double,
-
-    pub x: c_double,
-    pub y: c_double,
-    pub z: c_double,
-    pub w: c_double,
-}
-
-#[repr(C)]
-#[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
-pub struct V5_DeviceAdiData {
-    pub adi_types: [V5_AdiPortConfiguration; 8],
-}
-
-#[repr(C)]
-#[derive(Default, Debug, Copy, Clone, PartialEq)]
-pub struct V5_DeviceOpticalData {
-    pub red: c_double,
-    pub green: c_double,
-    pub blue: c_double,
-    pub brightness: c_double,
-}
-
-#[repr(C)]
-#[derive(Debug, Copy, Clone, PartialEq)]
-pub struct V5_DeviceImuData {
-    pub orientation: V5ImuOrientationMode,
-    pub rotation: V5_DeviceImuRaw,
-    pub acceleration: V5_DeviceImuRaw,
-    pub reset_timestamp: u32,
-}
-
-#[repr(C)]
-#[derive(Debug, Copy, Clone, PartialEq)]
-pub struct V5_DeviceMotorData {
-    pub brake_mode: V5MotorBrakeMode,
-    pub control_mode: V5MotorControlMode,
-    pub encoder_units: V5MotorEncoderUnits,
-    pub gearing: V5MotorGearset,
-    pub pos_pid: *mut V5_DeviceMotorPid,
-    pub vel_pid: *mut V5_DeviceMotorPid,
-    pub velocity_target: i32,
-    pub velocity_max: i32,
-    pub current: i32,
-    pub current_max: i32,
-    pub voltage: i32,
-    pub voltage_max: i32,
-    pub position: c_double,
-    pub position_target: c_double,
-    pub velocity: c_double,
-    pub power: c_double,
-    pub torque: c_double,
-    pub efficiency: c_double,
-    pub temperature: c_double,
-    pub faults: u32,
-    pub flags: u8,
-}
-
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub union V5_DeviceData {
-    pub motor: V5_DeviceMotorData,
-    pub imu: V5_DeviceImuData,
-    pub rotation: V5_DevicePositionData,
-    pub distance: V5_DevicePositionData,
-    pub optical: V5_DeviceOpticalData,
-    pub vision: (),
-    pub gps: V5_DeviceGpsData,
-    pub adi: V5_DeviceAdiData,
-}
+use crate::map_jump_table;
 
 /// Handle to a [`V5_Device`]
 #[allow(non_camel_case_types)]
 pub type V5_DeviceT = *mut V5_Device;
 
 /// A device plugged into a smart port
+/// 
+/// This private API type was derived from analysis of the bits returned
+/// by [`vexDeviceGetByIndex`]. Not all fields are known.
 #[repr(C)]
-#[derive(Copy, Clone)]
+#[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 pub struct V5_Device {
-    pub port: u8,
-    pub exists: bool,
-    pub device_type: V5_DeviceType,
-    pub timestamp: u32,
-
-    pub device_specific_data: V5_DeviceData,
+    pub zero_indexed_port: u8,
+    _unknown0: u8,
+    pub one_indexed_port: u8,
+    pub device_type: V5_DeviceType, // this is 32 bit
+    _unknown2: u8,
+    pub installed: bool,
 }
 
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
