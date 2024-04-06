@@ -19,14 +19,13 @@ pub struct V5_Device {
     _unknown0: u8,
     pub one_indexed_port: u8,
     _unknown1_3: [u8; 3],
-    pub device_type: V5_DeviceType, // this is 8 bit
-    _unknown2: u8,
+    pub device_type: V5_DeviceType, // this is 16 bit
     pub installed: bool,
 }
 
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 #[repr(transparent)]
-pub struct V5_DeviceType(pub core::ffi::c_char);
+pub struct V5_DeviceType(pub core::ffi::c_short);
 
 impl V5_DeviceType {
     pub const kDeviceTypeNoSensor: Self = Self(0);
