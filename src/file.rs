@@ -5,7 +5,7 @@ use core::ffi::{c_char, c_void};
 use crate::map_jump_table;
 
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
-#[repr(C)]
+#[repr(transparent)]
 pub struct FRESULT(pub core::ffi::c_uint);
 
 impl FRESULT {

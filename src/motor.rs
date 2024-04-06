@@ -3,7 +3,7 @@
 use crate::{device::V5_DeviceT, map_jump_table};
 use core::ffi::c_double;
 
-#[repr(C)]
+#[repr(transparent)]
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 pub struct V5MotorBrakeMode(pub core::ffi::c_uint);
 
@@ -13,7 +13,7 @@ impl V5MotorBrakeMode {
     pub const kV5MotorBrakeModeHold: Self = Self(2);
 }
 
-#[repr(C)]
+#[repr(transparent)]
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 pub struct V5MotorControlMode(pub core::ffi::c_uint);
 
@@ -27,7 +27,7 @@ impl V5MotorControlMode {
     pub const kMotorControlModeUNDEFINED: Self = Self(6);
 }
 
-#[repr(C)]
+#[repr(transparent)]
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 pub struct V5MotorEncoderUnits(pub core::ffi::c_uint);
 
@@ -37,7 +37,7 @@ impl V5MotorEncoderUnits {
     pub const kMotorEncoderCounts: Self = Self(2);
 }
 
-#[repr(C)]
+#[repr(transparent)]
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 pub struct V5MotorGearset(pub core::ffi::c_uint);
 

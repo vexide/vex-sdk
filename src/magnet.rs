@@ -4,7 +4,7 @@ use core::ffi::c_double;
 
 use crate::{map_jump_table, V5_DeviceT};
 
-#[repr(C)]
+#[repr(transparent)]
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 pub struct V5_DeviceMagnetDuration(pub core::ffi::c_uint);
 

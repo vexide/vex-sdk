@@ -2,7 +2,7 @@
 
 use crate::map_jump_table;
 
-#[repr(C)]
+#[repr(transparent)]
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 pub struct V5_TouchEvent(pub core::ffi::c_uint);
 

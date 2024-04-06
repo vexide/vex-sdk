@@ -105,7 +105,7 @@ pub struct V5_Device {
 }
 
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
-#[repr(C)]
+#[repr(transparent)]
 pub struct V5_DeviceType(pub core::ffi::c_uint);
 
 impl V5_DeviceType {

@@ -3,7 +3,7 @@
 use crate::map_jump_table;
 
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
-#[repr(C)]
+#[repr(transparent)]
 pub struct V5_ControllerId(pub core::ffi::c_uint);
 
 impl V5_ControllerId {    
@@ -12,7 +12,7 @@ impl V5_ControllerId {
 }
 
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
-#[repr(C)]
+#[repr(transparent)]
 pub struct V5_ControllerStatus(pub core::ffi::c_uint);
 
 impl V5_ControllerStatus {    
@@ -22,7 +22,7 @@ impl V5_ControllerStatus {
 }
 
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
-#[repr(C)]
+#[repr(transparent)]
 pub struct V5_ControllerIndex(pub core::ffi::c_uint);
 
 impl V5_ControllerIndex {    
