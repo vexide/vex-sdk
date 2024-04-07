@@ -83,5 +83,7 @@ map_jump_table! {
         pub fn vexDeviceGetTimestamp(device: V5_DeviceT) -> u32,
     0x2a8 =>
         pub fn vexDeviceGenericValueGet(device: V5_DeviceT) -> c_double,
+    0x1b8 => 
+        pub fn vexDeviceTypeGetByIndex(index: u32) -> V5_DeviceType,
     0x1b4 => pub fn vexDeviceButtonStateGet() -> c_int,
 }
