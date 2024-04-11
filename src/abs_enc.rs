@@ -14,4 +14,5 @@ map_jump_table! {
     0x4a0 => pub fn vexDeviceAbsEncReverseFlagGet(device: V5_DeviceT) -> bool,
     0x4a4 => pub fn vexDeviceAbsEncStatusGet(device: V5_DeviceT) -> u32,
 	0x4a8 => pub fn vexDeviceAbsEncTemperatureGet(device: V5_DeviceT) -> c_double,
+    0x4c0 => pub fn vexDeviceAbsEncDataRateSet(device: V5_DeviceT, rate: u32),
 }
