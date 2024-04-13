@@ -34,8 +34,8 @@ map_jump_table! {
     0x6b4 => pub fn vexDisplayFontNamedSet(pFontName: *const c_char),
     0x6b8 => pub fn vexDisplayForegroundColorGet() -> u32,
     0x6bc => pub fn vexDisplayBackgroundColorGet() -> u32,
-    0x6c0 => pub fn vexDisplayStringWidthGet(pString: *const c_char),
-    0x6c4 => pub fn vexDisplayStringHeightGet(pString: *const c_char),
+    0x6c0 => pub fn vexDisplayStringWidthGet(pString: *const c_char) -> i32,
+    0x6c4 => pub fn vexDisplayStringHeightGet(pString: *const c_char) -> i32,
     0x6c8 =>
         /// Inferred from <https://api.vexcode.cloud/v5/search/void%20vex::brain::lcd::setPenWidth(uint32_t%20width)/vex::brain::lcd/function>
         pub fn vexDisplayPenSizeSet(width: u32),
