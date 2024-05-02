@@ -1,5 +1,5 @@
 //! V5 LED
-//! 
+//!
 //! This device is not sold by VEX and only exists as development hardware.
 
 use crate::{map_jump_table, V5_DeviceT};

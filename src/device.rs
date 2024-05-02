@@ -9,7 +9,7 @@ use crate::map_jump_table;
 pub type V5_DeviceT = *mut V5_Device;
 
 /// A device plugged into a smart port
-/// 
+///
 /// This private API type was derived from analysis of the bits returned
 /// by [`vexDeviceGetByIndex`]. Not all fields are known.
 #[repr(C)]
@@ -72,7 +72,7 @@ map_jump_table! {
         pub fn vexDeviceGetByIndex(index: u32) -> V5_DeviceT,
     0x1d8 =>
         /// Get a device's bitflags on a specific port index.
-        /// 
+        ///
         /// Function signature inferred based on return type of vex::device::flags.
         pub fn vexDeviceFlagsGetByIndex(index: u32) -> u32,
     0x1a0 =>
@@ -83,7 +83,7 @@ map_jump_table! {
         pub fn vexDeviceGetTimestamp(device: V5_DeviceT) -> u32,
     0x2a8 =>
         pub fn vexDeviceGenericValueGet(device: V5_DeviceT) -> c_double,
-    0x1b8 => 
+    0x1b8 =>
         pub fn vexDeviceTypeGetByIndex(index: u32) -> V5_DeviceType,
     0x1b4 => pub fn vexDeviceButtonStateGet() -> c_int,
 }

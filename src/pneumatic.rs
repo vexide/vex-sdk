@@ -5,7 +5,7 @@ use crate::{map_jump_table, V5_DeviceT};
 #[repr(C)]
 #[derive(Default, Copy, Clone, Eq, PartialEq, Debug)]
 pub struct V5_DevicePneumaticCtrl {
-	pub flags: u16,
+    pub flags: u16,
     pub m1_pwm: u8,
     pub m2_pwm: u8,
     pub m3_pwm: u8,
