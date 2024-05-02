@@ -6,7 +6,7 @@ use crate::map_jump_table;
 #[repr(transparent)]
 pub struct V5_ControllerId(pub core::ffi::c_uint);
 
-impl V5_ControllerId {    
+impl V5_ControllerId {
     pub const kControllerMaster: Self = Self(0);
     pub const kControllerPartner: Self = Self(1);
 }
@@ -15,7 +15,7 @@ impl V5_ControllerId {
 #[repr(transparent)]
 pub struct V5_ControllerStatus(pub core::ffi::c_uint);
 
-impl V5_ControllerStatus {    
+impl V5_ControllerStatus {
     pub const kV5ControllerOffline: Self = Self(0);
     pub const kV5ControllerTethered: Self = Self(1);
     pub const kV5ControllerVexnet: Self = Self(2);
@@ -25,7 +25,7 @@ impl V5_ControllerStatus {
 #[repr(transparent)]
 pub struct V5_ControllerIndex(pub core::ffi::c_uint);
 
-impl V5_ControllerIndex {    
+impl V5_ControllerIndex {
     pub const AnaLeftX: Self = Self(0);
     pub const AnaLeftY: Self = Self(1);
     pub const AnaRightX: Self = Self(2);
