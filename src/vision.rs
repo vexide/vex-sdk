@@ -23,8 +23,7 @@ impl V5VisionBlockType {
     pub const kVisionTypeLineDetect: Self = Self(2);
 }
 
-#[repr(C)]
-#[repr(packed)]
+#[repr(C, packed)]
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 pub struct V5_DeviceVisionObject {
     /// block signature
@@ -43,8 +42,7 @@ pub struct V5_DeviceVisionObject {
     pub angle: u16,
 }
 
-#[repr(C)]
-#[repr(packed)]
+#[repr(C, packed)]
 #[derive(Default, Debug, Copy, Clone, PartialEq)]
 pub struct V5_DeviceVisionSignature {
     pub id: u8,
@@ -71,8 +69,7 @@ impl V5VisionWBMode {
     pub const kVisionWBManual: Self = Self(2);
 }
 
-#[repr(C)]
-#[repr(packed)]
+#[repr(C, packed)]
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 pub struct V5_DeviceVisionRgb {
     pub red: u8,

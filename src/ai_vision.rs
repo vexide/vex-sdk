@@ -4,8 +4,7 @@ use core::ffi::{c_double, c_float};
 
 use crate::{map_jump_table, V5_DeviceT};
 
-#[repr(C)]
-#[repr(packed)]
+#[repr(C, packed)]
 #[derive(Default, Debug, Copy, Clone, PartialEq)]
 pub struct V5_DeviceAiVisionColor {
     pub id: u8,
@@ -17,8 +16,7 @@ pub struct V5_DeviceAiVisionColor {
     pub reserved: u32,
 }
 
-#[repr(C)]
-#[repr(packed)]
+#[repr(C, packed)]
 #[derive(Copy, Clone)]
 pub struct V5_DeviceAiVisionObject {
     pub id: u8,
@@ -80,8 +78,7 @@ pub struct V5_DeviceAiVisionModelData {
     pub score: u16,
 }
 
-#[repr(C)]
-#[repr(packed)]
+#[repr(C, packed)]
 #[derive(Default, Debug, Copy, Clone, PartialEq)]
 pub struct V5_DeviceAiVisionCode {
     pub id: u8,

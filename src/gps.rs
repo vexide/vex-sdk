@@ -4,8 +4,7 @@ use core::ffi::c_double;
 
 use crate::{map_jump_table, V5_DeviceT};
 
-#[repr(C)]
-#[repr(packed)]
+#[repr(C, packed)]
 #[derive(Default, Debug, Copy, Clone, PartialEq)]
 pub struct V5_DeviceGpsRaw {
     pub x: c_double,
@@ -14,8 +13,7 @@ pub struct V5_DeviceGpsRaw {
     pub w: c_double,
 }
 
-#[repr(C)]
-#[repr(packed)]
+#[repr(C, packed)]
 #[derive(Default, Debug, Copy, Clone, PartialEq)]
 pub struct V5_DeviceGpsAttitude {
     pub pitch: c_double, // x
@@ -33,8 +31,7 @@ pub struct V5_DeviceGpsAttitude {
     pub rot: c_double,
 }
 
-#[repr(C)]
-#[repr(packed)]
+#[repr(C, packed)]
 #[derive(Default, Debug, Copy, Clone, PartialEq)]
 pub struct V5_DeviceGpsQuaternion {
     pub x: c_double,

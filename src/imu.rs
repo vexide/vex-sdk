@@ -4,8 +4,7 @@ use core::ffi::c_double;
 
 use crate::{device::V5_DeviceT, map_jump_table};
 
-#[repr(C)]
-#[repr(packed)]
+#[repr(C, packed)]
 #[derive(Default, Debug, Copy, Clone, PartialEq)]
 pub struct V5_DeviceImuRaw {
     pub x: c_double,
@@ -14,8 +13,7 @@ pub struct V5_DeviceImuRaw {
     pub w: c_double,
 }
 
-#[repr(C)]
-#[repr(packed)]
+#[repr(C, packed)]
 #[derive(Default, Debug, Copy, Clone, PartialEq)]
 pub struct V5_DeviceImuQuaternion {
     pub a: c_double,
@@ -38,8 +36,7 @@ impl V5ImuOrientationMode {
     pub const kImuOrientationAuto: Self = Self(0x80);
 }
 
-#[repr(C)]
-#[repr(packed)]
+#[repr(C, packed)]
 #[derive(Default, Debug, Copy, Clone, PartialEq)]
 pub struct V5_DeviceImuAttitude {
     pub pitch: c_double,
