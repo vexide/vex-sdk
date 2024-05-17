@@ -5,7 +5,7 @@ use core::ffi::c_double;
 
 #[repr(transparent)]
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
-pub struct V5MotorBrakeMode(pub core::ffi::c_uint);
+pub struct V5MotorBrakeMode(pub core::ffi::c_uchar);
 
 impl V5MotorBrakeMode {
     pub const kV5MotorBrakeModeCoast: Self = Self(0);
@@ -15,7 +15,7 @@ impl V5MotorBrakeMode {
 
 #[repr(transparent)]
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
-pub struct V5MotorControlMode(pub core::ffi::c_uint);
+pub struct V5MotorControlMode(pub core::ffi::c_uchar);
 
 impl V5MotorControlMode {
     pub const kMotorControlModeOFF: Self = Self(0);
@@ -29,7 +29,7 @@ impl V5MotorControlMode {
 
 #[repr(transparent)]
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
-pub struct V5MotorEncoderUnits(pub core::ffi::c_uint);
+pub struct V5MotorEncoderUnits(pub core::ffi::c_uchar);
 
 impl V5MotorEncoderUnits {
     pub const kMotorEncoderDegrees: Self = Self(0);
@@ -39,7 +39,7 @@ impl V5MotorEncoderUnits {
 
 #[repr(transparent)]
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
-pub struct V5MotorGearset(pub core::ffi::c_uint);
+pub struct V5MotorGearset(pub core::ffi::c_uchar);
 
 impl V5MotorGearset {
     pub const kMotorGearSet_36: Self = Self(0);

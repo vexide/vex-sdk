@@ -25,7 +25,7 @@ pub struct V5_Device {
 
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 #[repr(transparent)]
-pub struct V5_DeviceType(pub core::ffi::c_short);
+pub struct V5_DeviceType(pub core::ffi::c_uchar);
 
 impl V5_DeviceType {
     pub const kDeviceTypeNoSensor: Self = Self(0);

@@ -4,7 +4,7 @@ use crate::{map_jump_table, V5_DeviceT};
 
 #[repr(transparent)]
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
-pub struct V5VisionMode(pub core::ffi::c_uint);
+pub struct V5VisionMode(pub core::ffi::c_uchar);
 
 impl V5VisionMode {
     pub const kVisionModeNormal: Self = Self(0);
@@ -15,7 +15,7 @@ impl V5VisionMode {
 
 #[repr(transparent)]
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
-pub struct V5VisionBlockType(pub core::ffi::c_uint);
+pub struct V5VisionBlockType(pub core::ffi::c_uchar);
 
 impl V5VisionBlockType {
     pub const kVisionTypeNormal: Self = Self(0);
@@ -61,7 +61,7 @@ pub struct V5_DeviceVisionSignature {
 
 #[repr(transparent)]
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
-pub struct V5VisionWBMode(pub core::ffi::c_uint);
+pub struct V5VisionWBMode(pub core::ffi::c_uchar);
 
 impl V5VisionWBMode {
     pub const kVisionWBNormal: Self = Self(0);
@@ -80,7 +80,7 @@ pub struct V5_DeviceVisionRgb {
 
 #[repr(transparent)]
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
-pub struct V5VisionLedMode(pub core::ffi::c_uint);
+pub struct V5VisionLedMode(pub core::ffi::c_uchar);
 
 impl V5VisionLedMode {
     pub const kVisionLedModeAuto: Self = Self(0);
@@ -89,7 +89,7 @@ impl V5VisionLedMode {
 
 #[repr(transparent)]
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
-pub struct V5VisionWifiMode(pub core::ffi::c_uint);
+pub struct V5VisionWifiMode(pub core::ffi::c_uchar);
 
 impl V5VisionWifiMode {
     pub const kVisionWifiModeOff: Self = Self(0);

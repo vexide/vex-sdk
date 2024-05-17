@@ -4,7 +4,7 @@ use crate::map_jump_table;
 
 #[repr(transparent)]
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
-pub struct V5_TouchEvent(pub core::ffi::c_ushort);
+pub struct V5_TouchEvent(pub core::ffi::c_uchar);
 
 impl V5_TouchEvent {
     pub const kTouchEventRelease: Self = Self(0);
