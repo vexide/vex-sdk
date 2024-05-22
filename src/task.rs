@@ -27,11 +27,6 @@ map_jump_table! {
         ///
         /// Derived from <https://github.com/jpearman/vexcode-lvgllib6_X/blob/8ead3dab49665d4c98225d612672be28c7c2a425/src/v5lvgl.c#L18>
         pub fn vexTaskSleep(time: u32),
-    0x140 =>
-        /// Gets the number of concurrent threads supported by the hardware.
-        ///
-        /// Inferred from <https://api.vexcode.cloud/v5/search/static%20int32_t%20vex::thread::hardware_concurrency()/vex::thread/function>
-        pub fn vexTaskHardwareConcurrency() -> i32,
     0xf74 => pub fn vexBackgroundProcessing(),
     0x05c =>
         /// VEXos User Background Processing Procedure

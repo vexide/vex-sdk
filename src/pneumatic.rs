@@ -25,7 +25,4 @@ map_jump_table! {
     0xc0c => pub fn vexDevicePneumaticCylinderSet(device: V5_DeviceT, id: u32, bState: bool),
     0xc1c => pub fn vexDevicePneumaticPwmGet(device: V5_DeviceT) -> u32,
     0xc18 => pub fn vexDevicePneumaticPwmSet(device: V5_DeviceT, pwm: u8),
-    0xc14 =>
-        /// Signature inferred based on other status getters.
-        pub fn vexDevicePneumaticStatusGet(device: V5_DeviceT) -> u32,
 }

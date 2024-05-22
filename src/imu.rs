@@ -69,7 +69,6 @@ map_jump_table! {
     0x42c =>
         /// Returns the IMU's status bits.
         pub fn vexDeviceImuStatusGet(device: V5_DeviceT) -> u32,
-    0x430 => pub fn vexDeviceImuTemperatureGet(device: V5_DeviceT) -> c_double,
     0x438 => pub fn vexDeviceImuModeSet(device: V5_DeviceT, mode: u32),
     0x43c => pub fn vexDeviceImuModeGet(device: V5_DeviceT) -> u32,
     0x444 => pub fn vexDeviceImuDataRateSet(device: V5_DeviceT, rate: u32),

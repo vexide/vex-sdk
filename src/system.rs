@@ -58,9 +58,6 @@ map_jump_table! {
         /// VEXos's internal filesystem structure allows user programs to "link" other external binary packages =>
         /// similar
         pub fn vexSystemLinkAddrGet() -> u32,
-    0x168 => pub fn vexSystemTimerGet(param_1: u32) -> u32,
-    0x16c => pub fn vexSystemTimerEnable(param_1: u32) -> u32,
-    0x170 => pub fn vexSystemTimerDisable(param_1: u32),
     0x174 => pub fn vexSystemUsbStatus() -> u32,
     0x8c0 => pub fn vexSystemTimerStop(),
     0x8c4 => pub fn vexSystemTimerClearInterrupt(),

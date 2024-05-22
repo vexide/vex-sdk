@@ -36,12 +36,6 @@ map_jump_table! {
     0x6bc => pub fn vexDisplayBackgroundColorGet() -> u32,
     0x6c0 => pub fn vexDisplayStringWidthGet(pString: *const c_char) -> i32,
     0x6c4 => pub fn vexDisplayStringHeightGet(pString: *const c_char) -> i32,
-    0x6c8 =>
-        /// Inferred from <https://api.vexcode.cloud/v5/search/void%20vex::brain::lcd::setPenWidth(uint32_t%20width)/vex::brain::lcd/function>
-        pub fn vexDisplayPenSizeSet(width: u32),
-    0x6cc =>
-        /// Inferred from <https://api.vexcode.cloud/v5/search/void%20vex::brain::lcd::setPenWidth(uint32_t%20width)/vex::brain::lcd/function>
-        pub fn vexDisplayPenSizeGet() -> u32,
     0x794 => pub fn vexDisplayClipRegionSet(x1: i32, y1: i32, x2: i32, y2: i32),
     0x7a0 => pub fn vexDisplayRender(bVsyncWait: bool, bRunScheduler: bool),
     0x7a4 => pub fn vexDisplayDoubleBufferDisable(),

@@ -49,7 +49,6 @@ map_jump_table! {
     0x5dc => pub fn vexDeviceGpsRawGyroGet(device: V5_DeviceT, data: *mut V5_DeviceGpsRaw),
     0x5e0 => pub fn vexDeviceGpsRawAccelGet(device: V5_DeviceT, data: *mut V5_DeviceGpsRaw),
     0x5e4 => pub fn vexDeviceGpsStatusGet(device: V5_DeviceT) -> u32,
-    0x5e8 => pub fn vexDeviceGpsTemperatureGet(device: V5_DeviceT) -> c_double,
     0x5f0 => pub fn vexDeviceGpsModeSet(device: V5_DeviceT, mode: u32),
     0x5f4 => pub fn vexDeviceGpsModeGet(device: V5_DeviceT) -> u32,
     0x5f8 => pub fn vexDeviceGpsDataRateSet(device: V5_DeviceT, rate: u32),
