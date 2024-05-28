@@ -1,14 +1,10 @@
-#![cfg_attr(not(feature = "rustc-dep-of-std"), no_std)]
-#![cfg_attr(feature = "rustc-dep-of-std", no_core)]
+#![no_std]
 #![deny(unsafe_op_in_unsafe_fn)]
 #![allow(non_camel_case_types)]
 #![allow(non_upper_case_globals)]
 #![allow(non_snake_case)]
 #![feature(c_variadic)]
 #![cfg_attr(feature = "rustc-dep-of-std", feature(link_cfg, no_core))]
-
-#[cfg(feature = "rustc-dep-of-std")]
-extern crate rustc_std_workspace_core as core;
 
 pub mod abs_enc;
 pub mod adi;

@@ -11,9 +11,9 @@ edition = "2021"
 crate-type = ["staticlib"]
 
 [dependencies]
-rustc-std-workspace-core = { version = "1.0.0", optional = true }
+core = { package = "rustc-std-workspace-core", version = "1.0.0", optional = true }
 
 [features]
-rustc-dep-of-std = ["rustc-std-workspace-core"]
+rustc-dep-of-std = ["core"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
