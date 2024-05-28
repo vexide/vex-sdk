@@ -1,7 +1,7 @@
 [package]
 name = "vex-sdk"
 description = "Raw bindings to vexos user jump table functions."
-repository = "https://github.com/pros-rs/vex-sys/"
+repository = "https://github.com/vexide/vex-sdk/"
 authors = ["Tropical"]
 license-file = "LICENSE.md"
 categories = ["science::robotics", "no-std", "embedded"]
