@@ -23,8 +23,6 @@ pub struct vcodesig {
     /// Program originator
     pub owner: u32,
 
-    pub pad: [u32; 2],
-
     /// Program options
     pub options: u32,
 }
@@ -35,7 +33,6 @@ impl Default for vcodesig {
             magic: V5_SIG_MAGIC,
             r#type: Default::default(),
             owner: Default::default(),
-            pad: Default::default(),
             options: Default::default(),
         }
     }
