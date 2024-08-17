@@ -2,7 +2,7 @@
 
 use core::ffi::c_void;
 
-use crate::map_jump_table;
+use crate::{map_jump_table, JUMP_TABLE_START};
 
 /// Code Signature
 ///
@@ -119,4 +119,12 @@ map_jump_table! {
     0x920 => pub fn vexSystemSWInterrupt(),
     0x924 => pub fn vexSystemDataAbortInterrupt(),
     0x928 => pub fn vexSystemPrefetchAbortInterrupt(),
+}
+
+pub unsafe extern "C" fn vexSystemVersion() -> u32 {
+    unsafe { core::ptr::read_volatile((JUMP_TABLE_START + 0x1000) as *const u32) }
+}
+
+pub unsafe extern "C" fn vexStdlibVersion() -> u32 {
+    unsafe { core::ptr::read_volatile((JUMP_TABLE_START + 0x1004) as *const u32) }
 }
