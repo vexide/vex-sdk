@@ -16,9 +16,9 @@ pub type V5_DeviceT = *mut V5_Device;
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 pub struct V5_Device {
     pub zero_indexed_port: u8,
-    _unknown0: u8,
+    pub _unknown0: u8,
     pub one_indexed_port: u8,
-    _unknown1_3: [u8; 3],
+    pub _unknown1_3: [u8; 3],
     pub device_type: V5_DeviceType, // this is 16 bit
     pub installed: bool,
 }
