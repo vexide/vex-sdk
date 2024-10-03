@@ -1,31 +1,26 @@
 //! V5 Smart Devices
 
-use core::ffi::{c_double, c_int};
+use core::ffi::{c_double, c_int, c_void};
 
 use crate::map_jump_table;
 
-/// Handle to a [`V5_Device`]
+/// The max number of internal port indicies that could theoretically exist in VEXos.
+/// 
+/// This serves as the upper limit for the number of internal ports that will be added
+/// to VEXos and is thus a somewhatsafe value to set as a buffer length for functions
+/// such as [`vexDeviceGetStatus`].
+pub const V5_MAX_DEVICE_PORTS: usize = 32;
+
+/// Handle to an opaque [`V5_Device`].
 #[allow(non_camel_case_types)]
 pub type V5_DeviceT = *mut V5_Device;
 
-/// A device plugged into a smart port
-///
-/// This private API type was derived from analysis of the bits returned
-/// by [`vexDeviceGetByIndex`]. Not all fields are known.
-#[repr(C)]
-#[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
-pub struct V5_Device {
-    pub zero_indexed_port: u8,
-    pub _unknown0: u8,
-    pub one_indexed_port: u8,
-    pub _unknown1_3: [u8; 3],
-    pub device_type: V5_DeviceType, // this is 16 bit
-    pub installed: bool,
-}
+/// A device plugged into a smart port.
+pub type V5_Device = *mut c_void;
 
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 #[repr(transparent)]
-pub struct V5_DeviceType(pub core::ffi::c_ushort);
+pub struct V5_DeviceType(pub core::ffi::c_uchar);
 
 impl V5_DeviceType {
     /// No device connected
@@ -110,7 +105,6 @@ impl V5_DeviceType {
     pub const kDeviceTypeUndefinedSensor: Self = Self(255);
 }
 
-
 map_jump_table! {
     0x190 =>
         /// Get the number of devices plugged into the brain.
@@ -118,12 +112,19 @@ map_jump_table! {
     0x194 =>
         /// Get the number of devices of a specific type plugged into the brain.
         pub fn vexDevicesGetNumberByType(device_type: V5_DeviceType) -> u32,
-    0x198 => pub fn vexDevicesGet() -> V5_DeviceT,
+    0x198 =>
+        /// Get a buffer of all devices on the brain.
+        pub fn vexDevicesGet() -> V5_DeviceT,
     0x19c =>
         /// Get a handle to a specific device plugged into a specific port index.
         pub fn vexDeviceGetByIndex(index: u32) -> V5_DeviceT,
     0x1a0 =>
         /// Get a list of device types plugged into the brain.
+        /// 
+        /// Returns -1 if a null pointer is passed, otherwise the number of devices
+        /// that were written to the buffer.
+        /// 
+        /// The length of the buffer should be at most [`V5_MAX_DEVICE_PORTS`].
         pub fn vexDeviceGetStatus(devices: *mut V5_DeviceType) -> i32,
     0x1b0 =>
         /// Get the timestamp recorded by a device's internal clock.
