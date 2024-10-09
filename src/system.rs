@@ -121,10 +121,12 @@ map_jump_table! {
     0x928 => pub fn vexSystemPrefetchAbortInterrupt(),
 }
 
+#[no_mangle]
 pub unsafe extern "aapcs" fn vexSystemVersion() -> u32 {
     unsafe { core::ptr::read_volatile((JUMP_TABLE_START + 0x1000) as *const u32) }
 }
 
+#[no_mangle]
 pub unsafe extern "aapcs" fn vexStdlibVersion() -> u32 {
     unsafe { core::ptr::read_volatile((JUMP_TABLE_START + 0x1004) as *const u32) }
 }
