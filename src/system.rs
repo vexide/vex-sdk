@@ -108,7 +108,7 @@ map_jump_table! {
     0x174 => pub fn vexSystemUsbStatus() -> u32,
     0x8c0 => pub fn vexSystemTimerStop(),
     0x8c4 => pub fn vexSystemTimerClearInterrupt(),
-    0x8c8 => pub fn vexSystemTimerReinitForRtos(priority: u32, handler: extern "C" fn(data: *mut c_void)) -> i32,
+    0x8c8 => pub fn vexSystemTimerReinitForRtos(priority: u32, handler: extern "aapcs" fn(data: *mut c_void)) -> i32,
     0x8cc => pub fn vexSystemApplicationIRQHandler(ulICCIAR: u32),
     0x8d0 => pub fn vexSystemWatchdogReinitRtos() -> i32,
     0x8d4 => pub fn vexSystemWatchdogGet() -> u32,
@@ -121,10 +121,10 @@ map_jump_table! {
     0x928 => pub fn vexSystemPrefetchAbortInterrupt(),
 }
 
-pub unsafe extern "C" fn vexSystemVersion() -> u32 {
+pub unsafe extern "aapcs" fn vexSystemVersion() -> u32 {
     unsafe { core::ptr::read_volatile((JUMP_TABLE_START + 0x1000) as *const u32) }
 }
 
-pub unsafe extern "C" fn vexStdlibVersion() -> u32 {
+pub unsafe extern "aapcs" fn vexStdlibVersion() -> u32 {
     unsafe { core::ptr::read_volatile((JUMP_TABLE_START + 0x1004) as *const u32) }
 }
