@@ -4,12 +4,25 @@ use core::ffi::{c_char, VaList};
 
 use crate::map_jump_table;
 
+/// A decoded image written to by VEXos.
 #[repr(C, packed)]
 #[derive(Debug, Copy, Clone, Eq, PartialEq)]
 pub struct v5_image {
+    /// Definitive width of the output image.
     pub width: u16,
+
+    /// Definitive height of the output image.
     pub height: u16,
+
+    /// Buffer of RGB8 pixels that containing the image's data.
+    /// 
+    /// This field must be set before the read operation as a pointer to the pre-allocated pixel buffer.
+    /// After an image read operation, said image’s pixels are written to the location specified by this field.
     pub data: *mut u32,
+
+    /// Points to the first pixel of the second row in the pixel buffer.
+    /// 
+    /// Only set by the SDK after a [`vexImageBmpRead`] call. 
     pub p: *mut u32,
 }
 
@@ -138,8 +151,8 @@ map_jump_table! {
         /// 
         /// - `ibuf`: The PNG file as a buffer of bytes.
         /// - `obuf`: A decoded image encoded as RGB8 pixels that will be written to if the operation succeeds.
-        /// - `maxw`: Width of the image.
-        /// - `maxh`: Height of the image.
+        /// - `maxw`: Width capacity of the image buffer.
+        /// - `maxh`: Height capacity of the image buffer.
         /// 
         /// # Return
         /// 
@@ -147,7 +160,6 @@ map_jump_table! {
         /// 
         /// # Safety
         /// 
-        /// - `ibuf` must be null, OR point to a buffer of at least length ibuflen.
         /// - `oBuf` must point to an initialized [`v5_image`] struct or null.
         /// - `(*oBuf).data` must point to a mutable allocated image buffer that is at least `maxw * maxh * 4` bytes long or be null.
         pub fn vexImageBmpRead(ibuf: *const u8, oBuf: *mut v5_image, maxw: u32, maxh: u32) -> u32,
@@ -159,8 +171,8 @@ map_jump_table! {
         /// 
         /// - `ibuf`: The PNG file as a buffer of bytes.
         /// - `obuf`: A decoded image encoded as RGB8 pixels that will be written to if the operation succeeds.
-        /// - `maxw`: Width of the image.
-        /// - `maxh`: Height of the image.
+        /// - `maxw`: Width capacity of the image buffer.
+        /// - `maxh`: Height capacity of the image buffer.
         /// - `ibuflen`: Length of the input buffer.
         /// 
         /// # Return
