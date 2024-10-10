@@ -16,4 +16,7 @@ compiler_builtins = { version = "^0.1.109", optional = true }
 [features]
 rustc-dep-of-std = ["core", "compiler_builtins"]
 
+[package.metadata.docs.rs]
+default-target = "armv7a-none-eabi"
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

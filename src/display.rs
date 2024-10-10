@@ -119,7 +119,7 @@ map_jump_table! {
         /// # Arguments
         /// 
         /// - `bVsyncWait`: Sleep the current task until the screen is ready to refresh.
-        /// - `bRunScheduler`: Call [`vexTasksRun`] while waiting for a refresh.
+        /// - `bRunScheduler`: Call [`vexTasksRun`](crate::task::vexTasksRun) while waiting for a refresh.
         pub fn vexDisplayRender(bVsyncWait: bool, bRunScheduler: bool),
     0x7a4 =>
         /// Disables double-buffered mode, switching back to immediate mode rendering.
