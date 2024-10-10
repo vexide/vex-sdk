@@ -107,7 +107,9 @@ impl V5_DeviceType {
 
 map_jump_table! {
     0x190 =>
-        /// Get the number of devices plugged into the brain.
+        /// Get the number of device ports currently present on this system.
+        /// 
+        /// As of VEXos 1.1.4, this number is the constant `23`.
         pub fn vexDevicesGetNumber() -> u32,
     0x194 =>
         /// Get the number of devices of a specific type plugged into the brain.
@@ -116,7 +118,7 @@ map_jump_table! {
         /// Get a buffer of all devices on the brain.
         pub fn vexDevicesGet() -> V5_DeviceT,
     0x19c =>
-        /// Get a handle to a specific device plugged into a specific port index.
+        /// Get a handle to a device plugged into the specified port index.
         pub fn vexDeviceGetByIndex(index: u32) -> V5_DeviceT,
     0x1a0 =>
         /// Get a list of device types plugged into the brain.
