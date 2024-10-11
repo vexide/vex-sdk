@@ -3,10 +3,10 @@ name = "vex-sdk"
 description = "Raw bindings to vexos user jump table functions."
 repository = "https://github.com/vexide/vex-sdk/"
 authors = ["Tropical"]
-license-file = "LICENSE.md"
+license = "MIT"
 categories = ["science::robotics", "no-std", "embedded"]
 keywords = ["vex", "vex-v5", "vex-robotics", "robotics"]
-version = "0.21.0"
+version = "0.22.0"
 edition = "2021"
 
 [dependencies]
