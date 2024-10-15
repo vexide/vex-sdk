@@ -1,7 +1,8 @@
 //! Brain Display
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 use core::ffi::{c_char, VaList};
-
+#[cfg(any(feature = "v5", feature = "exp"))]
 use crate::map_jump_table;
 
 /// A decoded image written to by VEXos.
@@ -26,6 +27,7 @@ pub struct v5_image {
     pub p: *mut u32,
 }
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 map_jump_table! {
     0x640 =>
         /// Sets the color (encoded as RGB8) used for all future non-erasing display draws.
@@ -228,6 +230,7 @@ map_jump_table! {
         pub fn vexDisplayVBigCenteredString(nLineNumber: i32, format: *const c_char, args: VaList),
 }
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 pub unsafe extern "C" fn vexDisplayPrintf(
     xpos: i32,
     ypos: i32,
@@ -238,10 +241,12 @@ pub unsafe extern "C" fn vexDisplayPrintf(
     unsafe { vexDisplayVPrintf(xpos, ypos, bOpaque, format, args.as_va_list()) }
 }
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 pub unsafe extern "C" fn vexDisplayString(nLineNumber: i32, format: *const c_char, mut args: ...) {
     unsafe { vexDisplayVString(nLineNumber, format, args.as_va_list()) }
 }
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 pub unsafe extern "C" fn vexDisplayStringAt(
     xpos: i32,
     ypos: i32,
@@ -251,6 +256,7 @@ pub unsafe extern "C" fn vexDisplayStringAt(
     unsafe { vexDisplayVStringAt(xpos, ypos, format, args.as_va_list()) }
 }
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 pub unsafe extern "C" fn vexDisplayBigString(
     nLineNumber: i32,
     format: *const c_char,
@@ -259,6 +265,7 @@ pub unsafe extern "C" fn vexDisplayBigString(
     unsafe { vexDisplayVBigString(nLineNumber, format, args.as_va_list()) }
 }
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 pub unsafe extern "C" fn vexDisplayBigStringAt(
     xpos: i32,
     ypos: i32,
@@ -268,6 +275,7 @@ pub unsafe extern "C" fn vexDisplayBigStringAt(
     unsafe { vexDisplayVBigStringAt(xpos, ypos, format, args.as_va_list()) }
 }
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 pub unsafe extern "C" fn vexDisplaySmallStringAt(
     xpos: i32,
     ypos: i32,
@@ -277,6 +285,7 @@ pub unsafe extern "C" fn vexDisplaySmallStringAt(
     unsafe { vexDisplayVSmallStringAt(xpos, ypos, format, args.as_va_list()) }
 }
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 pub unsafe extern "C" fn vexDisplayCenteredString(
     nLineNumber: i32,
     format: *const c_char,
@@ -285,6 +294,7 @@ pub unsafe extern "C" fn vexDisplayCenteredString(
     unsafe { vexDisplayVCenteredString(nLineNumber, format, args.as_va_list()) }
 }
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 pub unsafe extern "C" fn vexDisplayBigCenteredString(
     nLineNumber: i32,
     format: *const c_char,

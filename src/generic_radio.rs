@@ -1,9 +1,12 @@
 //! V5 Smart Radio
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 use core::ffi::{c_char, c_int};
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 use crate::{map_jump_table, V5_DeviceT};
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 map_jump_table! {
     0xaa4 => pub fn vexDeviceGenericRadioConnection(device: V5_DeviceT, link_id: *mut c_char, r#type: c_int, ov: bool),
     0xaac => pub fn vexDeviceGenericRadioWriteFree(device: V5_DeviceT) -> i32,

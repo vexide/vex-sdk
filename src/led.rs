@@ -2,6 +2,7 @@
 //!
 //! This device is not sold by VEX and only exists as development hardware.
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 use crate::{map_jump_table, V5_DeviceT};
 
 #[repr(transparent)]
@@ -19,6 +20,7 @@ impl V5_DeviceLedColor {
     pub const kLedColorWhite: Self = Self(0xFFFFFF);
 }
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 map_jump_table! {
     0x1e0 => pub fn vexDeviceLedSet(device: V5_DeviceT, value: V5_DeviceLedColor),
     0x1e4 => pub fn vexDeviceLedRgbSet(device: V5_DeviceT, color: u32),

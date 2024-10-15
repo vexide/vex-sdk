@@ -1,9 +1,11 @@
 //! VEXos Task Scheduler Functions
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 use crate::map_jump_table;
-
+#[cfg(any(feature = "v5", feature = "exp"))]
 use core::ffi::{c_char, c_int, c_void};
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 map_jump_table! {
     0x028 =>
         /// Creates an RTOS task

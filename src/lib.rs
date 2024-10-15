@@ -6,6 +6,9 @@
 #![feature(c_variadic)]
 #![cfg_attr(feature = "rustc-dep-of-std", feature(link_cfg, no_core))]
 
+#[cfg(all(feature = "v5", feature = "exp"))]
+compile_error!("feature \"v5\" and feature \"exp\" cannot be enabled at the same time");
+
 pub mod abs_enc;
 pub mod adi;
 pub mod ai_vision;
@@ -34,37 +37,53 @@ pub mod task;
 pub mod touch;
 pub mod vision;
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 pub use abs_enc::*;
 pub use adi::*;
 pub use ai_vision::*;
 pub use arm::*;
+#[cfg(any(feature = "v5", feature = "exp"))]
 pub use battery::*;
+#[cfg(any(feature = "v5", feature = "exp"))]
 pub use competition::*;
 pub use controller::*;
+#[cfg(any(feature = "v5", feature = "exp"))]
 pub use device::*;
 pub use display::*;
+#[cfg(any(feature = "v5", feature = "exp"))]
 pub use distance::*;
 pub use file::*;
+#[cfg(any(feature = "v5", feature = "exp"))]
 pub use generic_radio::*;
+#[cfg(any(feature = "v5", feature = "exp"))]
 pub use generic_serial::*;
 pub use gps::*;
 pub use imu::*;
 pub use led::*;
+#[cfg(any(feature = "v5", feature = "exp"))]
 pub use light_tower::*;
 pub use magnet::*;
 pub use motor::*;
 pub use optical::*;
 pub use pneumatic::*;
+#[cfg(any(feature = "v5", feature = "exp"))]
 pub use range::*;
+#[cfg(any(feature = "v5", feature = "exp"))]
 pub use serial::*;
 pub use system::*;
+#[cfg(any(feature = "v5", feature = "exp"))]
 pub use task::*;
 pub use touch::*;
 pub use vision::*;
 
-pub const JUMP_TABLE_START: usize = 0x037FC000;
+#[cfg(feature = "v5")]
+pub const JUMP_TABLE_START: usize = 0x037fc000;
+
+#[cfg(feature = "exp")]
+pub const JUMP_TABLE_START: usize = 0x301fc000;
 
 #[macro_export]
+#[cfg(any(feature = "v5", feature = "exp"))]
 macro_rules! map_jump_table {
     (
         $(

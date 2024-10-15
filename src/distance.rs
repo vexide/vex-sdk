@@ -1,9 +1,12 @@
 //! V5 Distance Sensor
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 use core::ffi::c_double;
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 use crate::{map_jump_table, V5_DeviceT};
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 map_jump_table! {
     0x500 => pub fn vexDeviceDistanceDistanceGet(device: V5_DeviceT) -> u32,
     0x504 => pub fn vexDeviceDistanceConfidenceGet(device: V5_DeviceT) -> u32,

@@ -1,7 +1,9 @@
 //! CTE Workcell Arm
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 use core::ffi::c_double;
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 use crate::{map_jump_table, V5_DeviceT};
 
 #[repr(C)]
@@ -17,6 +19,7 @@ pub struct V5_DeviceArmTipPosition {
     pub velocity: i16,
 }
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 map_jump_table! {
     0xb54 => pub fn vexDeviceArmMoveTipCommandLinearAdv(device: V5_DeviceT, position: *mut V5_DeviceArmTipPosition, j6_rotation: c_double, j6_velocity: u16, relative: bool),
     0xb58 => pub fn vexDeviceArmMoveTipCommandJointAdv(device: V5_DeviceT, position: *mut V5_DeviceArmTipPosition, j6_rotation: c_double, j6_velocity: u16, relative: bool),

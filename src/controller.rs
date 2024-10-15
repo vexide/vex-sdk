@@ -1,5 +1,6 @@
 //! V5 Controller
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 use crate::map_jump_table;
 
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
@@ -67,6 +68,7 @@ impl V5_ControllerIndex {
     pub const ButtonA: Self = Self::Button8R;
 }
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 map_jump_table! {
     0x1a4 =>
         /// Get the value of a controller's data channel.

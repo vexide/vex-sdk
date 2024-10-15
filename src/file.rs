@@ -1,7 +1,9 @@
 //! Filesystem Access
 
-use core::ffi::{c_char, c_void};
+#[cfg(any(feature = "v5", feature = "exp"))]
+use core::ffi::c_char;
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 use crate::map_jump_table;
 
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
@@ -30,8 +32,9 @@ impl FRESULT {
     pub const FR_TOO_MANY_OPEN_FILES: Self = Self(18);
     pub const FR_INVALID_PARAMETER: Self = Self(19);
 }
-pub type FIL = c_void;
+pub type FIL = core::ffi::c_void;
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 map_jump_table! {
     0x7d0 => pub fn vexFileMountSD() -> FRESULT,
     0x7d4 => pub fn vexFileDirectoryGet(path: *const c_char, buffer: *mut c_char, len: u32) -> FRESULT,

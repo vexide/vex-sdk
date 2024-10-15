@@ -1,8 +1,12 @@
 //! V5 AI Vision Sensor
 
-use core::ffi::{c_double, c_float};
+#[cfg(any(feature = "v5", feature = "exp"))]
+use core::ffi::c_double;
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 use crate::{map_jump_table, V5_DeviceT};
+
+use core::ffi::c_float;
 
 #[repr(C, packed)]
 #[derive(Default, Debug, Copy, Clone, PartialEq)]
@@ -92,6 +96,7 @@ pub struct V5_DeviceAiVisionCode {
     pub c7: i16,
 }
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 map_jump_table! {
     0xcd4 => pub fn vexDeviceAiVisionClassNameGet(device: V5_DeviceT, id: i32, pName: *mut u8) -> i32,
     0xcc4 => pub fn vexDeviceAiVisionCodeGet(device: V5_DeviceT, id: u32, pCode: *mut V5_DeviceAiVisionCode) -> bool,

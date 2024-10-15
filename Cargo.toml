@@ -14,6 +14,8 @@ core = { package = "rustc-std-workspace-core", version = "1.0.0", optional = tru
 compiler_builtins = { version = "^0.1.109", optional = true }
 
 [features]
+v5 = []
+exp = []
 rustc-dep-of-std = ["core", "compiler_builtins"]
 
 [package.metadata.docs.rs]

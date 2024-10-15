@@ -1,6 +1,9 @@
 //! ADI Devices
+
+#[cfg(any(feature = "v5", feature = "exp"))]
 use core::ffi::c_double;
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 use crate::{map_jump_table, V5_DeviceT};
 
 #[repr(transparent)]
@@ -37,6 +40,7 @@ impl V5_DeviceBumperState {
     pub const kBumperPressed: Self = Self(1);
 }
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 map_jump_table! {
     0x208 => pub fn vexDeviceAdiPortConfigSet(device: V5_DeviceT, port: u32, config: V5_AdiPortConfiguration),
     0x20c => pub fn vexDeviceAdiPortConfigGet(device: V5_DeviceT, port: u32) -> V5_AdiPortConfiguration,

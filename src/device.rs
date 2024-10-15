@@ -1,7 +1,8 @@
 //! V5 Smart Devices
 
-use core::ffi::{c_double, c_int, c_void};
-
+#[cfg(any(feature = "v5", feature = "exp"))]
+use core::ffi::{c_double, c_int};
+#[cfg(any(feature = "v5", feature = "exp"))]
 use crate::map_jump_table;
 
 /// The max number of internal port indicies that could theoretically exist in VEXos.
@@ -16,7 +17,7 @@ pub const V5_MAX_DEVICE_PORTS: usize = 32;
 pub type V5_DeviceT = *mut V5_Device;
 
 /// A device plugged into a smart port.
-pub type V5_Device = *mut c_void;
+pub type V5_Device = *mut core::ffi::c_void;
 
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 #[repr(transparent)]
@@ -105,6 +106,7 @@ impl V5_DeviceType {
     pub const kDeviceTypeUndefinedSensor: Self = Self(255);
 }
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 map_jump_table! {
     0x190 =>
         /// Get the number of device ports currently present on this system.

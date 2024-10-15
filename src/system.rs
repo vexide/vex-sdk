@@ -1,7 +1,8 @@
 //! VEXos System Functions
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 use core::ffi::c_void;
-
+#[cfg(any(feature = "v5", feature = "exp"))]
 use crate::{map_jump_table, JUMP_TABLE_START};
 
 /// Code Signature
@@ -75,6 +76,7 @@ pub struct date {
     pub da_mon: u8,
 }
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 map_jump_table! {
     0x10 => pub fn vexStdlibMismatchError(param_1: u32, param_2: u32),
     0x01c =>
@@ -121,10 +123,12 @@ map_jump_table! {
     0x928 => pub fn vexSystemPrefetchAbortInterrupt(),
 }
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 pub unsafe extern "aapcs" fn vexSystemVersion() -> u32 {
     unsafe { core::ptr::read_volatile((JUMP_TABLE_START + 0x1000) as *const u32) }
 }
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 pub unsafe extern "aapcs" fn vexStdlibVersion() -> u32 {
     unsafe { core::ptr::read_volatile((JUMP_TABLE_START + 0x1004) as *const u32) }
 }

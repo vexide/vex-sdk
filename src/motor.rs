@@ -1,6 +1,8 @@
 //! V5 Smart Motor
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 use crate::{device::V5_DeviceT, map_jump_table};
+#[cfg(any(feature = "v5", feature = "exp"))]
 use core::ffi::c_double;
 
 #[repr(transparent)]
@@ -62,6 +64,7 @@ pub struct V5_DeviceMotorPid {
     pub pad2: [u8; 2],
 }
 
+#[cfg(any(feature = "v5", feature = "exp"))]
 map_jump_table! {
     0x2d0 => pub fn vexDeviceMotorVelocitySet(device: V5_DeviceT, velocity: i32),
     0x2d4 => pub fn vexDeviceMotorVelocityGet(device: V5_DeviceT) -> i32,
@@ -123,4 +126,5 @@ map_jump_table! {
         position: c_double,
         velocity: i32,
     ),
+    0x384 => pub fn vexDeviceMotorTypeGet(device: V5_DeviceT) -> i32,
 }
