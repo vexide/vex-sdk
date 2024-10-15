@@ -40,6 +40,8 @@ impl Default for vcodesig {
 }
 
 pub const V5_SIG_MAGIC: u32 = 0x35585658;
+pub const EX_SIG_MAGIC: u32 = 0x45585658;
+
 pub const V5_SIG_TYPE_USER: u32 = 0;
 pub const V5_SIG_OWNER_SYS: u32 = 0;
 pub const V5_SIG_OWNER_VEX: u32 = 1;
