@@ -37,41 +37,30 @@ pub mod task;
 pub mod touch;
 pub mod vision;
 
-#[cfg(any(target_env = "v5", target_env = "exp"))]
 pub use abs_enc::*;
 pub use adi::*;
 pub use ai_vision::*;
 pub use arm::*;
-#[cfg(any(target_env = "v5", target_env = "exp"))]
 pub use battery::*;
-#[cfg(any(target_env = "v5", target_env = "exp"))]
 pub use competition::*;
 pub use controller::*;
-#[cfg(any(target_env = "v5", target_env = "exp"))]
 pub use device::*;
 pub use display::*;
-#[cfg(any(target_env = "v5", target_env = "exp"))]
 pub use distance::*;
 pub use file::*;
-#[cfg(any(target_env = "v5", target_env = "exp"))]
 pub use generic_radio::*;
-#[cfg(any(target_env = "v5", target_env = "exp"))]
 pub use generic_serial::*;
 pub use gps::*;
 pub use imu::*;
 pub use led::*;
-#[cfg(any(target_env = "v5", target_env = "exp"))]
 pub use light_tower::*;
 pub use magnet::*;
 pub use motor::*;
 pub use optical::*;
 pub use pneumatic::*;
-#[cfg(any(target_env = "v5", target_env = "exp"))]
 pub use range::*;
-#[cfg(any(target_env = "v5", target_env = "exp"))]
 pub use serial::*;
 pub use system::*;
-#[cfg(any(target_env = "v5", target_env = "exp"))]
 pub use task::*;
 pub use touch::*;
 pub use vision::*;
