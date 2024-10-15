@@ -21,6 +21,7 @@ This project aims to cover 100% of the publicly available symbols present in the
 
 Functions present in `libv5rt` that are currently are **NOT** in `vex_sdk`:
 - Most things outside of `v5_api.h`and `v5_types.h`. This includes the "user functions", which are basically convenience methods for passing in port indexes directly (e.g. `vexImuReset` vs. `vexDeviceImuReset`).
+- Startup code like `vexStartup` and `vexMain` (rust code should handle this instead!), as well as C runtime shims.
 - `vexSdkVersion`, since we aren't an official SDK.
 - Any C++ `stdlib0`-related functions.
 - Most private API symbols*.
