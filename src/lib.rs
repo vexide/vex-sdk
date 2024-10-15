@@ -75,7 +75,7 @@ macro_rules! map_jump_table {
         $(
             $(#[$meta])*
             #[doc = "# Safety\nCalls to jumptable functions are unsafe because jumptable functions are owned by VEXos and we cannot guarantee their safety."]
-            #[no_mangle] $vis unsafe extern "aapcs" fn $name($($arg: $arg_ty),*) $(-> $ret)? {
+            $vis unsafe extern "aapcs" fn $name($($arg: $arg_ty),*) $(-> $ret)? {
                 unsafe {
                     (*(($crate::JUMP_TABLE_START + $offset) as *const extern "aapcs" fn($($arg_ty,)*) $(-> $ret)?))($($arg,)*)
                 }
