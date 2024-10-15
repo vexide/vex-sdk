@@ -29,10 +29,15 @@ map_jump_table! {
         pub fn vexTaskSleep(time: u32),
     0xf74 => pub fn vexBackgroundProcessing(),
     0x05c =>
-        /// VEXos User Background Processing Procedure
+        /// Ticks the CPU1 Scheduler
         ///
-        /// This function handles transactions between the user processor and master
-        /// processor when writing data to devices. This function should ideally be ran
-        /// every 2mS for devices to be properly communicated with.
+        /// This function is responsible for running VEXos tasks on CPU1. It must be called by
+        /// the runtime ideally every 2mS to allow for internal OS tasks on the user processor
+        /// to run. The scheduler is entirely cooperative, so the runtime must ensure that the CPU
+        /// gets time to regularly execute these tasks.
+        /// 
+        /// VEXos has several background tasks in its scheduler responsible for handling transactions
+        /// between CPU1 and CPU0, including tasks for handling device reads, serial flushing, USB,
+        /// and other important operations that must occur in the background alongside user code.
         pub fn vexTasksRun(),
 }
