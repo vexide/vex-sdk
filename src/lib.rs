@@ -72,7 +72,6 @@ pub const JUMP_TABLE_START: usize = 0x037fc000;
 pub const JUMP_TABLE_START: usize = 0x301fc000;
 
 #[macro_export]
-#[cfg(any(target_env = "v5", target_env = "exp"))]
 macro_rules! map_jump_table {
     (
         $(
