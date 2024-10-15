@@ -126,5 +126,10 @@ map_jump_table! {
         position: c_double,
         velocity: i32,
     ),
+}
+
+
+#[cfg(feature = "exp")]
+map_jump_table! {
     0x384 => pub fn vexDeviceMotorTypeGet(device: V5_DeviceT) -> i32,
 }
