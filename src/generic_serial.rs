@@ -1,9 +1,9 @@
 //! Smart Port Generic Serial Communication
 
-#[cfg(any(feature = "v5", feature = "exp"))]
+#[cfg(any(target_env = "v5", target_env = "exp"))]
 use crate::{map_jump_table, V5_DeviceT};
 
-#[cfg(any(feature = "v5", feature = "exp"))]
+#[cfg(any(target_env = "v5", target_env = "exp"))]
 map_jump_table! {
     0xa50 => pub fn vexDeviceGenericSerialEnable(device: V5_DeviceT, options: i32),
     0xa54 => pub fn vexDeviceGenericSerialBaudrate(device: V5_DeviceT, baudrate: i32),

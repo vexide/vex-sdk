@@ -2,7 +2,7 @@
 
 use core::ffi::c_double;
 
-#[cfg(any(feature = "v5", feature = "exp"))]
+#[cfg(any(target_env = "v5", target_env = "exp"))]
 use crate::{device::V5_DeviceT, map_jump_table};
 
 #[repr(C, packed)]
@@ -45,7 +45,7 @@ pub struct V5_DeviceImuAttitude {
     pub yaw: c_double,
 }
 
-#[cfg(any(feature = "v5", feature = "exp"))]
+#[cfg(any(target_env = "v5", target_env = "exp"))]
 map_jump_table! {
     0x410 =>
         /// Calibrates the IMU. This function is non-blocking.

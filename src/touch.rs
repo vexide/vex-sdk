@@ -1,6 +1,6 @@
 //! Brain Screen Touchscreen
 
-#[cfg(any(feature = "v5", feature = "exp"))]
+#[cfg(any(target_env = "v5", target_env = "exp"))]
 use crate::map_jump_table;
 
 #[repr(transparent)]
@@ -23,7 +23,7 @@ pub struct V5_TouchStatus {
     pub releaseCount: i32,
 }
 
-#[cfg(any(feature = "v5", feature = "exp"))]
+#[cfg(any(target_env = "v5", target_env = "exp"))]
 map_jump_table! {
     0x960 => pub fn vexTouchUserCallbackSet(callback: unsafe extern "C" fn(V5_TouchEvent, i32, i32)),
     0x964 => pub fn vexTouchDataGet(status: *mut V5_TouchStatus),

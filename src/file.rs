@@ -1,9 +1,9 @@
 //! Filesystem Access
 
-#[cfg(any(feature = "v5", feature = "exp"))]
+#[cfg(any(target_env = "v5", target_env = "exp"))]
 use core::ffi::c_char;
 
-#[cfg(any(feature = "v5", feature = "exp"))]
+#[cfg(any(target_env = "v5", target_env = "exp"))]
 use crate::map_jump_table;
 
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
@@ -34,7 +34,7 @@ impl FRESULT {
 }
 pub type FIL = core::ffi::c_void;
 
-#[cfg(any(feature = "v5", feature = "exp"))]
+#[cfg(any(target_env = "v5", target_env = "exp"))]
 map_jump_table! {
     0x7d0 => pub fn vexFileMountSD() -> FRESULT,
     0x7d4 => pub fn vexFileDirectoryGet(path: *const c_char, buffer: *mut c_char, len: u32) -> FRESULT,

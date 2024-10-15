@@ -1,6 +1,6 @@
 //! V5 Vision Sensor
 
-#[cfg(any(feature = "v5", feature = "exp"))]
+#[cfg(any(target_env = "v5", target_env = "exp"))]
 use crate::{map_jump_table, V5_DeviceT};
 
 #[repr(transparent)]
@@ -97,7 +97,7 @@ impl V5VisionWifiMode {
     pub const kVisionWifiModeOn: Self = Self(1);
 }
 
-#[cfg(any(feature = "v5", feature = "exp"))]
+#[cfg(any(target_env = "v5", target_env = "exp"))]
 map_jump_table! {
     0x398 => pub fn vexDeviceVisionModeSet(device: V5_DeviceT, mode: V5VisionMode),
     0x39c => pub fn vexDeviceVisionModeGet(device: V5_DeviceT) -> V5VisionMode,

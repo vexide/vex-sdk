@@ -1,12 +1,12 @@
 //! USB Serial Communication
 
-#[cfg(any(feature = "v5", feature = "exp"))]
+#[cfg(any(target_env = "v5", target_env = "exp"))]
 use core::ffi::{c_char, VaList};
 
-#[cfg(any(feature = "v5", feature = "exp"))]
+#[cfg(any(target_env = "v5", target_env = "exp"))]
 use crate::map_jump_table;
 
-#[cfg(any(feature = "v5", feature = "exp"))]
+#[cfg(any(target_env = "v5", target_env = "exp"))]
 map_jump_table! {
     0x898 =>
         /// Writes a single byte to the serial FIFO output buffer.
@@ -75,12 +75,12 @@ map_jump_table! {
     0x0f8 => pub fn vex_vsnprintf(out: *mut c_char, max_len: u32, format: *const c_char, args: VaList) -> i32,
 }
 
-#[cfg(any(feature = "v5", feature = "exp"))]
+#[cfg(any(target_env = "v5", target_env = "exp"))]
 pub unsafe extern "C" fn vex_printf(format: *const c_char, mut args: ...) -> i32 {
     unsafe { vex_vprintf(format, args.as_va_list()) }
 }
 
-#[cfg(any(feature = "v5", feature = "exp"))]
+#[cfg(any(target_env = "v5", target_env = "exp"))]
 pub unsafe extern "C" fn vex_sprintf(
     out: *mut c_char,
     format: *const c_char,
@@ -89,7 +89,7 @@ pub unsafe extern "C" fn vex_sprintf(
     unsafe { vex_vsprintf(out, format, args.as_va_list()) }
 }
 
-#[cfg(any(feature = "v5", feature = "exp"))]
+#[cfg(any(target_env = "v5", target_env = "exp"))]
 pub unsafe extern "C" fn vex_snprintf(
     out: *mut c_char,
     max_len: u32,
