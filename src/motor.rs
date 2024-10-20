@@ -68,7 +68,7 @@ pub struct V5_DeviceMotorPid {
 map_jump_table! {
     0x2d0 => pub fn vexDeviceMotorVelocitySet(device: V5_DeviceT, velocity: i32),
     0x2d4 => pub fn vexDeviceMotorVelocityGet(device: V5_DeviceT) -> i32,
-    0x2d4 => pub fn vexDeviceMotorActualVelocityGet(device: V5_DeviceT) -> c_double,
+    0x2d8 => pub fn vexDeviceMotorActualVelocityGet(device: V5_DeviceT) -> c_double,
     0x2dc => pub fn vexDeviceMotorDirectionGet(device: V5_DeviceT) -> i32,
     0x2e0 => pub fn vexDeviceMotorModeSet(device: V5_DeviceT, mode: V5MotorControlMode),
     0x2e4 => pub fn vexDeviceMotorModeGet(device: V5_DeviceT) -> V5MotorControlMode,
