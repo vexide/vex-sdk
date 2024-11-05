@@ -4,10 +4,6 @@
 #![allow(non_upper_case_globals)]
 #![allow(non_snake_case)]
 #![feature(c_variadic)]
-#![cfg_attr(target_env = "rustc-dep-of-std", feature(link_cfg, no_core))]
-
-#[cfg(all(target_env = "v5", target_env = "exp"))]
-compile_error!("feature \"v5\" and feature \"exp\" cannot be enabled at the same time");
 
 pub mod abs_enc;
 pub mod adi;
