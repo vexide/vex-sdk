@@ -17,6 +17,6 @@ compiler_builtins = { version = "^0.1.109", optional = true }
 rustc-dep-of-std = ["core", "compiler_builtins"]
 
 [package.metadata.docs.rs]
-default-target = "./armv7a-vex-v5.json"
+default-target = "armv7a-none-eabi"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
