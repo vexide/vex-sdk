@@ -6,7 +6,7 @@ authors = ["Tropical"]
 license = "MIT"
 categories = ["science::robotics", "no-std", "embedded"]
 keywords = ["vex", "vex-v5", "vex-robotics", "robotics"]
-version = "0.25.0"
+version = "0.25.2"
 edition = "2021"
 
 [dependencies]
@@ -17,6 +17,15 @@ compiler_builtins = { version = "^0.1.109", optional = true }
 rustc-dep-of-std = ["core", "compiler_builtins"]
 
 [package.metadata.docs.rs]
-default-target = "armv7a-none-eabi"
+targets = ["armv7a-none-eabi"] # Not actually, but this is at least close.
+# Trick docs.rs to use our actual target instead.
+cargo-args = [
+    "--target",
+    "./armv7a-vex-v5.json",
+    "-Z",
+    "build-std=core,alloc,compiler_builtins",
+    "-Z",
+    "build-std-features=compiler-builtins-mem",
+]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
