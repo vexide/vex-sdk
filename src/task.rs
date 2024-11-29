@@ -1,11 +1,9 @@
 //! VEXos Task Scheduler Functions
 
-#[cfg(any(target_env = "v5", target_env = "exp"))]
 use crate::map_jump_table;
-#[cfg(any(target_env = "v5", target_env = "exp"))]
+
 use core::ffi::{c_char, c_int, c_void};
 
-#[cfg(any(target_env = "v5", target_env = "exp"))]
 map_jump_table! {
     0x028 =>
         /// Creates an RTOS task
@@ -37,7 +35,7 @@ map_jump_table! {
         /// the runtime ideally every 2mS to allow for internal OS tasks on the user processor
         /// to run. The scheduler is entirely cooperative, so the runtime must ensure that the CPU
         /// gets time to regularly execute these tasks.
-        /// 
+        ///
         /// VEXos has several background tasks in its scheduler responsible for handling transactions
         /// between CPU1 and CPU0, including tasks for handling device reads, serial flushing, USB,
         /// and other important operations that must occur in the background alongside user code.

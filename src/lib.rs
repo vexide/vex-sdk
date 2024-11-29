@@ -61,11 +61,7 @@ pub use task::*;
 pub use touch::*;
 pub use vision::*;
 
-#[cfg(target_env = "v5")]
 pub const JUMP_TABLE_START: usize = 0x037fc000;
-
-#[cfg(target_env = "exp")]
-pub const JUMP_TABLE_START: usize = 0x301fc000;
 
 #[macro_export]
 macro_rules! map_jump_table {

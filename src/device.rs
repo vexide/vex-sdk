@@ -1,12 +1,11 @@
 //! V5 Smart Devices
 
-#[cfg(any(target_env = "v5", target_env = "exp"))]
 use core::ffi::{c_double, c_int};
-#[cfg(any(target_env = "v5", target_env = "exp"))]
+
 use crate::map_jump_table;
 
 /// The max number of internal port indicies that could theoretically exist in VEXos.
-/// 
+///
 /// This serves as the upper limit for the number of internal ports that will be added
 /// to VEXos and is thus a somewhatsafe value to set as a buffer length for functions
 /// such as [`vexDeviceGetStatus`].
@@ -106,11 +105,10 @@ impl V5_DeviceType {
     pub const kDeviceTypeUndefinedSensor: Self = Self(255);
 }
 
-#[cfg(any(target_env = "v5", target_env = "exp"))]
 map_jump_table! {
     0x190 =>
         /// Get the number of device ports currently present on this system.
-        /// 
+        ///
         /// As of VEXos 1.1.4, this number is the constant `23`.
         pub fn vexDevicesGetNumber() -> u32,
     0x194 =>
@@ -124,10 +122,10 @@ map_jump_table! {
         pub fn vexDeviceGetByIndex(index: u32) -> V5_DeviceT,
     0x1a0 =>
         /// Get a list of device types plugged into the brain.
-        /// 
+        ///
         /// Returns -1 if a null pointer is passed, otherwise the number of devices
         /// that were written to the buffer.
-        /// 
+        ///
         /// The length of the buffer should be at most [`V5_MAX_DEVICE_PORTS`].
         pub fn vexDeviceGetStatus(devices: *mut V5_DeviceType) -> i32,
     0x1b0 =>

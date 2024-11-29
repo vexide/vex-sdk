@@ -1,9 +1,7 @@
 //! V5 Rotation Sensor
 
-#[cfg(any(target_env = "v5", target_env = "exp"))]
 use crate::{map_jump_table, V5_DeviceT};
 
-#[cfg(any(target_env = "v5", target_env = "exp"))]
 map_jump_table! {
     0x488 => pub fn vexDeviceAbsEncReset(device: V5_DeviceT),
     0x48c => pub fn vexDeviceAbsEncPositionSet(device: V5_DeviceT, position: i32),

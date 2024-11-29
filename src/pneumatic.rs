@@ -1,6 +1,5 @@
 //! CTE Workcell Pneumatics Control
 
-#[cfg(any(target_env = "v5", target_env = "exp"))]
 use crate::{map_jump_table, V5_DeviceT};
 
 #[repr(C)]
@@ -18,7 +17,6 @@ pub struct V5_DevicePneumaticCtrl {
     pub comp_pwm: u8,
 }
 
-#[cfg(any(target_env = "v5", target_env = "exp"))]
 map_jump_table! {
     0xc28 => pub fn vexDevicePneumaticActuationStatusGet(device: V5_DeviceT, ac1: *mut u16, ac2: *mut u16, ac3: *mut u16, ac4: *mut u16) -> u32,
     0xc08 => pub fn vexDevicePneumaticCompressorSet(device: V5_DeviceT, bState: bool),

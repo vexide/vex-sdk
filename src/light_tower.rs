@@ -1,9 +1,7 @@
 //! CTE Workcell Signal Tower
 
-#[cfg(any(target_env = "v5", target_env = "exp"))]
 use crate::{map_jump_table, V5_DeviceT};
 
-#[cfg(any(target_env = "v5", target_env = "exp"))]
 map_jump_table! {
     0x5b8 => pub fn vexDeviceLightTowerBlinkSet(device: V5_DeviceT, select: u8, mask: u8, onTime: i32, offTime: i32),
     0x5a4 => pub fn vexDeviceLightTowerColorSet(device: V5_DeviceT, color_id: u32, value: u32),

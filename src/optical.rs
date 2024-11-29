@@ -2,7 +2,6 @@
 
 use core::ffi::c_double;
 
-#[cfg(any(target_env = "v5", target_env = "exp"))]
 use crate::{map_jump_table, V5_DeviceT};
 
 #[repr(C)]
@@ -36,7 +35,6 @@ pub struct V5_DeviceOpticalGesture {
     pub time: u32,
 }
 
-#[cfg(any(target_env = "v5", target_env = "exp"))]
 map_jump_table! {
     0x528 => pub fn vexDeviceOpticalHueGet(device: V5_DeviceT) -> c_double,
     0x52c => pub fn vexDeviceOpticalSatGet(device: V5_DeviceT) -> c_double,

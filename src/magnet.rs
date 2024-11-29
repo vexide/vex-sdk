@@ -1,8 +1,7 @@
 //! V5 Workcell Electromagnet
 
-#[cfg(any(target_env = "v5", target_env = "exp"))]
 use core::ffi::c_double;
-#[cfg(any(target_env = "v5", target_env = "exp"))]
+
 use crate::{map_jump_table, V5_DeviceT};
 
 #[repr(transparent)]
@@ -16,7 +15,6 @@ impl V5_DeviceMagnetDuration {
     pub const kMagnetDurationExtraLong: Self = Self(3);
 }
 
-#[cfg(any(target_env = "v5", target_env = "exp"))]
 map_jump_table! {
     0x578 => pub fn vexDeviceMagnetPowerSet(device: V5_DeviceT, value: i32, time: i32),
     0x57c => pub fn vexDeviceMagnetPowerGet(device: V5_DeviceT) -> i32,

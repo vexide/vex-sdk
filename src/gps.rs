@@ -2,7 +2,6 @@
 
 use core::ffi::c_double;
 
-#[cfg(any(target_env = "v5", target_env = "exp"))]
 use crate::{map_jump_table, V5_DeviceT};
 
 #[repr(C, packed)]
@@ -41,7 +40,6 @@ pub struct V5_DeviceGpsQuaternion {
     pub w: c_double,
 }
 
-#[cfg(any(target_env = "v5", target_env = "exp"))]
 map_jump_table! {
     0x5c8 => pub fn vexDeviceGpsReset(device: V5_DeviceT),
     0x5cc => pub fn vexDeviceGpsHeadingGet(device: V5_DeviceT) -> c_double,
