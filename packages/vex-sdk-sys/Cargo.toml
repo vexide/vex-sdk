@@ -1,0 +1,13 @@
+[package]
+name = "vex-sdk-sys"
+description = "Raw bindings to the VEX V5 runtime library"
+version = "0.1.0"
+edition = "2024"
+links = "v5rt"
+authors = [
+    "vexide",
+    "Lewis McClelland <lewis@lewismcclelland.me>",
+    "Tropical"
+]
+
+[dependencies]
