@@ -1,0 +1,17 @@
+[package]
+name = "vex-sdk-jumptable"
+description = "Raw bindings to VEXos user jump table functions."
+repository = "https://github.com/vexide/vex-sdk/"
+authors = ["Tropical"]
+license = "MIT"
+categories = ["science::robotics", "no-std", "embedded"]
+keywords = ["vex", "vex-v5", "vex-robotics", "robotics"]
+version = "0.26.0"
+edition = "2021"
+links = "vex-sdk"
+
+[dependencies]
+vex-sdk = { workspace = true }
+
+[package.metadata.docs.rs]
+targets = ["armv7a-vex-v5"]

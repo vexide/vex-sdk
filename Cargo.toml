@@ -3,5 +3,5 @@ members = ["packages/*"]
 resolver = "3"
 
 [workspace.dependencies]
-vex-sdk = { version = "0.26.0", path = "packages/vex-sdk" }
-vex-sdk-sys = { version = "0.0.1", path = "packages/vex-sdk-sys" }
+vex-sdk = { version = "0.27.0", path = "packages/vex-sdk" }
+vex-sdk-jumptable = { version = "0.0.1", path = "packages/vex-sdk-jumptable" }
