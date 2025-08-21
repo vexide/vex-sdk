@@ -1,6 +1,6 @@
 [package]
 name = "vex-sdk-jumptable"
-description = "Raw bindings to VEXos user jump table functions."
+description = "Implementation of VEX's platform SDK interface"
 repository = "https://github.com/vexide/vex-sdk/"
 authors = ["Tropical"]
 license = "MIT"

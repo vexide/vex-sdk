@@ -1,6 +1,6 @@
 [package]
 name = "vex-sdk"
-description = "FFI bindings to libraries compatible with the VEX runtime SDK."
+description = "FFI bindings to VEX's platform SDKs"
 repository = "https://github.com/vexide/vex-sdk/"
 authors = ["Tropical"]
 license = "MIT"
