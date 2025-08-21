@@ -58,10 +58,12 @@ map_jump_table! {
     0x0f8 => pub fn vex_vsnprintf(out: *mut c_char, max_len: u32, format: *const c_char, args: VaList) -> i32,
 }
 
+#[unsafe(no_mangle)]
 pub unsafe extern "C" fn vex_printf(format: *const c_char, mut args: ...) -> i32 {
     unsafe { vex_vprintf(format, args.as_va_list()) }
 }
 
+#[unsafe(no_mangle)]
 pub unsafe extern "C" fn vex_sprintf(
     out: *mut c_char,
     format: *const c_char,
@@ -70,6 +72,7 @@ pub unsafe extern "C" fn vex_sprintf(
     unsafe { vex_vsprintf(out, format, args.as_va_list()) }
 }
 
+#[unsafe(no_mangle)]
 pub unsafe extern "C" fn vex_snprintf(
     out: *mut c_char,
     max_len: u32,
@@ -79,10 +82,12 @@ pub unsafe extern "C" fn vex_snprintf(
     unsafe { vex_vsnprintf(out, max_len, format, args.as_va_list()) }
 }
 
+#[unsafe(no_mangle)]
 pub unsafe extern "system" fn vexSystemVersion() -> u32 {
     unsafe { core::ptr::read_volatile((JUMP_TABLE_START + 0x1000) as *const u32) }
 }
 
+#[unsafe(no_mangle)]
 pub unsafe extern "system" fn vexStdlibVersion() -> u32 {
     unsafe { core::ptr::read_volatile((JUMP_TABLE_START + 0x1004) as *const u32) }
 }
