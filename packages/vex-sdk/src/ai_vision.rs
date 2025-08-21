@@ -1,7 +1,6 @@
 //! V5 AI Vision Sensor
 
-use core::ffi::c_double;
-use core::ffi::c_float;
+use core::ffi::{c_double, c_float};
 
 use crate::V5_DeviceT;
 

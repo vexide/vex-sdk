@@ -1,6 +1,6 @@
 [package]
 name = "vex-sdk-jumptable"
-description = "Implementation of VEX's platform SDK interface"
+description = "VEX SDK implementation using VEXos jump table addresses."
 repository = "https://github.com/vexide/vex-sdk/"
 authors = ["Tropical"]
 license = "MIT"

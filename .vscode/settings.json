@@ -1,4 +1,6 @@
 {
-    "rust-analyzer.procMacro.enable": true,
-    "rust-analyzer.cargo.allTargets": false
+    "rust-analyzer.cargo.allTargets": false,
+    "rust-analyzer.check.targets": [
+        "armv7a-vex-v5",
+    ],
 }
