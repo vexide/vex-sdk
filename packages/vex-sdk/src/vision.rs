@@ -1,9 +1,9 @@
 //! V5 Vision Sensor
 
 use crate::{map_jump_table};
-use vex_sdk_sys::V5_DeviceT; 
+use vex_sdk_types::V5_DeviceT;
 
-pub use vex_sdk_sys::{
+pub use vex_sdk_types::{
     V5VisionLedMode, V5VisionMode, V5VisionWBMode, V5VisionWifiMode, V5_DeviceVisionObject,
     V5_DeviceVisionRgb, V5_DeviceVisionSignature,
 };

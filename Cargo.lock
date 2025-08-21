@@ -105,7 +105,7 @@ version = "0.26.0"
 dependencies = [
  "compiler_builtins",
  "rustc-std-workspace-core",
- "vex-sdk-sys",
+ "vex-sdk-types",
 ]
 
 [[package]]
@@ -116,4 +116,9 @@ dependencies = [
  "rustc-std-workspace-core",
  "serde",
  "serde_json",
+ "vex-sdk",
 ]
+
+[[package]]
+name = "vex-sdk-types"
+version = "0.0.1"

@@ -3,9 +3,9 @@
 use core::ffi::c_double;
 
 use crate::map_jump_table;
-use vex_sdk_sys::V5_DeviceT;
+use vex_sdk_types::V5_DeviceT;
 
-pub use vex_sdk_sys::V5_DeviceArmTipPosition;
+pub use vex_sdk_types::V5_DeviceArmTipPosition;
 
 map_jump_table! {
     0xb54 => pub fn vexDeviceArmMoveTipCommandLinearAdv(device: V5_DeviceT, position: *mut V5_DeviceArmTipPosition, j6_rotation: c_double, j6_velocity: u16, relative: bool),

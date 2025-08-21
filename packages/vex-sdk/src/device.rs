@@ -4,7 +4,7 @@ use core::ffi::{c_double, c_int};
 
 use crate::map_jump_table;
 
-pub use vex_sdk_sys::{V5_DeviceType, V5_DeviceT};
+pub use vex_sdk_types::{V5_DeviceType, V5_DeviceT};
 
 map_jump_table! {
     0x190 =>

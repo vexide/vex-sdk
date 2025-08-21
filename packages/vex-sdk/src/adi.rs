@@ -4,8 +4,8 @@ use core::ffi::c_double;
 
 use crate::{map_jump_table};
 
-pub use vex_sdk_sys::{V5_AdiPortConfiguration, V5_DeviceBumperState};
-use vex_sdk_sys::V5_DeviceT;
+pub use vex_sdk_types::{V5_AdiPortConfiguration, V5_DeviceBumperState};
+use vex_sdk_types::V5_DeviceT;
 
 map_jump_table! {
     0x208 => pub fn vexDeviceAdiPortConfigSet(device: V5_DeviceT, port: u32, config: V5_AdiPortConfiguration),

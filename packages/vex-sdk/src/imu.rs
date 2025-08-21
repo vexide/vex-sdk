@@ -2,9 +2,9 @@
 
 use core::ffi::c_double;
 use crate::map_jump_table;
-use vex_sdk_sys::V5_DeviceT;
+use vex_sdk_types::V5_DeviceT;
 
-pub use vex_sdk_sys::{V5_DeviceImuAttitude, V5_DeviceImuQuaternion, V5_DeviceImuRaw};
+pub use vex_sdk_types::{V5_DeviceImuAttitude, V5_DeviceImuQuaternion, V5_DeviceImuRaw};
 
 map_jump_table! {
     0x410 =>

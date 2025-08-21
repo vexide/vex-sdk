@@ -1,10 +1,10 @@
 //! V5 Workcell Electromagnet
 
 use core::ffi::c_double;
-pub use vex_sdk_sys::V5_DeviceMagnetDuration;
+pub use vex_sdk_types::V5_DeviceMagnetDuration;
 use crate::map_jump_table;
 
-use vex_sdk_sys::V5_DeviceT;
+use vex_sdk_types::V5_DeviceT;
 
 map_jump_table! {
     0x578 => pub fn vexDeviceMagnetPowerSet(device: V5_DeviceT, value: i32, time: i32),

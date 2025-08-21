@@ -2,7 +2,7 @@
 
 use crate::{map_jump_table, V5_DeviceT};
 
-use vex_sdk_sys::V5_DevicePneumaticCtrl;
+use vex_sdk_types::V5_DevicePneumaticCtrl;
 
 map_jump_table! {
     0xc28 => pub fn vexDevicePneumaticActuationStatusGet(device: V5_DeviceT, ac1: *mut u16, ac2: *mut u16, ac3: *mut u16, ac4: *mut u16) -> u32,

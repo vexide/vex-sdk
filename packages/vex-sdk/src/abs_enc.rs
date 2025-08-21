@@ -1,7 +1,7 @@
 //! V5 Rotation Sensor
 
 use crate::{map_jump_table};
-use vex_sdk_sys::V5_DeviceT;
+use vex_sdk_types::V5_DeviceT;
 
 map_jump_table! {
     0x488 => pub fn vexDeviceAbsEncReset(device: V5_DeviceT),

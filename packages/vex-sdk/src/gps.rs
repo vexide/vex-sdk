@@ -1,10 +1,10 @@
 //! V5 GPS
 
 use core::ffi::c_double;
-use vex_sdk_sys::V5_DeviceT;
+use vex_sdk_types::V5_DeviceT;
 use crate::map_jump_table;
 
-pub use vex_sdk_sys::{V5_DeviceGpsQuaternion, V5_DeviceGpsAttitude, V5_DeviceGpsRaw};
+pub use vex_sdk_types::{V5_DeviceGpsQuaternion, V5_DeviceGpsAttitude, V5_DeviceGpsRaw};
 
 map_jump_table! {
     0x5c8 => pub fn vexDeviceGpsReset(device: V5_DeviceT),

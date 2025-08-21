@@ -2,7 +2,7 @@
 
 use core::ffi::{c_char, VaList};
 
-pub use vex_sdk_sys::v5_image;
+pub use vex_sdk_types::v5_image;
 
 use crate::map_jump_table;
 

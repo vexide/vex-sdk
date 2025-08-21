@@ -2,7 +2,7 @@
 
 use core::ffi::{c_char, c_void, VaList};
 
-pub use vex_sdk_sys::{
+pub use vex_sdk_types::{
     date, time, vcodesig, EX_SIG_MAGIC, V5_SIG_MAGIC, V5_SIG_OPTIONS_EXIT, V5_SIG_OPTIONS_INDG,
     V5_SIG_OPTIONS_NONE, V5_SIG_OPTIONS_THDG, V5_SIG_OWNER_PARTNER, V5_SIG_OWNER_SYS,
     V5_SIG_OWNER_VEX, V5_SIG_TYPE_USER,

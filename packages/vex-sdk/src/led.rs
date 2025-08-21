@@ -4,9 +4,9 @@
 
 
 use crate::{map_jump_table};
-use vex_sdk_sys::V5_DeviceT;
+use vex_sdk_types::V5_DeviceT;
 
-pub use vex_sdk_sys::V5_DeviceLedColor;
+pub use vex_sdk_types::V5_DeviceLedColor;
 
 map_jump_table! {
     0x1e0 => pub fn vexDeviceLedSet(device: V5_DeviceT, value: V5_DeviceLedColor),

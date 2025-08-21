@@ -2,7 +2,7 @@
 
 use crate::map_jump_table;
 
-pub use vex_sdk_sys::{V5_ControllerId, V5_ControllerIndex, V5_ControllerStatus};
+pub use vex_sdk_types::{V5_ControllerId, V5_ControllerIndex, V5_ControllerStatus};
 
 map_jump_table! {
     0x1a4 =>

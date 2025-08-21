@@ -1,6 +1,6 @@
 //! Brain Screen Touchscreen
 
-pub use vex_sdk_sys::{V5_TouchEvent, V5_TouchStatus};
+pub use vex_sdk_types::{V5_TouchEvent, V5_TouchStatus};
 
 use crate::map_jump_table;
 

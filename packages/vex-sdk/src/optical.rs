@@ -2,9 +2,9 @@
 
 use crate::map_jump_table;
 use core::ffi::c_double;
-pub use vex_sdk_sys::{V5_DeviceOpticalGesture, V5_DeviceOpticalRaw, V5_DeviceOpticalRgb};
+pub use vex_sdk_types::{V5_DeviceOpticalGesture, V5_DeviceOpticalRaw, V5_DeviceOpticalRgb};
 
-use vex_sdk_sys::V5_DeviceT;
+use vex_sdk_types::V5_DeviceT;
 
 map_jump_table! {
     0x528 => pub fn vexDeviceOpticalHueGet(device: V5_DeviceT) -> c_double,

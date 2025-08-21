@@ -4,8 +4,8 @@ use core::ffi::{c_double};
 
 use crate::{map_jump_table};
 
-pub use vex_sdk_sys::{V5_DeviceAiVisionCode, V5_DeviceAiVisionColor, V5_DeviceAiVisionObject};
-use vex_sdk_sys::V5_DeviceT;
+pub use vex_sdk_types::{V5_DeviceAiVisionCode, V5_DeviceAiVisionColor, V5_DeviceAiVisionObject};
+use vex_sdk_types::V5_DeviceT;
 
 map_jump_table! {
     0xcd4 => pub fn vexDeviceAiVisionClassNameGet(device: V5_DeviceT, id: i32, pName: *mut u8) -> i32,

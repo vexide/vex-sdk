@@ -14,7 +14,7 @@ edition = "2021"
 # crate-type = ["staticlib"]
 
 [dependencies]
-vex-sdk-sys = { workspace = true }
+vex-sdk-types = { workspace = true }
 core = { package = "rustc-std-workspace-core", version = "1.0.0", optional = true }
 compiler_builtins = { version = "^0.1.109", optional = true }
 

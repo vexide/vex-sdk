@@ -3,8 +3,8 @@
 use crate::map_jump_table;
 use core::ffi::c_double;
 
-use vex_sdk_sys::V5_DeviceT;
-pub use vex_sdk_sys::{
+use vex_sdk_types::V5_DeviceT;
+pub use vex_sdk_types::{
     V5MotorBrakeMode, V5MotorControlMode, V5MotorEncoderUnits, V5MotorGearset, V5_DeviceMotorPid,
 };
 

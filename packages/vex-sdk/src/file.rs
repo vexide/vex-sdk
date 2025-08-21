@@ -3,7 +3,7 @@
 use core::ffi::c_char;
 use crate::map_jump_table;
 
-pub use vex_sdk_sys::{FIL, FRESULT};
+pub use vex_sdk_types::{FIL, FRESULT};
 
 map_jump_table! {
     0x7d0 => pub fn vexFileMountSD() -> FRESULT,
