@@ -2,7 +2,7 @@
 
 Rust bindings to VEXos system APIs.
 
-This repository provides libraries for interacting with low-level VEXos system APIs from Rust. These crates are intended to to serve as a foundation to build higher level Rust tooling for VEX, as well as an effort to document for VEXos system functionality.
+This repository provides libraries for interacting with low-level VEXos system APIs from Rust. These crates are intended to to serve as a foundation for building higher level VEX libraries, as well as an effort to document VEXos system functions.
 
 ## Contents
 
