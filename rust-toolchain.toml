@@ -1,4 +1,3 @@
 [toolchain]
-channel = "nightly-2025-06-19"
+channel = "nightly-2025-08-20"
 components = ["rust-src"]
-targets = ["armv7a-vex-v5"]
