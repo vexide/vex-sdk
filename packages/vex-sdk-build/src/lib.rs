@@ -1,7 +1,7 @@
 use std::{fs::File, io::Cursor, path::Path};
 
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, Eq, PartialEq)]
-pub struct Manifest {
+struct Manifest {
     latest: String,
     catalog: Vec<String>,
 }
