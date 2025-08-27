@@ -1,5 +1,11 @@
 [workspace]
-members = ["packages/*"]
+members = [
+    "./packages/vex-sdk",
+    "./packages/vex-sdk-jumptable"
+]
+exclude = [
+    "./packages/vex-sdk-build",
+]
 resolver = "3"
 
 [workspace.dependencies]
