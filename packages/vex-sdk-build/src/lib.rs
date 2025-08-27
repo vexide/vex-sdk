@@ -50,6 +50,7 @@ pub fn link_sdk(version: &str) {
     )
     .unwrap();
 
+    println!("cargo::rerun-if-changed=build.rs");
     println!("cargo:rustc-link-search=native={out_dir}");
     println!("cargo:rustc-link-lib=static={runtime_library_name}");
 }
