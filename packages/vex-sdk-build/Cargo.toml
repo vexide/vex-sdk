@@ -11,4 +11,4 @@ version = "0.0.1"
 [dependencies]
 zip = "4.5.0"
 serde = { version = "1.0", features = ["derive"] }
-reqwest = { version = "0.12.23", features = ["blocking", "json"] }
+ureq = { version = "3.1.0", features = ["json"] }

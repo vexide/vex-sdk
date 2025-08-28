@@ -23,19 +23,23 @@ pub fn link_sdk(version: &str) {
         _ => panic!("unsupported `target_vendor` value. `vex-sdk-build` only supports building for VEX targets.")
     };
 
-    let manifest: Manifest = reqwest::blocking::get(format!("{cdn_base}/manifest.json"))
-        .unwrap()
-        .json()
-        .expect("failed to download VEX SDK manifest");
+    let manifest: Manifest = ureq::get(format!("{cdn_base}/manifest.json"))
+        .call()
+        .expect("failed to download VEX SDK manifest")
+        .body_mut()
+        .read_json()
+        .expect("failed to parse VEX SDK manifest");
 
     if !manifest.catalog.contains(&version.to_string()) {
         panic!("{} is not a valid VEX SDK version", version);
     }
 
-    let zip_data = reqwest::blocking::get(format!("{cdn_base}/{version}.zip"))
-        .unwrap()
-        .bytes()
-        .expect("failed to download VEX SDK");
+    let zip_data = ureq::get(format!("{cdn_base}/{version}.zip"))
+        .call()
+        .expect("failed to download VEX SDK")
+        .body_mut()
+        .read_to_vec()
+        .expect("failed to read VEX SDK");
 
     let runtime_library_file = format!("lib{runtime_library_name}.a");
     let mut archive =
