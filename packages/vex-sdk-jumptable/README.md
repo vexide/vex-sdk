@@ -2,7 +2,7 @@
 
 Raw bindings to VEXos user jump table functions.
 
-This repository serves as a partial open-source reimplementation of VEX's V5 runtime SDK (libv5rt.a), but doesn't necessarily aim to be API or ABI compatible. The intent of this crate is to be used as building blocks for higher-level rust tooling to run on the V5 brain without linking to C libraries in any way.
+This packages serves as a partial open-source reimplementation of VEX's V5 runtime SDK (libv5rt.a). The intent of this crate is to be used as building blocks for higher-level rust tooling to run on the V5 brain without linking to C libraries in any way.
 
 - Jumptable and firmware address offsets are largely derived from [cetio's VEXAPI research repository](https://github.com/cetio/VEXAPI).
 - Symbols and function signatures are taken from publicly available sources, such as the [PROS kernel](https://github.com/purduesigbots/pros) and projects such as [v5rtmod](https://github.com/Skyluker4/v5rtmod).

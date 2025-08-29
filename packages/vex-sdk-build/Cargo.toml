@@ -1,6 +1,6 @@
 [package]
 name = "vex-sdk-build"
-description = "Build script helper for locating, downloading, and linking to official VEX SDKs."
+description = "A build script helper to download and link to official SDKs from VEX."
 repository = "https://github.com/vexide/vex-sdk/"
 authors = ["Tropical"]
 license = "MIT"

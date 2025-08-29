@@ -7,7 +7,9 @@ This repository provides libraries for interacting with low-level VEXos system A
 ## Contents
 
 - [`vex-sdk`]: FFI bindings to VEX's platform SDKs.
+- [`vex-sdk-build`]: A build script helper to download and link to official SDKs from VEX.
 - [`vex-sdk-jumptable`]: Open-source implementation of VEXos system APIs using firmware jump addresses.
 
 [`vex-sdk`]: ./packages/vex-sdk
+[`vex-sdk-build`]: ./packages/vex-sdk-build
 [`vex-sdk-jumptable`]: ./packages/vex-sdk-jumptable
