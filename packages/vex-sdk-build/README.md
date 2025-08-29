@@ -16,7 +16,7 @@ This package should be added to your project's `build-dependencies`.
 
 ```toml
 [build-dependencies]
-vex-sdk-build = "0.1.0"
+vex-sdk-build = "0.0.1"
 ```
 
 In order to download and link a certain SDK, simply call `vex_sdk_build::link_sdk` with your desired [SDK version](https://content.vexrobotics.com/vexos/public/V5/vscode/sdk/cpp/manifest.json) from a `build.rs` script in your project.
