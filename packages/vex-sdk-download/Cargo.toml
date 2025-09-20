@@ -1,5 +1,5 @@
 [package]
-name = "vex-sdk-build"
+name = "vex-sdk-download"
 description = "A build script helper to download and link to official SDKs from VEX."
 repository = "https://github.com/vexide/vex-sdk/"
 authors = ["Tropical"]
