@@ -15,4 +15,5 @@ This repository provides libraries for interacting with low-level VEXos system A
 [`vex-sdk`]: ./packages/vex-sdk
 [`vex-sdk-build`]: ./packages/vex-sdk-build
 [`vex-sdk-jumptable`]: ./packages/vex-sdk-jumptable
+[`vex-sdk-pros`]: ./packages/vex-sdk-pros
 [`vex-sdk-mock`]: ./packages/vex-sdk-mock
