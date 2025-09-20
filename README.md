@@ -9,6 +9,7 @@ This repository provides libraries for interacting with low-level VEXos system A
 - [`vex-sdk`]: FFI bindings to VEX's platform SDKs.
 - [`vex-sdk-build`]: A build script helper to download and link to official SDKs from VEX.
 - [`vex-sdk-jumptable`]: Open-source implementation of VEXos system APIs using firmware jump addresses.
+- [`vex-sdk-pros`]: A crate that links to the PROS kernel as a provider for SDK functions, and bridges API incompatibilities between `vex-sdk` and VEX's partner SDK (`libv5rts.a`).
 - [`vex-sdk-mock`]: A stubbed implementation of the VEX SDK for testing programs using the `vex-sdk` crate on non-VEXos targets.
 
 [`vex-sdk`]: ./packages/vex-sdk
