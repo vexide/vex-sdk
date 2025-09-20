@@ -1,0 +1,11 @@
+[package]
+name = "vex-sdk-pros"
+description = "VEX SDK implementation using the PROS kernel's partner SDK for linkage."
+repository = "https://github.com/vexide/vex-sdk/"
+authors = ["Tropical"]
+license = "MIT"
+categories = ["science::robotics", "no-std", "embedded"]
+keywords = ["vex", "vex-v5", "vex-robotics", "robotics"]
+version = "0.0.1"
+edition = "2021"
+links = "pros"

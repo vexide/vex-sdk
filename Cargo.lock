@@ -28,3 +28,7 @@ version = "0.0.1"
 dependencies = [
  "vex-sdk",
 ]
+
+[[package]]
+name = "vex-sdk-pros"
+version = "0.0.1"
