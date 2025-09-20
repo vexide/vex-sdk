@@ -1,9 +1,10 @@
 #![no_std]
+#![feature(c_variadic)]
 #![deny(unsafe_op_in_unsafe_fn)]
 #![allow(non_camel_case_types)]
 #![allow(non_upper_case_globals)]
 #![allow(non_snake_case)]
-#![feature(c_variadic)]
+#![allow(unused)]
 
 pub mod abs_enc;
 pub mod adi;
@@ -60,29 +61,3 @@ pub use system::*;
 pub use task::*;
 pub use touch::*;
 pub use vision::*;
-
-pub const JUMP_TABLE_START: usize = 0x037fc000;
-
-#[cfg(not(target_os = "vexos"))]
-compile_error!("`vex-sdk-jumptable` does not support this target.");
-
-#[macro_export]
-macro_rules! map_jump_table {
-    (
-        $(
-            $offset:expr =>
-            $(#[$meta:meta])* $vis:vis fn $name:ident($($arg:ident: $arg_ty:ty $(,)?),*) $(-> $ret:ty)?
-        ),+ $(,)?
-    ) => {
-        $(
-            $(#[$meta])*
-            #[doc = "# Safety\nCalls to jumptable functions are unsafe because jumptable functions are owned by VEXos and we cannot guarantee their safety."]
-            #[unsafe(no_mangle)]
-            $vis unsafe extern "system" fn $name($($arg: $arg_ty),*) $(-> $ret)? {
-                unsafe {
-                    (*(($crate::JUMP_TABLE_START + $offset) as *const extern "system" fn($($arg_ty,)*) $(-> $ret)?))($($arg,)*)
-                }
-            }
-        )+
-    };
-}

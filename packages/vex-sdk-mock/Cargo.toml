@@ -1,0 +1,13 @@
+[package]
+name = "vex-sdk-mock"
+description = "Mocked version of the VEX SDK for testing purposes and running vexide programs on host targets."
+repository = "https://github.com/vexide/vex-sdk/"
+authors = ["Tropical"]
+license = "MIT"
+categories = ["science::robotics", "embedded"]
+keywords = ["vex", "vex-v5", "vex-robotics", "robotics"]
+version = "0.0.1"
+edition = "2024"
+
+[dependencies]
+vex-sdk = { workspace = true }

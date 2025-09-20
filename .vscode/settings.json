@@ -1,5 +1,8 @@
 {
     "rust-analyzer.cargo.allTargets": false,
+    "rust-analyzer.check.targets": [
+        "armv7a-vex-v5",
+    ],
     "rust-analyzer.linkedProjects": [
         "./Cargo.toml",
         "./packages/vex-sdk-build/Cargo.toml",

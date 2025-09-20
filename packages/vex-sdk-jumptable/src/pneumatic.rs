@@ -1,6 +1,6 @@
 //! CTE Workcell Pneumatics Control
 
-use vex_sdk::V5_DevicePneumaticCtrl;
+pub use vex_sdk::V5_DevicePneumaticCtrl;
 
 use crate::{map_jump_table, V5_DeviceT};
 
