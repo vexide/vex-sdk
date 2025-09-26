@@ -1,8 +1,8 @@
-# vex-sdk-download
+# vex-sdk-vexcode
 
-A build script helper to download and link to official SDKs from VEX.
+A build script helper to download and link to official VEXcode SDKs.
 
-This package provides a simple helper function for downloading and linking to official proprietary runtime SDKs distributed by VEX from Rust `build.rs` scripts.
+This package provides a simple helper function for downloading and linking to proprietary VEXcode runtime SDKs distributed by VEX from Rust `build.rs` scripts.
 
 > [!NOTE]
 > SDKs distributed by VEX are proprietary software with limitations regarding ownership and distribution. Please familiarize yourself with these terms in VEX's [software EULA](https://www.vexrobotics.com/software-eula) and the `license.pdf` file included in VEX's' SDK.
@@ -16,15 +16,15 @@ This package should be added to your project's `build-dependencies`.
 
 ```toml
 [build-dependencies]
-vex-sdk-download = "0.0.1"
+vex-sdk-vexcode = "0.0.1"
 ```
 
-In order to download and link a certain SDK, simply call `vex_sdk_build::link_sdk` with your desired [SDK version](https://content.vexrobotics.com/vexos/public/V5/vscode/sdk/cpp/manifest.json) from a `build.rs` script in your project.
+In order to download and link a certain SDK, simply call `vex_sdk_vexcode::link_sdk` with your desired [SDK version](https://content.vexrobotics.com/vexos/public/V5/vscode/sdk/cpp/manifest.json) from a `build.rs` script in your project.
 
 ```rs
 // build.rs
 fn main() {
-    vex_sdk_build::link_sdk("V5_20240802_15_00_00");
+    vex_sdk_vexcode::link_sdk("V5_20240802_15_00_00");
 }
 ```
 

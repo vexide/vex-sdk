@@ -6,7 +6,7 @@ members = [
     "./packages/vex-sdk-pros",
 ]
 exclude = [
-    "./packages/vex-sdk-download",
+    "./packages/vex-sdk-vexcode",
 ]
 resolver = "3"
 

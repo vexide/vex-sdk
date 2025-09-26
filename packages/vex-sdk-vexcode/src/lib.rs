@@ -13,14 +13,14 @@ pub fn link_sdk(version: &str) {
     let out_dir = std::env::var("OUT_DIR").expect("OUT_DIR environment variable not set");
 
     if !target.contains("vex") {
-        panic!("`vex-sdk-download` only supports building for VEX targets.")
+        panic!("`vex-sdk-vexcode` only supports building for VEX targets.")
     }
 
     let (cdn_base, folder_name, runtime_library_name) = match target_env.as_ref() {
         "v5" => ("https://content.vexrobotics.com/vexos/public/V5/vscode/sdk/cpp", "vexv5", "v5rt"),
         "exp" => ("https://content.vexrobotics.com/vexos/public/EXP/vscode/sdk/cpp", "vexexp", "exprt"),
         "iq2" => ("https://content.vexrobotics.com/vexos/public/IQ2/vscode/sdk/cpp", "vexiq2", "viq2rt"),
-        _ => panic!("unsupported `target_vendor` value. `vex-sdk-download` only supports building for VEX targets.")
+        _ => panic!("unsupported `target_vendor` value. `vex-sdk-vexcode` only supports building for VEX targets.")
     };
 
     let manifest: Manifest = ureq::get(format!("{cdn_base}/manifest.json"))
