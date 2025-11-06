@@ -414,7 +414,7 @@ pub unsafe extern "C" fn vexDisplayPrintf(
     unsafe {
         vexDisplayVPrintf(
             xpos,
-            ypos + (HEADER_HEIGHT as i32),
+            ypos,
             bOpaque,
             format,
             args.as_va_list(),
@@ -437,7 +437,7 @@ pub unsafe extern "C" fn vexDisplayStringAt(
     unsafe {
         vexDisplayVStringAt(
             xpos,
-            ypos + (HEADER_HEIGHT as i32),
+            ypos,
             format,
             args.as_va_list(),
         )
@@ -463,7 +463,7 @@ pub unsafe extern "C" fn vexDisplayBigStringAt(
     unsafe {
         vexDisplayVBigStringAt(
             xpos,
-            ypos + (HEADER_HEIGHT as i32),
+            ypos,
             format,
             args.as_va_list(),
         )
@@ -480,7 +480,7 @@ pub unsafe extern "C" fn vexDisplaySmallStringAt(
     unsafe {
         vexDisplayVSmallStringAt(
             xpos,
-            ypos + (HEADER_HEIGHT as i32),
+            ypos,
             format,
             args.as_va_list(),
         )
