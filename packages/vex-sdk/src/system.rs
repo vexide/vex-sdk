@@ -102,7 +102,7 @@ unsafe extern "system" {
     pub fn vexSystemBoot();
     pub fn vexSystemUndefinedException();
     pub fn vexSystemFIQInterrupt();
-    pub fn vexSystemIQRQnterrupt();
+    pub fn vexSystemIRQInterrupt();
     pub fn vexSystemSWInterrupt();
     pub fn vexSystemDataAbortInterrupt();
     pub fn vexSystemPrefetchAbortInterrupt();

@@ -49,7 +49,7 @@ map_jump_table! {
     0x910 => pub fn vexSystemBoot(),
     0x914 => pub fn vexSystemUndefinedException(),
     0x918 => pub fn vexSystemFIQInterrupt(),
-    0x91c => pub fn vexSystemIQRQnterrupt(),
+    0x91c => pub fn vexSystemIRQInterrupt(),
     0x920 => pub fn vexSystemSWInterrupt(),
     0x924 => pub fn vexSystemDataAbortInterrupt(),
     0x928 => pub fn vexSystemPrefetchAbortInterrupt(),

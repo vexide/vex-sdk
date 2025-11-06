@@ -97,7 +97,7 @@ pub extern "C" fn vexSystemFIQInterrupt() {
     loop {}
 }
 #[unsafe(no_mangle)]
-pub extern "C" fn vexSystemIQRQnterrupt() {
+pub extern "C" fn vexSystemIRQInterrupt() {
     loop {}
 }
 #[unsafe(no_mangle)]
