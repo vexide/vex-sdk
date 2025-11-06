@@ -10,21 +10,21 @@ checksum = "1956f5517128a2b6f23ab2dadf1a976f4f5b27962e7724c2bf3d45e539ec098c"
 
 [[package]]
 name = "vex-sdk"
-version = "0.27.1"
+version = "0.28.0"
 dependencies = [
  "rustc-std-workspace-core",
 ]
 
 [[package]]
 name = "vex-sdk-jumptable"
-version = "0.0.2"
+version = "0.1.0"
 dependencies = [
  "vex-sdk",
 ]
 
 [[package]]
 name = "vex-sdk-mock"
-version = "0.0.1"
+version = "0.1.0"
 dependencies = [
  "vex-sdk",
 ]

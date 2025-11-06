@@ -6,7 +6,7 @@ authors = ["Tropical"]
 license = "MIT"
 categories = ["science::robotics", "embedded"]
 keywords = ["vex", "vex-v5", "vex-robotics", "robotics"]
-version = "0.0.1"
+version = "0.1.0"
 edition = "2024"
 
 [dependencies]
