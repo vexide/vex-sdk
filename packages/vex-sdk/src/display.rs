@@ -11,6 +11,10 @@
 //! - [`V5_SIG_OPTIONS_INDG`]: Inverts the background color to pure white.
 //! - [`V5_SIG_OPTIONS_THDG`]: Sets the background color to pure white if VEXos is using the light theme, and black otherwise.
 //! - If both options are set, the themed option ([`V5_SIG_OPTIONS_THDG`]) takes preference.
+//!
+//! ## Format strings
+//! Some VEXos display functions take a C-style format string. The format string is a printf-style format string, with the following limitations:
+//! - TODO: document limitations
 
 use core::ffi::c_char;
 
