@@ -112,7 +112,7 @@ unsafe extern "system" {
     pub fn vexDevicesGet() -> V5_DeviceT;
     /// Returns the device corresponsing to the provided smartport index, or else a null pointer if the index is invalid.
     ///  
-    /// Indices [0, 20] correspond to the smartports on the brain, index 21 is the ADI expander, and index 24 is the battery.
+    /// Indices [0, 20] correspond to the smartports on the brain, index 21 is the internal ADI expander, and index 24 is the battery.
     pub fn vexDeviceGetByIndex(index: u32) -> V5_DeviceT;
     pub fn vexDeviceGetStatus(devices: *mut V5_DeviceType) -> i32;
     /// Returns the timestamp, in milliseconds since startup, of the last packet received from the device.
