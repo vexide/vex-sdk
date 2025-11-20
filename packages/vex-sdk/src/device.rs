@@ -16,6 +16,7 @@ pub type V5_DeviceT = *mut V5_Device;
 /// A device plugged into a smart port.
 pub type V5_Device = *mut core::ffi::c_void;
 
+/// A device category.
 #[derive(Default, Debug, Copy, Clone, Eq, PartialEq)]
 #[repr(transparent)]
 pub struct V5_DeviceType(pub core::ffi::c_uchar);
@@ -104,11 +105,17 @@ impl V5_DeviceType {
 }
 
 unsafe extern "system" {
+    /// Returns the max number of connected devices, including the internal ADI expander.
     pub fn vexDevicesGetNumber() -> u32;
+    /// Returns the number of currently connected devices of a given category.
     pub fn vexDevicesGetNumberByType(device_type: V5_DeviceType) -> u32;
     pub fn vexDevicesGet() -> V5_DeviceT;
+    /// Returns the device corresponsing to the provided smartport index, or else a null pointer if the index is invalid.
+    ///  
+    /// Indices [0, 20] correspond to the smartports on the brain, index 21 is the internal ADI expander, and index 24 is the battery.
     pub fn vexDeviceGetByIndex(index: u32) -> V5_DeviceT;
     pub fn vexDeviceGetStatus(devices: *mut V5_DeviceType) -> i32;
+    /// Returns the timestamp, in milliseconds since startup, of the last packet received from the device.
     pub fn vexDeviceGetTimestamp(device: V5_DeviceT) -> u32;
     pub fn vexDeviceGenericValueGet(device: V5_DeviceT) -> c_double;
     pub fn vexDeviceButtonStateGet() -> c_int;
