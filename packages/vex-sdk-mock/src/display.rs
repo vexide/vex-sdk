@@ -14,7 +14,8 @@ pub extern "C" fn vexDisplayErase() {}
 pub extern "C" fn vexDisplayScroll(nStartLine: i32, nLines: i32) {}
 #[unsafe(no_mangle)]
 pub extern "C" fn vexDisplayScrollRect(x1: i32, y1: i32, x2: i32, y2: i32, nLines: i32) {}
-pub unsafe fn vexDisplayCopyRect(
+#[unsafe(no_mangle)]
+pub extern "C" fn vexDisplayCopyRect(
     x1: i32,
     y1: i32,
     x2: i32,
@@ -88,7 +89,6 @@ pub extern "C" fn vexImageBmpRead(
     Default::default()
 }
 #[unsafe(no_mangle)]
-#[unsafe(no_mangle)]
 pub extern "C" fn vexImagePngRead(
     ibuf: *const u8,
     oBuf: *mut v5_image,
@@ -138,6 +138,7 @@ pub unsafe extern "C" fn vexDisplayVBigStringAt(
     args: VaList<'_, '_>,
 ) {
 }
+#[unsafe(no_mangle)]
 pub unsafe extern "C" fn vexDisplayVSmallStringAt(
     xpos: i32,
     ypos: i32,

@@ -22,7 +22,9 @@ pub extern "C" fn vexScratchMemoryUnock() {}
 pub extern "C" fn vexSystemTimeGet() -> u32 {
     Default::default()
 }
+#[unsafe(no_mangle)]
 pub unsafe extern "C" fn vexGettime(pTime: *mut time) {}
+#[unsafe(no_mangle)]
 pub unsafe extern "C" fn vexGetdate(pDate: *mut date) {
     unsafe {
         *pDate = date {

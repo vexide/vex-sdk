@@ -28,7 +28,8 @@ pub extern "C" fn vexDeviceFlagsGetByIndex(index: u32) -> u32 {
 pub extern "C" fn vexDeviceGetStatus(devices: *mut V5_DeviceType) -> i32 {
     -1
 }
-pub unsafe extern "C" fn vexDeviceGetTimestamp(device: V5_DeviceT) -> u32 {
+#[unsafe(no_mangle)]
+pub extern "C" fn vexDeviceGetTimestamp(device: V5_DeviceT) -> u32 {
     Default::default()
 }
 #[unsafe(no_mangle)]
