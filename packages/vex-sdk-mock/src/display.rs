@@ -104,7 +104,7 @@ pub unsafe extern "C" fn vexDisplayVPrintf(
     ypos: i32,
     bOpaque: i32,
     format: *const c_char,
-    mut args: VaList<'_, '_>,
+    mut args: VaList<'_>,
 ) {
 }
 
@@ -112,7 +112,7 @@ pub unsafe extern "C" fn vexDisplayVPrintf(
 pub unsafe extern "C" fn vexDisplayVString(
     nLineNumber: i32,
     format: *const c_char,
-    args: VaList<'_, '_>,
+    args: VaList<'_>,
 ) {
 }
 #[unsafe(no_mangle)]
@@ -120,14 +120,14 @@ pub unsafe extern "C" fn vexDisplayVStringAt(
     xpos: i32,
     ypos: i32,
     format: *const c_char,
-    args: VaList<'_, '_>,
+    args: VaList<'_>,
 ) {
 }
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn vexDisplayVBigString(
     nLineNumber: i32,
     format: *const c_char,
-    args: VaList<'_, '_>,
+    args: VaList<'_>,
 ) {
 }
 #[unsafe(no_mangle)]
@@ -135,7 +135,7 @@ pub unsafe extern "C" fn vexDisplayVBigStringAt(
     xpos: i32,
     ypos: i32,
     format: *const c_char,
-    args: VaList<'_, '_>,
+    args: VaList<'_>,
 ) {
 }
 #[unsafe(no_mangle)]
@@ -143,21 +143,21 @@ pub unsafe extern "C" fn vexDisplayVSmallStringAt(
     xpos: i32,
     ypos: i32,
     format: *const c_char,
-    args: VaList<'_, '_>,
+    args: VaList<'_>,
 ) {
 }
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn vexDisplayVCenteredString(
     nLineNumber: i32,
     format: *const c_char,
-    args: VaList<'_, '_>,
+    args: VaList<'_>,
 ) {
 }
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn vexDisplayVBigCenteredString(
     nLineNumber: i32,
     format: *const c_char,
-    args: VaList<'_, '_>,
+    args: VaList<'_>,
 ) {
 }
 
@@ -167,14 +167,14 @@ pub unsafe extern "C" fn vexDisplayPrintf(
     ypos: i32,
     bOpaque: i32,
     format: *const c_char,
-    mut args: ...
+    args: ...
 ) {
-    unsafe { vexDisplayVPrintf(xpos, ypos, bOpaque, format, args.as_va_list()) }
+    unsafe { vexDisplayVPrintf(xpos, ypos, bOpaque, format, args) }
 }
 
 #[unsafe(no_mangle)]
-pub unsafe extern "C" fn vexDisplayString(nLineNumber: i32, format: *const c_char, mut args: ...) {
-    unsafe { vexDisplayVString(nLineNumber, format, args.as_va_list()) }
+pub unsafe extern "C" fn vexDisplayString(nLineNumber: i32, format: *const c_char, args: ...) {
+    unsafe { vexDisplayVString(nLineNumber, format, args) }
 }
 
 #[unsafe(no_mangle)]
@@ -182,18 +182,18 @@ pub unsafe extern "C" fn vexDisplayStringAt(
     xpos: i32,
     ypos: i32,
     format: *const c_char,
-    mut args: ...
+    args: ...
 ) {
-    unsafe { vexDisplayVStringAt(xpos, ypos, format, args.as_va_list()) }
+    unsafe { vexDisplayVStringAt(xpos, ypos, format, args) }
 }
 
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn vexDisplayBigString(
     nLineNumber: i32,
     format: *const c_char,
-    mut args: ...
+    args: ...
 ) {
-    unsafe { vexDisplayVBigString(nLineNumber, format, args.as_va_list()) }
+    unsafe { vexDisplayVBigString(nLineNumber, format, args) }
 }
 
 #[unsafe(no_mangle)]
@@ -201,9 +201,9 @@ pub unsafe extern "C" fn vexDisplayBigStringAt(
     xpos: i32,
     ypos: i32,
     format: *const c_char,
-    mut args: ...
+    args: ...
 ) {
-    unsafe { vexDisplayVBigStringAt(xpos, ypos, format, args.as_va_list()) }
+    unsafe { vexDisplayVBigStringAt(xpos, ypos, format, args) }
 }
 
 #[unsafe(no_mangle)]
@@ -211,25 +211,25 @@ pub unsafe extern "C" fn vexDisplaySmallStringAt(
     xpos: i32,
     ypos: i32,
     format: *const c_char,
-    mut args: ...
+    args: ...
 ) {
-    unsafe { vexDisplayVSmallStringAt(xpos, ypos, format, args.as_va_list()) }
+    unsafe { vexDisplayVSmallStringAt(xpos, ypos, format, args) }
 }
 
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn vexDisplayCenteredString(
     nLineNumber: i32,
     format: *const c_char,
-    mut args: ...
+    args: ...
 ) {
-    unsafe { vexDisplayVCenteredString(nLineNumber, format, args.as_va_list()) }
+    unsafe { vexDisplayVCenteredString(nLineNumber, format, args) }
 }
 
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn vexDisplayBigCenteredString(
     nLineNumber: i32,
     format: *const c_char,
-    mut args: ...
+    args: ...
 ) {
-    unsafe { vexDisplayVBigCenteredString(nLineNumber, format, args.as_va_list()) }
+    unsafe { vexDisplayVBigCenteredString(nLineNumber, format, args) }
 }

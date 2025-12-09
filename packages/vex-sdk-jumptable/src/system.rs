@@ -59,17 +59,17 @@ map_jump_table! {
 }
 
 #[unsafe(no_mangle)]
-pub unsafe extern "C" fn vex_printf(format: *const c_char, mut args: ...) -> i32 {
-    unsafe { vex_vprintf(format, args.as_va_list()) }
+pub unsafe extern "C" fn vex_printf(format: *const c_char, args: ...) -> i32 {
+    unsafe { vex_vprintf(format, args) }
 }
 
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn vex_sprintf(
     out: *mut c_char,
     format: *const c_char,
-    mut args: ...
+    args: ...
 ) -> i32 {
-    unsafe { vex_vsprintf(out, format, args.as_va_list()) }
+    unsafe { vex_vsprintf(out, format, args) }
 }
 
 #[unsafe(no_mangle)]
@@ -77,9 +77,9 @@ pub unsafe extern "C" fn vex_snprintf(
     out: *mut c_char,
     max_len: u32,
     format: *const c_char,
-    mut args: ...
+    args: ...
 ) -> i32 {
-    unsafe { vex_vsnprintf(out, max_len, format, args.as_va_list()) }
+    unsafe { vex_vsnprintf(out, max_len, format, args) }
 }
 
 #[unsafe(no_mangle)]
