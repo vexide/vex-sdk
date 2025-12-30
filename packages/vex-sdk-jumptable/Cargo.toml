@@ -9,6 +9,7 @@ keywords = ["vex", "vex-v5", "vex-robotics", "robotics"]
 version = "0.1.1"
 edition = "2021"
 links = "vex-sdk"
+rust-version = "1.94"
 
 [dependencies]
 vex-sdk = { workspace = true }

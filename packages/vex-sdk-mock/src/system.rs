@@ -137,7 +137,7 @@ pub unsafe extern "C" fn vex_vsnprintf(
 }
 
 #[unsafe(no_mangle)]
-pub unsafe extern "C" fn vex_printf(format: *const c_char, mut args: ...) -> i32 {
+pub unsafe extern "C" fn vex_printf(format: *const c_char, args: ...) -> i32 {
     -1
 }
 
@@ -145,7 +145,7 @@ pub unsafe extern "C" fn vex_printf(format: *const c_char, mut args: ...) -> i32
 pub unsafe extern "C" fn vex_sprintf(
     out: *mut c_char,
     format: *const c_char,
-    mut args: ...
+    args: ...
 ) -> i32 {
     -1
 }
@@ -155,7 +155,7 @@ pub unsafe extern "C" fn vex_snprintf(
     out: *mut c_char,
     max_len: u32,
     format: *const c_char,
-    mut args: ...
+    args: ...
 ) -> i32 {
     -1
 }
