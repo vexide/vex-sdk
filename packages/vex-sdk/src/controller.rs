@@ -66,7 +66,7 @@ impl V5_ControllerIndex {
 }
 
 unsafe extern "system" {
-    pub fn vexControllerGet(id: V5_ControllerId, index: V5_ControllerIndex) -> i32;
-    pub fn vexControllerConnectionStatusGet(id: V5_ControllerId) -> V5_ControllerStatus;
-    pub fn vexControllerTextSet(id: u32, line: u32, col: u32, buf: *const u8) -> u32;
+    pub safe fn vexControllerGet(id: V5_ControllerId, index: V5_ControllerIndex) -> i32;
+    pub safe fn vexControllerConnectionStatusGet(id: V5_ControllerId) -> V5_ControllerStatus;
+    pub unsafe fn vexControllerTextSet(id: u32, line: u32, col: u32, buf: *const u8) -> u32;
 }

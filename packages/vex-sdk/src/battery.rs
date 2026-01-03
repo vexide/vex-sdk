@@ -3,8 +3,8 @@
 use core::ffi::c_double;
 
 unsafe extern "system" {
-    pub fn vexBatteryVoltageGet() -> i32;
-    pub fn vexBatteryCurrentGet() -> i32;
-    pub fn vexBatteryTemperatureGet() -> c_double;
-    pub fn vexBatteryCapacityGet() -> c_double;
+    pub safe fn vexBatteryVoltageGet() -> i32;
+    pub safe fn vexBatteryCurrentGet() -> i32;
+    pub safe fn vexBatteryTemperatureGet() -> c_double;
+    pub safe fn vexBatteryCapacityGet() -> c_double;
 }

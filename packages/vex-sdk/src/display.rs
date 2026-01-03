@@ -25,34 +25,34 @@ pub struct v5_image {
 }
 
 unsafe extern "system" {
-    pub fn vexDisplayForegroundColor(col: u32);
-    pub fn vexDisplayBackgroundColor(col: u32);
-    pub fn vexDisplayErase();
-    pub fn vexDisplayScroll(nStartLine: i32, nLines: i32);
-    pub fn vexDisplayScrollRect(x1: i32, y1: i32, x2: i32, y2: i32, nLines: i32);
-    pub fn vexDisplayCopyRect(x1: i32, y1: i32, x2: i32, y2: i32, pSrc: *mut u32, srcStride: i32);
-    pub fn vexDisplayPixelSet(x: u32, y: u32);
-    pub fn vexDisplayPixelClear(x: u32, y: u32);
-    pub fn vexDisplayLineDraw(x1: i32, y1: i32, x2: i32, y2: i32);
-    pub fn vexDisplayLineClear(x1: i32, y1: i32, x2: i32, y2: i32);
-    pub fn vexDisplayRectDraw(x1: i32, y1: i32, x2: i32, y2: i32);
-    pub fn vexDisplayRectClear(x1: i32, y1: i32, x2: i32, y2: i32);
-    pub fn vexDisplayRectFill(x1: i32, y1: i32, x2: i32, y2: i32);
-    pub fn vexDisplayCircleDraw(xc: i32, yc: i32, radius: i32);
-    pub fn vexDisplayCircleClear(xc: i32, yc: i32, radius: i32);
-    pub fn vexDisplayCircleFill(xc: i32, yc: i32, radius: i32);
-    pub fn vexDisplayTextSize(n: u32, d: u32);
-    pub fn vexDisplayFontNamedSet(pFontName: *const c_char);
-    pub fn vexDisplayForegroundColorGet() -> u32;
-    pub fn vexDisplayBackgroundColorGet() -> u32;
-    pub fn vexDisplayStringWidthGet(pString: *const c_char) -> i32;
-    pub fn vexDisplayStringHeightGet(pString: *const c_char) -> i32;
-    pub fn vexDisplayClipRegionSet(x1: i32, y1: i32, x2: i32, y2: i32);
-    pub fn vexDisplayRender(bVsyncWait: bool, bRunScheduler: bool);
-    pub fn vexDisplayDoubleBufferDisable();
-    pub fn vexDisplayClipRegionSetWithIndex(index: i32, x1: i32, y1: i32, x2: i32, y2: i32);
-    pub fn vexImageBmpRead(ibuf: *const u8, oBuf: *mut v5_image, maxw: u32, maxh: u32) -> u32;
-    pub fn vexImagePngRead(
+    pub safe fn vexDisplayForegroundColor(col: u32);
+    pub safe fn vexDisplayBackgroundColor(col: u32);
+    pub safe fn vexDisplayErase();
+    pub safe fn vexDisplayScroll(nStartLine: i32, nLines: i32);
+    pub safe fn vexDisplayScrollRect(x1: i32, y1: i32, x2: i32, y2: i32, nLines: i32);
+    pub unsafe fn vexDisplayCopyRect(x1: i32, y1: i32, x2: i32, y2: i32, pSrc: *mut u32, srcStride: i32);
+    pub safe fn vexDisplayPixelSet(x: u32, y: u32);
+    pub safe fn vexDisplayPixelClear(x: u32, y: u32);
+    pub safe fn vexDisplayLineDraw(x1: i32, y1: i32, x2: i32, y2: i32);
+    pub safe fn vexDisplayLineClear(x1: i32, y1: i32, x2: i32, y2: i32);
+    pub safe fn vexDisplayRectDraw(x1: i32, y1: i32, x2: i32, y2: i32);
+    pub safe fn vexDisplayRectClear(x1: i32, y1: i32, x2: i32, y2: i32);
+    pub safe fn vexDisplayRectFill(x1: i32, y1: i32, x2: i32, y2: i32);
+    pub safe fn vexDisplayCircleDraw(xc: i32, yc: i32, radius: i32);
+    pub safe fn vexDisplayCircleClear(xc: i32, yc: i32, radius: i32);
+    pub safe fn vexDisplayCircleFill(xc: i32, yc: i32, radius: i32);
+    pub safe fn vexDisplayTextSize(n: u32, d: u32);
+    pub unsafe fn vexDisplayFontNamedSet(pFontName: *const c_char);
+    pub safe fn vexDisplayForegroundColorGet() -> u32;
+    pub safe fn vexDisplayBackgroundColorGet() -> u32;
+    pub unsafe fn vexDisplayStringWidthGet(pString: *const c_char) -> i32;
+    pub unsafe fn vexDisplayStringHeightGet(pString: *const c_char) -> i32;
+    pub safe fn vexDisplayClipRegionSet(x1: i32, y1: i32, x2: i32, y2: i32);
+    pub safe fn vexDisplayRender(bVsyncWait: bool, bRunScheduler: bool);
+    pub safe fn vexDisplayDoubleBufferDisable();
+    pub safe fn vexDisplayClipRegionSetWithIndex(index: i32, x1: i32, y1: i32, x2: i32, y2: i32);
+    pub unsafe fn vexImageBmpRead(ibuf: *const u8, oBuf: *mut v5_image, maxw: u32, maxh: u32) -> u32;
+    pub unsafe fn vexImagePngRead(
         ibuf: *const u8,
         oBuf: *mut v5_image,
         maxw: u32,

@@ -76,42 +76,42 @@ pub struct date {
 }
 
 unsafe extern "system" {
-    pub fn vexScratchMemoryPtr(ptr: *mut *mut core::ffi::c_void) -> i32;
-    pub fn vexScratchMemoryLock() -> bool;
-    pub fn vexScratchMemoryUnlock();
-    pub fn vexSystemTimeGet() -> u32;
-    pub fn vexGettime() -> time;
-    pub fn vexGetdate() -> date;
-    pub fn vexSystemMemoryDump();
-    pub fn vexSystemDigitalIO(pin: u32, value: u32);
-    pub fn vexSystemStartupOptions() -> u32;
-    pub fn vexSystemExitRequest();
-    pub fn vexSystemHighResTimeGet() -> u64;
-    pub fn vexSystemPowerupTimeGet() -> u64;
-    pub fn vexSystemLinkAddrGet() -> u32;
-    pub fn vexSystemUsbStatus() -> u32;
-    pub fn vexSystemTimerStop();
-    pub fn vexSystemTimerClearInterrupt();
-    pub fn vexSystemTimerReinitForRtos(
+    pub unsafe fn vexScratchMemoryPtr(ptr: *mut *mut core::ffi::c_void) -> i32;
+    pub unsafe fn vexScratchMemoryLock() -> bool;
+    pub unsafe fn vexScratchMemoryUnlock();
+    pub safe fn vexSystemTimeGet() -> u32;
+    pub safe fn vexGettime() -> time;
+    pub safe fn vexGetdate() -> date;
+    pub safe fn vexSystemMemoryDump();
+    pub safe fn vexSystemDigitalIO(pin: u32, value: u32);
+    pub safe fn vexSystemStartupOptions() -> u32;
+    pub safe fn vexSystemExitRequest();
+    pub safe fn vexSystemHighResTimeGet() -> u64;
+    pub safe fn vexSystemPowerupTimeGet() -> u64;
+    pub safe fn vexSystemLinkAddrGet() -> u32;
+    pub safe fn vexSystemUsbStatus() -> u32;
+    pub unsafe fn vexSystemTimerStop();
+    pub unsafe fn vexSystemTimerClearInterrupt();
+    pub unsafe fn vexSystemTimerReinitForRtos(
         priority: u32,
-        handler: extern "system" fn(data: *mut c_void),
+        handler: unsafe extern "system" fn(data: *mut c_void),
     ) -> i32;
-    pub fn vexSystemApplicationIRQHandler(ulICCIAR: u32);
-    pub fn vexSystemWatchdogReinitRtos() -> i32;
-    pub fn vexSystemWatchdogGet() -> u32;
-    pub fn vexSystemBoot();
-    pub fn vexSystemUndefinedException();
-    pub fn vexSystemFIQInterrupt();
-    pub fn vexSystemIRQInterrupt();
-    pub fn vexSystemSWInterrupt();
-    pub fn vexSystemDataAbortInterrupt();
-    pub fn vexSystemPrefetchAbortInterrupt();
-    pub fn vexSystemVersion() -> u32;
-    pub fn vexStdlibVersion() -> u32;
+    pub unsafe fn vexSystemApplicationIRQHandler(ulICCIAR: u32);
+    pub unsafe fn vexSystemWatchdogReinitRtos() -> i32;
+    pub safe fn vexSystemWatchdogGet() -> u32;
+    pub unsafe fn vexSystemBoot();
+    pub unsafe fn vexSystemUndefinedException();
+    pub unsafe fn vexSystemFIQInterrupt();
+    pub unsafe fn vexSystemIRQInterrupt();
+    pub unsafe fn vexSystemSWInterrupt();
+    pub unsafe fn vexSystemDataAbortInterrupt();
+    pub unsafe fn vexSystemPrefetchAbortInterrupt();
+    pub safe fn vexSystemVersion() -> u32;
+    pub safe fn vexStdlibVersion() -> u32;
 }
 
 unsafe extern "C" {
-    pub fn vex_printf(format: *const c_char, ...) -> i32;
-    pub fn vex_sprintf(out: *mut c_char, format: *const c_char, ...) -> i32;
-    pub fn vex_snprintf(out: *mut c_char, max_len: u32, format: *const c_char, ...) -> i32;
+    pub unsafe fn vex_printf(format: *const c_char, ...) -> i32;
+    pub unsafe fn vex_sprintf(out: *mut c_char, format: *const c_char, ...) -> i32;
+    pub unsafe fn vex_snprintf(out: *mut c_char, max_len: u32, format: *const c_char, ...) -> i32;
 }

@@ -99,22 +99,22 @@ unsafe extern "system" {
         id: u32,
         pCode: *mut V5_DeviceAiVisionCode,
     ) -> bool;
-    pub fn vexDeviceAiVisionCodeSet(device: V5_DeviceT, pCode: *mut V5_DeviceAiVisionCode);
-    pub fn vexDeviceAiVisionColorGet(
+    pub unsafe fn vexDeviceAiVisionCodeSet(device: V5_DeviceT, pCode: *mut V5_DeviceAiVisionCode);
+    pub unsafe fn vexDeviceAiVisionColorGet(
         device: V5_DeviceT,
         id: u32,
         pColor: *mut V5_DeviceAiVisionColor,
     ) -> bool;
-    pub fn vexDeviceAiVisionColorSet(device: V5_DeviceT, pColor: *mut V5_DeviceAiVisionColor);
-    pub fn vexDeviceAiVisionModeGet(device: V5_DeviceT) -> u32;
-    pub fn vexDeviceAiVisionModeSet(device: V5_DeviceT, mode: u32);
-    pub fn vexDeviceAiVisionObjectCountGet(device: V5_DeviceT) -> i32;
-    pub fn vexDeviceAiVisionObjectGet(
+    pub unsafe fn vexDeviceAiVisionColorSet(device: V5_DeviceT, pColor: *mut V5_DeviceAiVisionColor);
+    pub unsafe fn vexDeviceAiVisionModeGet(device: V5_DeviceT) -> u32;
+    pub unsafe fn vexDeviceAiVisionModeSet(device: V5_DeviceT, mode: u32);
+    pub unsafe fn vexDeviceAiVisionObjectCountGet(device: V5_DeviceT) -> i32;
+    pub unsafe fn vexDeviceAiVisionObjectGet(
         device: V5_DeviceT,
         indexObj: u32,
         pObject: *mut V5_DeviceAiVisionObject,
     ) -> i32;
-    pub fn vexDeviceAiVisionSensorSet(device: V5_DeviceT, brightness: c_double, contrast: c_double);
-    pub fn vexDeviceAiVisionStatusGet(device: V5_DeviceT) -> u32;
-    pub fn vexDeviceAiVisionTemperatureGet(device: V5_DeviceT) -> c_double;
+    pub unsafe fn vexDeviceAiVisionSensorSet(device: V5_DeviceT, brightness: c_double, contrast: c_double);
+    pub unsafe fn vexDeviceAiVisionStatusGet(device: V5_DeviceT) -> u32;
+    pub unsafe fn vexDeviceAiVisionTemperatureGet(device: V5_DeviceT) -> c_double;
 }

@@ -41,26 +41,26 @@ pub struct V5_DeviceGpsQuaternion {
 }
 
 unsafe extern "system" {
-    pub fn vexDeviceGpsReset(device: V5_DeviceT);
-    pub fn vexDeviceGpsHeadingGet(device: V5_DeviceT) -> c_double;
-    pub fn vexDeviceGpsDegreesGet(device: V5_DeviceT) -> c_double;
-    pub fn vexDeviceGpsQuaternionGet(device: V5_DeviceT, data: *mut V5_DeviceGpsQuaternion);
-    pub fn vexDeviceGpsAttitudeGet(device: V5_DeviceT, data: *mut V5_DeviceGpsAttitude, bRaw: bool);
-    pub fn vexDeviceGpsRawGyroGet(device: V5_DeviceT, data: *mut V5_DeviceGpsRaw);
-    pub fn vexDeviceGpsRawAccelGet(device: V5_DeviceT, data: *mut V5_DeviceGpsRaw);
-    pub fn vexDeviceGpsStatusGet(device: V5_DeviceT) -> u32;
-    pub fn vexDeviceGpsModeSet(device: V5_DeviceT, mode: u32);
-    pub fn vexDeviceGpsModeGet(device: V5_DeviceT) -> u32;
-    pub fn vexDeviceGpsDataRateSet(device: V5_DeviceT, rate: u32);
-    pub fn vexDeviceGpsOriginSet(device: V5_DeviceT, ox: c_double, oy: c_double);
-    pub fn vexDeviceGpsOriginGet(device: V5_DeviceT, ox: *mut c_double, oy: *mut c_double);
-    pub fn vexDeviceGpsRotationSet(device: V5_DeviceT, value: c_double);
-    pub fn vexDeviceGpsRotationGet(device: V5_DeviceT) -> c_double;
-    pub fn vexDeviceGpsInitialPositionSet(
+    pub unsafe fn vexDeviceGpsReset(device: V5_DeviceT);
+    pub unsafe fn vexDeviceGpsHeadingGet(device: V5_DeviceT) -> c_double;
+    pub unsafe fn vexDeviceGpsDegreesGet(device: V5_DeviceT) -> c_double;
+    pub unsafe fn vexDeviceGpsQuaternionGet(device: V5_DeviceT, data: *mut V5_DeviceGpsQuaternion);
+    pub unsafe fn vexDeviceGpsAttitudeGet(device: V5_DeviceT, data: *mut V5_DeviceGpsAttitude, bRaw: bool);
+    pub unsafe fn vexDeviceGpsRawGyroGet(device: V5_DeviceT, data: *mut V5_DeviceGpsRaw);
+    pub unsafe fn vexDeviceGpsRawAccelGet(device: V5_DeviceT, data: *mut V5_DeviceGpsRaw);
+    pub unsafe fn vexDeviceGpsStatusGet(device: V5_DeviceT) -> u32;
+    pub unsafe fn vexDeviceGpsModeSet(device: V5_DeviceT, mode: u32);
+    pub unsafe fn vexDeviceGpsModeGet(device: V5_DeviceT) -> u32;
+    pub unsafe fn vexDeviceGpsDataRateSet(device: V5_DeviceT, rate: u32);
+    pub unsafe fn vexDeviceGpsOriginSet(device: V5_DeviceT, ox: c_double, oy: c_double);
+    pub unsafe fn vexDeviceGpsOriginGet(device: V5_DeviceT, ox: *mut c_double, oy: *mut c_double);
+    pub unsafe fn vexDeviceGpsRotationSet(device: V5_DeviceT, value: c_double);
+    pub unsafe fn vexDeviceGpsRotationGet(device: V5_DeviceT) -> c_double;
+    pub unsafe fn vexDeviceGpsInitialPositionSet(
         device: V5_DeviceT,
         initial_x: c_double,
         initial_y: c_double,
         initial_rotation: c_double,
     );
-    pub fn vexDeviceGpsErrorGet(device: V5_DeviceT) -> c_double;
+    pub unsafe fn vexDeviceGpsErrorGet(device: V5_DeviceT) -> c_double;
 }

@@ -5,5 +5,5 @@
 use crate::V5_DeviceT;
 
 unsafe extern "system" {
-    pub fn vexDeviceRangeValueGet(device: V5_DeviceT) -> i32;
+    pub unsafe fn vexDeviceRangeValueGet(device: V5_DeviceT) -> i32;
 }

@@ -20,8 +20,8 @@ impl V5_DeviceLedColor {
 }
 
 unsafe extern "system" {
-    pub fn vexDeviceLedSet(device: V5_DeviceT, value: V5_DeviceLedColor);
-    pub fn vexDeviceLedRgbSet(device: V5_DeviceT, color: u32);
-    pub fn vexDeviceLedGet(device: V5_DeviceT) -> V5_DeviceLedColor;
-    pub fn vexDeviceLedRgbGet(device: V5_DeviceT) -> u32;
+    pub unsafe fn vexDeviceLedSet(device: V5_DeviceT, value: V5_DeviceLedColor);
+    pub unsafe fn vexDeviceLedRgbSet(device: V5_DeviceT, color: u32);
+    pub unsafe fn vexDeviceLedGet(device: V5_DeviceT) -> V5_DeviceLedColor;
+    pub unsafe fn vexDeviceLedRgbGet(device: V5_DeviceT) -> u32;
 }

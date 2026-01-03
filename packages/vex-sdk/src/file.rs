@@ -31,18 +31,18 @@ impl FRESULT {
 pub type FIL = core::ffi::c_void;
 
 unsafe extern "system" {
-    pub fn vexFileMountSD() -> FRESULT;
-    pub fn vexFileDirectoryGet(path: *const c_char, buffer: *mut c_char, len: u32) -> FRESULT;
-    pub fn vexFileOpen(filename: *const c_char, mode: *const c_char) -> *mut FIL;
-    pub fn vexFileOpenWrite(filename: *const c_char) -> *mut FIL;
-    pub fn vexFileOpenCreate(filename: *const c_char) -> *mut FIL;
-    pub fn vexFileClose(fdp: *mut FIL);
-    pub fn vexFileWrite(buf: *mut c_char, size: u32, nItems: u32, fdp: *mut FIL) -> i32;
-    pub fn vexFileSize(fdp: *mut FIL) -> i32;
-    pub fn vexFileSeek(fdp: *mut FIL, offset: u32, whence: i32) -> FRESULT;
-    pub fn vexFileRead(buf: *mut c_char, size: u32, nItems: u32, fdp: *mut FIL) -> i32;
-    pub fn vexFileDriveStatus(drive: u32) -> bool;
-    pub fn vexFileTell(fdp: *mut FIL) -> i32;
-    pub fn vexFileSync(fdp: *mut FIL);
-    pub fn vexFileStatus(filename: *const c_char) -> u32;
+    pub safe fn vexFileMountSD() -> FRESULT;
+    pub unsafe fn vexFileDirectoryGet(path: *const c_char, buffer: *mut c_char, len: u32) -> FRESULT;
+    pub unsafe fn vexFileOpen(filename: *const c_char, mode: *const c_char) -> *mut FIL;
+    pub unsafe fn vexFileOpenWrite(filename: *const c_char) -> *mut FIL;
+    pub unsafe fn vexFileOpenCreate(filename: *const c_char) -> *mut FIL;
+    pub unsafe fn vexFileClose(fdp: *mut FIL);
+    pub unsafe fn vexFileWrite(buf: *mut c_char, size: u32, nItems: u32, fdp: *mut FIL) -> i32;
+    pub unsafe fn vexFileSize(fdp: *mut FIL) -> i32;
+    pub unsafe fn vexFileSeek(fdp: *mut FIL, offset: u32, whence: i32) -> FRESULT;
+    pub unsafe fn vexFileRead(buf: *mut c_char, size: u32, nItems: u32, fdp: *mut FIL) -> i32;
+    pub unsafe fn vexFileDriveStatus(drive: u32) -> bool;
+    pub unsafe fn vexFileTell(fdp: *mut FIL) -> i32;
+    pub unsafe fn vexFileSync(fdp: *mut FIL);
+    pub unsafe fn vexFileStatus(filename: *const c_char) -> u32;
 }

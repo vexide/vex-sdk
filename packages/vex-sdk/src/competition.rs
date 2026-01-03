@@ -1,6 +1,6 @@
 //! Competition Control
 
 unsafe extern "system" {
-    pub fn vexCompetitionStatus() -> u32;
-    pub fn vexCompetitionControl(data: u32);
+    pub safe fn vexCompetitionStatus() -> u32;
+    pub safe fn vexCompetitionControl(data: u32);
 }

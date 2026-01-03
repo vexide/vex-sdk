@@ -104,12 +104,12 @@ impl V5_DeviceType {
 }
 
 unsafe extern "system" {
-    pub fn vexDevicesGetNumber() -> u32;
-    pub fn vexDevicesGetNumberByType(device_type: V5_DeviceType) -> u32;
-    pub fn vexDevicesGet() -> V5_DeviceT;
-    pub fn vexDeviceGetByIndex(index: u32) -> V5_DeviceT;
-    pub fn vexDeviceGetStatus(devices: *mut V5_DeviceType) -> i32;
-    pub fn vexDeviceGetTimestamp(device: V5_DeviceT) -> u32;
-    pub fn vexDeviceGenericValueGet(device: V5_DeviceT) -> c_double;
-    pub fn vexDeviceButtonStateGet() -> c_int;
+    pub safe fn vexDevicesGetNumber() -> u32;
+    pub safe fn vexDevicesGetNumberByType(device_type: V5_DeviceType) -> u32;
+    pub safe fn vexDevicesGet() -> V5_DeviceT;
+    pub safe fn vexDeviceGetByIndex(index: u32) -> V5_DeviceT;
+    pub unsafe fn vexDeviceGetStatus(devices: *mut V5_DeviceType) -> i32;
+    pub unsafe fn vexDeviceGetTimestamp(device: V5_DeviceT) -> u32;
+    pub unsafe fn vexDeviceGenericValueGet(device: V5_DeviceT) -> c_double;
+    pub safe fn vexDeviceButtonStateGet() -> c_int;
 }

@@ -39,15 +39,15 @@ impl V5_DeviceBumperState {
 }
 
 unsafe extern "system" {
-    pub fn vexDeviceAdiPortConfigSet(
+    pub unsafe fn vexDeviceAdiPortConfigSet(
         device: V5_DeviceT,
         port: u32,
         config: V5_AdiPortConfiguration,
     );
-    pub fn vexDeviceAdiPortConfigGet(device: V5_DeviceT, port: u32) -> V5_AdiPortConfiguration;
-    pub fn vexDeviceAdiValueSet(device: V5_DeviceT, port: u32, value: i32);
-    pub fn vexDeviceAdiValueGet(device: V5_DeviceT, port: u32) -> i32;
-    pub fn vexDeviceAdiAddrLedSet(
+    pub unsafe fn vexDeviceAdiPortConfigGet(device: V5_DeviceT, port: u32) -> V5_AdiPortConfiguration;
+    pub unsafe fn vexDeviceAdiValueSet(device: V5_DeviceT, port: u32, value: i32);
+    pub unsafe fn vexDeviceAdiValueGet(device: V5_DeviceT, port: u32) -> i32;
+    pub unsafe fn vexDeviceAdiAddrLedSet(
         device: V5_DeviceT,
         port: u32,
         pData: *mut u32,
@@ -55,9 +55,9 @@ unsafe extern "system" {
         nLength: u32,
         options: u32,
     );
-    pub fn vexDeviceBumperGet(device: V5_DeviceT) -> V5_DeviceBumperState;
-    pub fn vexDeviceGyroReset(device: V5_DeviceT);
-    pub fn vexDeviceGyroHeadingGet(device: V5_DeviceT) -> c_double;
-    pub fn vexDeviceGyroDegreesGet(device: V5_DeviceT) -> c_double;
-    pub fn vexDeviceSonarValueGet(device: V5_DeviceT) -> i32;
+    pub unsafe fn vexDeviceBumperGet(device: V5_DeviceT) -> V5_DeviceBumperState;
+    pub unsafe fn vexDeviceGyroReset(device: V5_DeviceT);
+    pub unsafe fn vexDeviceGyroHeadingGet(device: V5_DeviceT) -> c_double;
+    pub unsafe fn vexDeviceGyroDegreesGet(device: V5_DeviceT) -> c_double;
+    pub unsafe fn vexDeviceSonarValueGet(device: V5_DeviceT) -> i32;
 }

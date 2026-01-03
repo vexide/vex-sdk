@@ -21,6 +21,6 @@ pub struct V5_TouchStatus {
 }
 
 unsafe extern "system" {
-    pub fn vexTouchUserCallbackSet(callback: unsafe extern "system" fn(V5_TouchEvent, i32, i32));
-    pub fn vexTouchDataGet(status: *mut V5_TouchStatus);
+    pub unsafe fn vexTouchUserCallbackSet(callback: unsafe extern "system" fn(V5_TouchEvent, i32, i32));
+    pub unsafe fn vexTouchDataGet(status: *mut V5_TouchStatus);
 }

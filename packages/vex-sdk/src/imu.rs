@@ -45,15 +45,15 @@ pub struct V5_DeviceImuAttitude {
 }
 
 unsafe extern "system" {
-    pub fn vexDeviceImuReset(device: V5_DeviceT);
-    pub fn vexDeviceImuHeadingGet(device: V5_DeviceT) -> c_double;
-    pub fn vexDeviceImuDegreesGet(device: V5_DeviceT) -> c_double;
-    pub fn vexDeviceImuQuaternionGet(device: V5_DeviceT, data: *mut V5_DeviceImuQuaternion);
-    pub fn vexDeviceImuAttitudeGet(device: V5_DeviceT, data: *mut V5_DeviceImuAttitude);
-    pub fn vexDeviceImuRawGyroGet(device: V5_DeviceT, data: *mut V5_DeviceImuRaw);
-    pub fn vexDeviceImuRawAccelGet(device: V5_DeviceT, data: *mut V5_DeviceImuRaw);
-    pub fn vexDeviceImuStatusGet(device: V5_DeviceT) -> u32;
-    pub fn vexDeviceImuModeSet(device: V5_DeviceT, mode: u32);
-    pub fn vexDeviceImuModeGet(device: V5_DeviceT) -> u32;
-    pub fn vexDeviceImuDataRateSet(device: V5_DeviceT, rate: u32);
+    pub unsafe fn vexDeviceImuReset(device: V5_DeviceT);
+    pub unsafe fn vexDeviceImuHeadingGet(device: V5_DeviceT) -> c_double;
+    pub unsafe fn vexDeviceImuDegreesGet(device: V5_DeviceT) -> c_double;
+    pub unsafe fn vexDeviceImuQuaternionGet(device: V5_DeviceT, data: *mut V5_DeviceImuQuaternion);
+    pub unsafe fn vexDeviceImuAttitudeGet(device: V5_DeviceT, data: *mut V5_DeviceImuAttitude);
+    pub unsafe fn vexDeviceImuRawGyroGet(device: V5_DeviceT, data: *mut V5_DeviceImuRaw);
+    pub unsafe fn vexDeviceImuRawAccelGet(device: V5_DeviceT, data: *mut V5_DeviceImuRaw);
+    pub unsafe fn vexDeviceImuStatusGet(device: V5_DeviceT) -> u32;
+    pub unsafe fn vexDeviceImuModeSet(device: V5_DeviceT, mode: u32);
+    pub unsafe fn vexDeviceImuModeGet(device: V5_DeviceT) -> u32;
+    pub unsafe fn vexDeviceImuDataRateSet(device: V5_DeviceT, rate: u32);
 }

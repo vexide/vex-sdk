@@ -16,11 +16,11 @@ impl V5_DeviceMagnetDuration {
 }
 
 unsafe extern "system" {
-    pub fn vexDeviceMagnetPowerSet(device: V5_DeviceT, value: i32, time: i32);
-    pub fn vexDeviceMagnetPowerGet(device: V5_DeviceT) -> i32;
-    pub fn vexDeviceMagnetPickup(device: V5_DeviceT, duration: V5_DeviceMagnetDuration);
-    pub fn vexDeviceMagnetDrop(device: V5_DeviceT, duration: V5_DeviceMagnetDuration);
-    pub fn vexDeviceMagnetTemperatureGet(device: V5_DeviceT) -> c_double;
-    pub fn vexDeviceMagnetCurrentGet(device: V5_DeviceT) -> c_double;
-    pub fn vexDeviceMagnetStatusGet(device: V5_DeviceT) -> u32;
+    pub unsafe fn vexDeviceMagnetPowerSet(device: V5_DeviceT, value: i32, time: i32);
+    pub unsafe fn vexDeviceMagnetPowerGet(device: V5_DeviceT) -> i32;
+    pub unsafe fn vexDeviceMagnetPickup(device: V5_DeviceT, duration: V5_DeviceMagnetDuration);
+    pub unsafe fn vexDeviceMagnetDrop(device: V5_DeviceT, duration: V5_DeviceMagnetDuration);
+    pub unsafe fn vexDeviceMagnetTemperatureGet(device: V5_DeviceT) -> c_double;
+    pub unsafe fn vexDeviceMagnetCurrentGet(device: V5_DeviceT) -> c_double;
+    pub unsafe fn vexDeviceMagnetStatusGet(device: V5_DeviceT) -> u32;
 }
