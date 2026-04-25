@@ -33,6 +33,12 @@ map_jump_table! {
         /// Get the timestamp recorded by a device's internal clock.
         pub fn vexDeviceGetTimestamp(device: V5_DeviceT) -> u32,
     0x2a8 =>
-        pub fn vexDeviceGenericValueGet(device: V5_DeviceT) -> c_double,
+        /// Get the reading of a generic sensor.
+        ///
+        /// Returns `0` if the device is not considered a generic sensor by VEXos. Note that this
+        /// function is not a way to read from all kinds of sensor with a single call: for example,
+        /// distance sensors are not Generic sensors any more than they are motors, so they will
+        /// return zero.
+        pub fn vexDeviceGenericValueGet(device: V5_DeviceT) -> i32,
     0x1b4 => pub fn vexDeviceButtonStateGet() -> c_int,
 }

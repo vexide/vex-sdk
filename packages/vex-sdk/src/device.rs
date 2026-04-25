@@ -110,6 +110,6 @@ unsafe extern "system" {
     pub fn vexDeviceGetByIndex(index: u32) -> V5_DeviceT;
     pub fn vexDeviceGetStatus(devices: *mut V5_DeviceType) -> i32;
     pub fn vexDeviceGetTimestamp(device: V5_DeviceT) -> u32;
-    pub fn vexDeviceGenericValueGet(device: V5_DeviceT) -> c_double;
+    pub fn vexDeviceGenericValueGet(device: V5_DeviceT) -> i32;
     pub fn vexDeviceButtonStateGet() -> c_int;
 }
