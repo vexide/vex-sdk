@@ -1,7 +1,7 @@
 #![no_std]
 
 #[cfg(not(target_os = "vexos"))]
-compile_error!("`vex-sdk-jumptable` does not support this target.");
+compile_error!("`vex-sdk-pros` does not support this target.");
 
 /// vexTasksRun is aliased to vexBackgroundProcessing on the partner SDK.
 #[unsafe(no_mangle)]
