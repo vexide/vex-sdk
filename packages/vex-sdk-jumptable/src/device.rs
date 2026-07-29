@@ -1,6 +1,6 @@
 //! V5 Smart Devices
 
-use core::ffi::{c_double, c_int};
+use core::ffi::c_int;
 
 pub use vex_sdk::{V5_DeviceT, V5_DeviceType};
 
