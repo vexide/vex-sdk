@@ -6,9 +6,13 @@ authors = ["Tropical"]
 license = "MIT"
 categories = ["science::robotics", "embedded"]
 keywords = ["vex", "vex-v5", "vex-robotics", "robotics"]
-version = "0.0.1"
+version = "0.1.0-rc.1"
+edition = "2024"
+rust-version = "1.88"
 
 [dependencies]
-zip = "4.5.0"
+# We only ever decompress, and every VEXcode SDK archive is `stored`/`deflate`,
+# so the remaining codecs (and zopfli, a compressor) are dead weight here.
+zip = { version = "8.6.0", default-features = false, features = ["deflate-flate2-zlib-rs"] }
 serde = { version = "1.0", features = ["derive"] }
 ureq = { version = "3.1.0", features = ["json"] }

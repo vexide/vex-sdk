@@ -1,6 +1,6 @@
 //! V5 Smart Devices
 
-use core::ffi::{c_double, c_int};
+use core::ffi::c_int;
 
 /// The max number of internal port indicies that could theoretically exist in VEXos.
 ///

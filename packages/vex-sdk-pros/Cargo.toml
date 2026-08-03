@@ -6,6 +6,6 @@ authors = ["Tropical"]
 license = "MIT"
 categories = ["science::robotics", "no-std", "embedded"]
 keywords = ["vex", "vex-v5", "vex-robotics", "robotics"]
-version = "0.0.1"
+version = "0.1.0-rc.1"
 edition = "2021"
 links = "pros"

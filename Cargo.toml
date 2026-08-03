@@ -11,7 +11,7 @@ exclude = [
 resolver = "3"
 
 [workspace.dependencies]
-vex-sdk = { version = "0.28.0", path = "packages/vex-sdk" }
-vex-sdk-jumptable = { version = "0.1.1", path = "packages/vex-sdk-jumptable" }
-vex-sdk-pros = { version = "0.0.1", path = "packages/vex-sdk-pros" }
-vex-sdk-mock = { version = "0.1.0", path = "packages/vex-sdk-mock" }
+vex-sdk = { version = "0.29.0-rc.1", path = "packages/vex-sdk" }
+vex-sdk-jumptable = { version = "0.2.0-rc.1", path = "packages/vex-sdk-jumptable" }
+vex-sdk-pros = { version = "0.1.0-rc.1", path = "packages/vex-sdk-pros" }
+vex-sdk-mock = { version = "0.2.0-rc.1", path = "packages/vex-sdk-mock" }
