@@ -6,9 +6,9 @@ authors = ["Tropical"]
 license = "MIT"
 categories = ["science::robotics", "embedded"]
 keywords = ["vex", "vex-v5", "vex-robotics", "robotics"]
-version = "0.2.0-rc.1"
+version = "0.2.0"
 edition = "2024"
-rust-version = "1.94"
+rust-version = "1.101"
 
 [dependencies]
 vex-sdk = { workspace = true }
