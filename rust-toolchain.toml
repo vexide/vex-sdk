@@ -2,4 +2,4 @@
 channel = "nightly-2026-10-13"
 components = ["rust-src"]
 # We are using build-std
-# targets = ["armv7a-vex-v5"]
+# targets = ["thumbv7a-vex-v5"]
