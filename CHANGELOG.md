@@ -44,5 +44,5 @@ by crate below.
 
 #### Changed
 
-- Updated `zip` from 4.5 to 8.6.
+- Updated `zip` from 4.5 to 9.0.
 - Raised the minimum supported Rust version to 1.88.
