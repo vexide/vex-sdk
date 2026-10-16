@@ -27,4 +27,4 @@ A prebuilt `libpros.a` is vendored in the `link/` directory and is linked static
 
 ## Supported Targets
 
-This crate only supports VEXos targets (`armv7a-vex-v5`). Building it for any other target raises a `compile_error!`.
+This crate only supports VEXos targets (`thumbv7a-vex-v5`). Building it for any other target raises a `compile_error!`.
