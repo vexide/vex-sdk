@@ -66,7 +66,28 @@ impl V5_ControllerIndex {
 }
 
 unsafe extern "system" {
+    /// Returns the value of the given input peripheral on the given controller. (TODO: return value for invalid parameters?)
+    /// 
+    /// # Return values:
+    /// - For digital inputs (all buttons), the value returned is 0 if the button is not depressed, and nonzero otherwise.
+    /// - For joystick inputs, the value returned is between [-127, 127].
+    /// - For battery capacity [`V5_ControllerIndex::BatteryCapacity`], returns a value between [0, 100]. (TODO: determine battery level range)
+    /// - For flags [`V5_ControllerIndex::Flags`], returns a bitflag (TODO: determine bitflag values).
     pub fn vexControllerGet(id: V5_ControllerId, index: V5_ControllerIndex) -> i32;
+    /// Returns the connection status of the given controller.
     pub fn vexControllerConnectionStatusGet(id: V5_ControllerId) -> V5_ControllerStatus;
+    /// Draws the given string to given controller at the provided one-indexed line and column, or rumble the controller.
+    ///
+    /// # Special actions (TODO: add docs for earlier VEXos versions):
+    /// - If `buf` is an empty string, and `col` is 1, the given line will be cleared.
+    /// - If `buf` is an empty string, `line` is 0, and `col` is 1, the whole screen will be cleared.
+    /// - If `line` is 4 and `col` is 1, the provided string will be used as a rumble pattern. The string must consist of `'-'`, `'.'`, and `' '`.
+    ///
+    /// # Safety
+    /// The safety of VEXos functions cannot be guaranteed. The following is a non-exhausive list of precondiditions that must be met for safety:
+    /// - `buf` must point to a null-terminated C-string.
+    ///
+    /// # Return value
+    /// Returns 1 on success, non-1 value on failure.
     pub fn vexControllerTextSet(id: u32, line: u32, col: u32, buf: *const u8) -> u32;
 }
