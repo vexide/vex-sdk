@@ -1,5 +1,5 @@
 [toolchain]
-channel = "nightly-2026-10-13"
+channel = "nightly-2026-10-14"
 components = ["rust-src"]
 # We are using build-std
 # targets = ["thumbv7a-vex-v5"]
