@@ -10,7 +10,7 @@ by crate below.
 
 ## [Unreleased]
 
-## [2026-07-28] `vex-sdk` 0.29.0
+## [2026-10-16] `vex-sdk` 0.29.0
 
 #### Changed
 
